@@ -1,0 +1,13 @@
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let i of images" cdkDrag>
+    <img [src]="i.data" height="200">{{i.fileName}}
+  </div>
+</div>
+
+<!-- <img *ngFor='let url of urls'  [src]="url" height="200"> <br/> -->
+
+<input type='file' (change)="onSelectFile($event)" multiple>
