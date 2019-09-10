@@ -1,6 +1,11 @@
 <p>
   Start editing to see some magic happen :)
 </p>
+<div class="ui-inputgroup">
+  <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+  <input type="text" pInputText placeholder="Project" [(ngModel)]="projectName"> 
+  <p-dropdown [options]="companyNamesList" [(ngModel)]="companyId" optionLabel="companyName"></p-dropdown>        
+</div>
 
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
   <div class="example-box" *ngFor="let i of images" cdkDrag>

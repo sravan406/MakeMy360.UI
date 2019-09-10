@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { fileUploadData, companyNamesList } from 'src/app/@core/models/admin-models';
 
 @Component({
   selector: 'file-upload',
@@ -8,7 +9,10 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class FileUploadComponent {
   name = 'Angular 4';
-  images = [];
+  //public data: fileUploadData;
+  public projectName: string;
+  public images: any[] = [];
+  public companyNamesList: companyNamesList[];
 
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
