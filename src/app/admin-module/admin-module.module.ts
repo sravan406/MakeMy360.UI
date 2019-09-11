@@ -6,6 +6,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
+import {AccordionModule} from 'primeng/accordion';
 
 @NgModule({
   declarations: [FileUploadComponent],
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     DragDropModule,
     InputTextModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    AccordionModule
   ]
 })
 export class AdminModule { }

@@ -12,7 +12,10 @@ export class FileUploadComponent {
   //public data: fileUploadData;
   public projectName: string;
   public images: any[] = [];
-  public companyNamesList: companyNamesList[];
+  public companyName: string;
+  //public companyNamesList: companyNamesList[];
+  companyNamesList = ['Really Smart', 'Infotech',
+  'GGK', 'WeatheDell'];
 
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
