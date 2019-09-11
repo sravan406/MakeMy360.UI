@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AdminModule } from './admin-module/admin-module.module';
 import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
+import { baseService } from './@core/data/base-service.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { LoginModule } from './login/login.module';
     AppRoutingModule,
     LoginModule
   ],
-  providers: [],
+  providers: [baseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

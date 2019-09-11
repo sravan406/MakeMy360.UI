@@ -1,0 +1,1 @@
+export const fileuploadurl = "fileupload/upload"; //controllerName/methodName

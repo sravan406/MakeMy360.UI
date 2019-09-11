@@ -7,6 +7,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import {AccordionModule} from 'primeng/accordion';
+import { baseService } from '../@core/data/base-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [FileUploadComponent],
@@ -17,7 +19,9 @@ import {AccordionModule} from 'primeng/accordion';
     InputTextModule,
     DropdownModule,
     FormsModule,
-    AccordionModule
-  ]
+    AccordionModule,
+    HttpClientModule
+  ],
+  providers: [baseService],
 })
 export class AdminModule { }

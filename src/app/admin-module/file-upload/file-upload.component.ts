@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { fileUploadData, companyNamesList } from 'src/app/@core/models/admin-models';
+import { Router } from '@angular/router';
+import { baseService } from 'src/app/@core/data/base-service.service';
+import { fileuploadurl } from 'src/app/@core/service-urls.constant';
 
 @Component({
   selector: 'file-upload',
@@ -16,6 +19,8 @@ export class FileUploadComponent {
   //public companyNamesList: companyNamesList[];
   companyNamesList = ['Really Smart', 'Infotech',
   'GGK', 'WeatheDell'];
+
+  constructor(private service: baseService, private router: Router) { }
 
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
@@ -36,5 +41,11 @@ export class FileUploadComponent {
 
   drop(event: CdkDragDrop<{ title: string, poster: string }[]>) {
     moveItemInArray(this.images, event.previousIndex, event.currentIndex);
+  }
+
+  upload(){
+    this.service.post(fileuploadurl, this.images).subscribe(resp=>{
+      console.log(resp);
+    });
   }
 }
