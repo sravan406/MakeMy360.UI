@@ -1,14 +1,14 @@
-export class fileUploadData{
+export interface fileUploadData{
     projectName: string;
-    images: any[] = [];
+    images: any[];
 }
 
-export class companyNamesList{
+export interface companyNamesList{
     companyId: number;
     companyName: string;
 }
 
-export class CompanyDetails
+export interface CompanyDetails
 {
     companyName:string;
     companyId:number;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { baseService } from '../../@core/data/base-service.service';
 import { CompanyDetails } from '../../@core/models/admin-models';
-import { Constants } from '../../../Constants';
+//import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
 
 @Component({
@@ -12,14 +12,18 @@ import { UrlConstants } from '../../@core/service-urls.constant';
 export class CompanyComponent implements OnInit {
 
   public companyDetails: CompanyDetails;
-  constructor(private service:baseService) { }
-  
-  SaveCopamy()
-  {
-    this.service.post(Constants.ApiUrl+UrlConstants.companyDetails,this.companyDetails);
-  }
+  constructor(private service: baseService) { }
 
   ngOnInit() {
+    this.companyDetails = {
+      companyName: "",
+      companyId: 0,
+    };
   }
+
+  SaveCopamy() {
+    this.service.post(UrlConstants.companyDetails, this.companyDetails);
+  }
+
 
 }
