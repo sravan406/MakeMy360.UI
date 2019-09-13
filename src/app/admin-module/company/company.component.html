@@ -1,0 +1,11 @@
+<div class="container">
+    <form>
+      <div class="form-group">
+        <label for="name">Company Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="CompanyName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="SaveCopamy()">Upload</button>
+
+    </form>
+</div>
+  

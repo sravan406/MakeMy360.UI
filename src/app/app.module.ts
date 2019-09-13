@@ -9,13 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
 import { baseService } from './@core/data/base-service.service';
 import { AppHeaderComponent } from './layout/app-header/app-header.component';
+import { CompanyComponent } from './admin-module/company/company.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     HomeComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    CompanyComponent
   ],
   imports: [
     FormsModule,

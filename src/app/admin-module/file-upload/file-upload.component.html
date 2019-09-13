@@ -15,7 +15,8 @@
 
     <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let i of images" cdkDrag>
-        <img [src]="i.data" height="200">{{i.fileName}}
+        <img [src]="i.data" height="200">
+        <input type="text" class="form-control" id="fileName" [(ngModel)]="i.fileName" [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
