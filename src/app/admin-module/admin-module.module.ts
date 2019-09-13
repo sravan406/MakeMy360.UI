@@ -9,9 +9,11 @@ import { FormsModule } from '@angular/forms';
 import {AccordionModule} from 'primeng/accordion';
 import { baseService } from '../@core/data/base-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CompanyComponent } from 'src/app/admin-module/company/company.component';
+
 
 @NgModule({
-  declarations: [FileUploadComponent],
+  declarations: [FileUploadComponent, CompanyComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
