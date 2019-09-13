@@ -8,14 +8,13 @@ import { AdminModule } from './admin-module/admin-module.module';
 import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
 import { baseService } from './@core/data/base-service.service';
-import { CompanyComponent } from './company/company.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    HomeComponent,
-    CompanyComponent
+    HomeComponent
+    
     
   ],
   imports: [
