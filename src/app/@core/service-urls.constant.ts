@@ -1,6 +1,6 @@
 export const UrlConstants ={
     fileuploadurl:"fileupload/upload",
-    companyDetails:"AddOrUpdateCompanyDetails"
-            
+    companyDetails:"AddOrUpdateCompanyDetails",
+    getCompanyDetails:"company/getCompanyDetails"
 
 }; //controllerName/methodName

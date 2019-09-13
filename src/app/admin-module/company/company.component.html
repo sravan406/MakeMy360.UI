@@ -1,11 +1,55 @@
 <div class="container">
-    <form>
+  <form>
+    <div [hidden]="hideCompanyDetails">
       <div class="form-group">
         <label for="name">Company Name</label>
-        <input type="text" class="form-control" id="name" [(ngModel)]="companyDetails.companyName" [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" id="name" [(ngModel)]="companyDetails.companyName"
+          [ngModelOptions]="{standalone: true}">
       </div>
-      <button type="submit" class="btn btn-primary" (click)="SaveCopamy()">Upload</button>
-
-    </form>
+      <div class="form-group">
+        <label for="name">Established Year</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="companyDetails.establishedYear"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        <label for="name">Is Active</label>
+        <p-checkbox name="groupname" value="val1" [(ngModel)]="companyDetails.isActive"></p-checkbox>
+        <!-- <input type="checkbox" class="form-control" id="name" [(ngModel)]="companyDetails.isActive"
+          [ngModelOptions]="{standalone: true}"> -->
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" style="align-content: right;"
+          (click)="saveCompany()">Save</button>
+      </div>
+    </div>
+    <div [hidden]="!hideCompanyDetails">
+      <button type="submit" class="btn btn-primary" style="align-content: right;" (click)="addCompany()">Add</button>
+      <br />
+      <p-table #dt1 [columns]="cols" [value]="companyDetailsList" [paginator]="true" [rows]="10" dataKey="vin"
+        [resizableColumns]="true" [reorderableColumns]="true" selectionMode="single" [(selection)]="selectedCar1"
+        stateStorage="session" stateKey="statedemo-session">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of cols" [pSortableColumn]="col.field" pResizableColumn pReorderableColumn>
+              {{col.header}}
+              <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+          </tr>
+          <tr>
+            <th *ngFor="let col of cols" [ngSwitch]="col.field" class="ui-fluid">
+              <input pInputText type="text" (input)="dt1.filter($event.target.value, col.field, col.filterMatchMode)"
+                [value]="dt1.filters[col.field]?.value">
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns">
+              {{rowData[col.field]}}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </form>
 </div>
-  
