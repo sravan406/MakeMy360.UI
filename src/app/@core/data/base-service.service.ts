@@ -25,12 +25,18 @@ export class baseService {
      * @param body
      */
     public post(url: string, body: any) {
-        return this.http.post(this.getApiUrl(url), body).pipe(
-            catchError((e) => {
-                return this.handleError(e);
-            })
+        
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }; 
+        return this.http.post(this.getApiUrl(url), body,httpOptions).subscribe(
+           data=>{
+               alert('ok');
+           },
+           error=>{
+             console.log("hi");
+           }
         );
     }
+
 
     /**
      * Post
@@ -70,6 +76,11 @@ export class baseService {
     public get<T>(url: string, options?: HttpParams): Observable<T> {
         return this.http.get<T>(this.getApiUrl(url));
     }
+
+ 
+
+ 
+
 
     /**
      * getFile

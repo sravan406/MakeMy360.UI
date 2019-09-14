@@ -16,13 +16,17 @@ export class CompanyComponent implements OnInit {
 
   ngOnInit() {
     this.companyDetails = {
-      companyName: "",
-      companyId: 0,
+      CompanyName: "",
+      CompanyId: 0,
     };
   }
 
   SaveCopamy() {
     this.service.post(UrlConstants.companyDetails, this.companyDetails);
+  }
+
+  GetCompanyDetails() {
+    this.service.get(UrlConstants.companyDetails);
   }
 
 

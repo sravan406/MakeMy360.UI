@@ -10,6 +10,7 @@ export interface companyNamesList{
 
 export interface CompanyDetails
 {
-    companyName:string;
-    companyId:number;
+    CompanyId:number;
+    CompanyName:string;
+    
 }
