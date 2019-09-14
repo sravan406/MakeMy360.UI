@@ -3,6 +3,7 @@ import { baseService } from '../../@core/data/base-service.service';
 import { CompanyDetails } from '../../@core/models/admin-models';
 //import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-company',
@@ -15,8 +16,10 @@ export class CompanyComponent implements OnInit {
   cols: any[];
   companyDetailsList: CompanyDetails[] = [];
   hideCompanyDetails: boolean = true;
+  showFilter: boolean = false;
+  showSavebtn: boolean = false;
 
-  constructor(private service: baseService) { }
+  constructor(private service: baseService, private _location: Location) { }
 
   ngOnInit() {
 
@@ -25,10 +28,10 @@ export class CompanyComponent implements OnInit {
       { header: 'Established Year', field: 'establishedYear' },
       { header: 'Is Active', field: 'isActive' }
     ];
-    
-    this.companyDetailsList = [{companyName:"icici", establishedYear:1989, isActive:true},{companyName:"abc", establishedYear:2019, isActive:true},
-    {companyName:"hdfc", establishedYear:2000, isActive:false},{companyName:"abc", establishedYear:2019, isActive:true},
-    {companyName:"ggk", establishedYear:2019, isActive:true}]
+
+    this.companyDetailsList = [{ companyName: "icici", establishedYear: 1989, isActive: true }, { companyName: "abc", establishedYear: 2019, isActive: true },
+    { companyName: "hdfc", establishedYear: 2000, isActive: false }, { companyName: "abc", establishedYear: 2019, isActive: true },
+    { companyName: "ggk", establishedYear: 2019, isActive: true }]
 
     console.log(this.companyDetailsList);
     // this.service.get(UrlConstants.getCompanyDetails).subscribe(resp => {
@@ -36,13 +39,18 @@ export class CompanyComponent implements OnInit {
     // });
   }
 
-  addCompany(){
+  addCompany() {
     this.hideCompanyDetails = false;
   }
+
   saveCompany() {
     this.service.post(UrlConstants.companyDetails, this.companyDetails);
     this.hideCompanyDetails = true;
   }
 
+  clickOnEdit(data) {
+    this.companyDetails = data;
+  }
+  clickOnDelete() { }
 
 }
