@@ -15,3 +15,11 @@ export interface CompanyDetails
     establishedYear?:number;
     isActive?:boolean;
 }
+
+export interface ProjectDetails
+{
+    companyName?:string;
+    companyId?:number;
+    projectName?:string;
+    location?:string;
+}
