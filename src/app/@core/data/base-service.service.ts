@@ -27,14 +27,10 @@ export class baseService {
     public post(url: string, body: any) {
         
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }; 
-        return this.http.post(this.getApiUrl(url), body,httpOptions).subscribe(
-           data=>{
-               alert('ok');
-           },
-           error=>{
-             console.log("hi");
-           }
+        return this.http.post(this.getApiUrl(url), body,httpOptions) .pipe(
+            catchError((e) => this.handleError(e))
         );
+        
     }
 
 

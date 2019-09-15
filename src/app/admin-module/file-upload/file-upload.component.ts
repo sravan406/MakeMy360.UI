@@ -44,8 +44,7 @@ export class FileUploadComponent {
   }
 
   upload(){
-    this.service.post(UrlConstants.fileuploadurl, this.images).subscribe(resp=>{
-      console.log(resp);
-    });
+    this.service.post(UrlConstants.fileuploadurl, this.images);
+    
   }
 }
