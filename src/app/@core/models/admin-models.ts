@@ -10,7 +10,16 @@ export interface companyNamesList{
 
 export interface CompanyDetails
 {
-    CompanyId:number;
-    CompanyName:string;
-    
+    companyName?:string;
+    companyId?:number;
+    establishedYear?:number;
+    isActive?:boolean;
+}
+
+export interface ProjectDetails
+{
+    companyName?:string;
+    companyId?:number;
+    projectName?:string;
+    location?:string;
 }

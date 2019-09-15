@@ -12,9 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CompanyComponent } from 'src/app/admin-module/company/company.component';
 import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ProjectComponent } from './project/project.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [FileUploadComponent, CompanyComponent],
+  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -25,7 +27,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     AccordionModule,
     HttpClientModule,
     TableModule,
-    CheckboxModule
+    CheckboxModule,BrowserAnimationsModule
   ],
   providers: [baseService],
 })
