@@ -25,14 +25,18 @@ export class baseService {
      * @param body
      */
     public post(url: string, body: any) {
-        
-    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }; 
-        return this.http.post(this.getApiUrl(url), body,httpOptions) .pipe(
-            catchError((e) => this.handleError(e))
+        return this.http.post(this.getApiUrl(url), body).subscribe(
+           data=>{
+               alert('ok');
+           },
+           error=>{
+               console.log("hi");
+             console.log(JSON.stringify(error.json()));
+           }
         );
-        
     }
 
+   
 
     /**
      * Post

@@ -1,5 +1,5 @@
 export const UrlConstants ={
-    fileuploadurl:"fileupload/upload",
+    fileuploadurl:"FileUploads",
     companyDetails:"AddOrUpdateCompanyDetails",
     getCompanyDetails:"GetAllCompanyDetails",
     projectDetails:"project/getProjectDetails"

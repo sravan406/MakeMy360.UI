@@ -54,10 +54,10 @@ export class CompanyComponent implements OnInit {
   }
 
   saveCompany() {
-    this.service.post(UrlConstants.companyDetails, this.companyDetails).subscribe((resp:any[]) => {
-      this.getCompanyDetails();
-      this.hideCompanyDetails = true;
-    });
+    // this.service.post(UrlConstants.companyDetails, this.companyDetails).subscribe((resp:any[]) => {
+    //   this.getCompanyDetails();
+    //   this.hideCompanyDetails = true;
+    // });
         
     
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { baseService } from '../../@core/data/base-service.service';
-import { ProjectDetails } from '../../@core/models/admin-models';
+import { ProjectDetails, CompanyDetails } from '../../@core/models/admin-models';
 //import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
 
@@ -17,19 +17,12 @@ export class ProjectComponent implements OnInit {
     hideProjectDetails: boolean = true;
     showFilter: boolean = false;
     showSavebtn: boolean = false;
-    companyNamesList: any[];
+    companyNamesList=[];
 
     constructor(private service: baseService) { }
 
     ngOnInit() {
-        this.companyNamesList = [
-            { label: 'Select City', value: null },
-            { label: 'New York', value: 1 },
-            { label: 'Rome', value: 2 },
-            { label: 'London', value: 3 },
-            { label: 'Istanbul', value: 4 },
-            { label: 'Paris', value: 5 }
-        ];
+        
 
         this.cols = [
             { header: 'Company Name', field: 'companyName' },
@@ -41,13 +34,23 @@ export class ProjectComponent implements OnInit {
         { companyName: "infosys", projectName: "State project", location: "Bangalore" }, { companyName: "value labs", projectName: "Krishnapatnam", location: "Chennai" },
         { companyName: "capgemini", projectName: "Water Board", location: "Hyderabad" }]
 
-        console.log(this.projectDetailsList);
-        // this.service.get(UrlConstants.getCompanyDetails).subscribe(resp => {
-        //   this.companyDetailsList =  resp;
-        // });
+        this.getAllCompanyDetails();
+      
+    }
+
+    getAllCompanyDetails()
+    {
+        this.service.get(UrlConstants.getCompanyDetails).subscribe((resp : any[]) => {
+           
+            for(let i=0;i<=resp.length;i++)
+           {
+                this.companyNamesList.push({label:resp[i].CompanyName,value:resp[i].CompanyId});
+           }
+          });
     }
 
     addProject() {
+      this.projectDetails={};  
         this.hideProjectDetails = false;
     }
 
