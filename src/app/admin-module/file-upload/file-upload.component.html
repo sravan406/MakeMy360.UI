@@ -1,17 +1,20 @@
 <div class="container">
   <form>
-
-    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div cdkDropList class="example-list" cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let i of images" cdkDrag>
-        <img [src]="i.data" height="200">
-        <input type="text" class="form-control" id="fileName" [(ngModel)]="i.fileName" [ngModelOptions]="{standalone: true}">
+        <div class="form-group">
+          <img [src]="i.data" height="200">
+          <figcaption class="caption"><input type="text"></figcaption>
+          <!-- <input type="text" class="form-control" id="fileName" [(ngModel)]="i.fileName"
+            [ngModelOptions]="{standalone: true}"> -->
+        </div>
       </div>
     </div>
 
     <!-- <img *ngFor='let url of urls'  [src]="url" height="200"> <br/> -->
     <div class="form-group">
-    <input type='file' (change)="onSelectFile($event)" multiple>
-        <button type="submit" class="btn btn-primary" (click)="upload()">Upload</button>
+      <input type='file' (change)="onSelectFile($event)" multiple>
+      <button type="submit" class="btn btn-primary" (click)="upload()">Upload</button>
     </div>
   </form>
 </div>

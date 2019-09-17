@@ -14,9 +14,10 @@ import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ProjectComponent } from './project/project.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ParanomaDetailsComponent } from './paranoma-details/paranoma-details.component';
 
 @NgModule({
-  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent],
+  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

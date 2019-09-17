@@ -13,16 +13,13 @@ import { UrlConstants } from 'src/app/@core/service-urls.constant';
 export class FileUploadComponent {
   name = 'Angular 4';
   //public data: fileUploadData;
-  public projectName: string;
   public images: any[] = [];
-  public companyName: string;
   //public companyNamesList: companyNamesList[];
-  companyNamesList = ['Really Smart', 'Infotech',
-  'GGK', 'WeatheDell'];
+  @Output() imagesDetails = new EventEmitter();
 
   constructor(private service: baseService) { }
 
-  onSelectFile(event) {
+  async onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var filesAmount = event.target.files.length;
       var data_source = "";
@@ -36,6 +33,7 @@ export class FileUploadComponent {
         }
         reader.readAsDataURL(event.target.files[i]);
       }
+    
     }
   }
 
@@ -44,8 +42,9 @@ export class FileUploadComponent {
   }
 
   upload(){
-    this.service.post(UrlConstants.fileuploadurl, this.images).subscribe(resp=>{
-      console.log(resp);
-    });
+    this.imagesDetails.emit(this.images);
+    // this.service.post(UrlConstants.fileuploadurl, this.images).subscribe(resp=>{
+    //   console.log(resp);
+    // });
   }
 }
