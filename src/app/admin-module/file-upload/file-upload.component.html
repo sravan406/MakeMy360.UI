@@ -4,7 +4,8 @@
       <div class="example-box" *ngFor="let i of images" cdkDrag>
         <div class="form-group">
           <img [src]="i.data" height="200">
-          <figcaption class="caption"><input type="text"></figcaption>
+          <figcaption class="caption"><input type="text" class="form-control" [(ngModel)]="i.imageName"
+            [ngModelOptions]="{standalone: true}"></figcaption>
           <!-- <input type="text" class="form-control" id="fileName" [(ngModel)]="i.fileName"
             [ngModelOptions]="{standalone: true}"> -->
         </div>

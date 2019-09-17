@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { fileUploadData, companyNamesList } from 'src/app/@core/models/admin-models';
+import { fileUploadData, companyNamesList, ImagesDetails } from 'src/app/@core/models/admin-models';
 import { Router } from '@angular/router';
 import { baseService } from 'src/app/@core/data/base-service.service';
 import { UrlConstants } from 'src/app/@core/service-urls.constant';
@@ -13,7 +13,7 @@ import { UrlConstants } from 'src/app/@core/service-urls.constant';
 export class FileUploadComponent {
   name = 'Angular 4';
   //public data: fileUploadData;
-  public images: any[] = [];
+  public images: ImagesDetails[] = [];
   //public companyNamesList: companyNamesList[];
   @Output() imagesDetails = new EventEmitter();
 
