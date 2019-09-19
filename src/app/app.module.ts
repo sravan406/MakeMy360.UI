@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
 import { baseService } from './@core/data/base-service.service';
 import { AppHeaderComponent } from './layout/app-header/app-header.component';
+import { UserModule } from './user-module/user-module.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AppHeaderComponent } from './layout/app-header/app-header.component';
     BrowserModule,
     AdminModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    UserModule
   ],
   providers: [baseService],
   bootstrap: [AppComponent]
