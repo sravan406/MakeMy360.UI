@@ -37,7 +37,7 @@
           </tr>
           <tr *ngIf="showFilter">
             <th *ngFor="let col of cols" [ngSwitch]="col.field" class="ui-fluid">
-              <input pInputText type="text" (input)="dt1.filter($event.target.value, col.field, col.filterMatchMode)"
+              <input pInputText type="text" (input)="dt1.filter($event.target.value, col.field, 'contains')"
                 [value]="dt1.filters[col.field]?.value">
             </th>
             <th></th>

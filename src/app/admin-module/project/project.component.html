@@ -19,7 +19,7 @@
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.location"
                 [ngModelOptions]="{standalone: true}">
             </div>
-            <file-upload></file-upload>
+            <file-upload (imagesDetails)='imagesDetailsUpdated($event)'></file-upload>
             <div class="form-group">
                 <button *ngIf="showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
                     (click)="saveProject()">Save</button>
@@ -45,7 +45,7 @@
                     <tr *ngIf="showFilter">
                         <th *ngFor="let col of cols" [ngSwitch]="col.field" class="ui-fluid">
                             <input pInputText type="text"
-                                (input)="dt1.filter($event.target.value, col.field, col.filterMatchMode)"
+                                (input)="dt1.filter($event.target.value, col.field, 'contains')"
                                 [value]="dt1.filters[col.field]?.value">
                         </th>
                         <th></th>

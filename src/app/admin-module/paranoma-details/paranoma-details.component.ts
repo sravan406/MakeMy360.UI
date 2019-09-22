@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { baseService } from '../../@core/data/base-service.service';
-import { ProjectDetails, CompanyDetails } from '../../@core/models/admin-models';
+import { ProjectDetails } from '../../@core/models/admin-models';
 //import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
 
 @Component({
-    selector: 'app-project',
-    templateUrl: './project.component.html',
-    styleUrls: ['./project.component.css']
+    selector: 'app-paranoma-details',
+    templateUrl: './paranoma-details.component.html',
+    styleUrls: ['./paranoma-details.component.css']
 })
-export class ProjectComponent implements OnInit {
+export class ParanomaDetailsComponent implements OnInit {
 
     projectDetails: ProjectDetails = {};
     cols: any[];
@@ -17,12 +17,10 @@ export class ProjectComponent implements OnInit {
     hideProjectDetails: boolean = true;
     showFilter: boolean = false;
     showSavebtn: boolean = false;
-    companyNamesList=[];
 
     constructor(private service: baseService) { }
 
     ngOnInit() {
-        
 
         this.cols = [
             { header: 'Company Name', field: 'companyName' },
@@ -34,23 +32,13 @@ export class ProjectComponent implements OnInit {
         { companyName: "infosys", projectName: "State project", location: "Bangalore" }, { companyName: "value labs", projectName: "Krishnapatnam", location: "Chennai" },
         { companyName: "capgemini", projectName: "Water Board", location: "Hyderabad" }]
 
-        this.getAllCompanyDetails();
-      
-    }
-
-    getAllCompanyDetails()
-    {
-        this.service.get(UrlConstants.getCompanyDetails).subscribe((resp : any[]) => {
-           
-            for(let i=0;i<=resp.length;i++)
-           {
-                this.companyNamesList.push({label:resp[i].CompanyName,value:resp[i].CompanyId});
-           }
-          });
+        console.log(this.projectDetailsList);
+        // this.service.get(UrlConstants.getCompanyDetails).subscribe(resp => {
+        //   this.companyDetailsList =  resp;
+        // });
     }
 
     addProject() {
-      this.projectDetails={};  
         this.hideProjectDetails = false;
     }
 
