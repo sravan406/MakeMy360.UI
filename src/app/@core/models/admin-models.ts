@@ -1,9 +1,9 @@
-export interface fileUploadData{
+export interface fileUploadData {
     projectName: string;
     images: any[];
 }
 
-export interface companyNamesList{
+export interface companyNamesList {
     companyId: number;
     companyName: string;
 }
@@ -15,10 +15,9 @@ export interface CompanyDetails
    
 }
 
-export interface ProjectDetails
-{
-    companyName?:string;
-    companyId?:number;
-    projectName?:string;
-    location?:string;
+export interface ProjectDetails {
+    companyName?: string;
+    companyId?: number;
+    projectName?: string;
+    location?: string;
 }
