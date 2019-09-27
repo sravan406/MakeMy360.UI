@@ -8,11 +8,11 @@ export interface companyNamesList {
     companyName: string;
 }
 
-export interface CompanyDetails {
-    companyName?:string;
-    companyId?:number;
-    establishedYear?:number;
-    isActive?:boolean;
+export interface CompanyDetails
+{
+    CompanyName?:string;
+    CompanyId?:number;
+   
 }
 
 export interface ProjectDetails {
@@ -20,7 +20,7 @@ export interface ProjectDetails {
     companyId?: number;
     projectName?: string;
     location?: string;
-    images?:ImagesDetails[];
+    images?:FileToUpload[];
 }
 
 export interface ImagesDetails{
@@ -29,3 +29,15 @@ export interface ImagesDetails{
     projectId?:number;
     data?:string;
 }
+
+
+export class FileToUpload {
+    fileName: string ;
+    fileSize: number;
+    fileType: string;
+    lastModifiedTime: number;
+    lastModifiedDate: Date;
+    fileAsBase64: string;
+    data?:string;
+    ChangedFileName?:string;
+  }

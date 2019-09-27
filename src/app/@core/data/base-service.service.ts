@@ -4,8 +4,15 @@ import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { map, concatAll, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { FileToUpload, ProjectDetails } from '../models/admin-models';
 // import { GlobalEventsManager } from '../../data/global-events-manager';
+const httpOptions = {
+    headers: new HttpHeaders({
 
+      'ContentType': 'application/json;utf-8'
+        
+    })
+  };
 @Injectable()
 export class baseService {
 
@@ -25,12 +32,29 @@ export class baseService {
      * @param body
      */
     public post(url: string, body: any) {
-        return this.http.post(this.getApiUrl(url), body).pipe(
-            catchError((e) => {
-                return this.handleError(e);
-            })
+        const HttpUploadOptions = {
+            headers: new HttpHeaders({ "Content-Type": "multipart/form-data" })
+          }
+        return this.http.post(url, body,HttpUploadOptions).subscribe(
+           data=>{
+               alert('ok');
+           },
+           error=>{
+               console.log("hi");
+             console.log(JSON.stringify(error.json()));
+           }
         );
     }
+
+    public uploadFile(url:string,theFile: ProjectDetails)  {
+        return this.http.post<ProjectDetails>(
+            this.getApiUrl(url), theFile, httpOptions).subscribe(data=>{alert('ok');},error=>{
+
+                console.log(error);
+            });
+      } 
+
+   
 
     /**
      * Post
@@ -70,6 +94,11 @@ export class baseService {
     public get<T>(url: string, options?: HttpParams): Observable<T> {
         return this.http.get<T>(this.getApiUrl(url));
     }
+
+ 
+
+ 
+
 
     /**
      * getFile
@@ -111,5 +140,6 @@ export class baseService {
     private getApiUrl(url) {
         return this.baseApiUrl + url;
     }
+
 
 }

@@ -1,6 +1,6 @@
 export const UrlConstants ={
-    fileuploadurl:"fileupload/upload",
+    fileuploadurl:"FileUploads",
     companyDetails:"AddOrUpdateCompanyDetails",
-    getCompanyDetails:"Api/GetAllCompanyDetails",
-    projectDetails:"project/getProjectDetails"
-}; //controllerName/methodName
+    getCompanyDetails:"GetAllCompanyDetails",
+    projectDetails:"FileUploads"
+}; //no NEED TO USE Controller Name always as we are using attribute routing.

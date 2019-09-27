@@ -12,3 +12,12 @@ export interface ImagesDetails{
     projectId?:number;
     data?:string;
 }
+
+export interface FileToUpload {
+    fileName: string ;
+    fileSize: number;
+    fileType: string;
+    lastModifiedTime: number;
+    lastModifiedDate: Date;
+    fileAsBase64: string;
+  }

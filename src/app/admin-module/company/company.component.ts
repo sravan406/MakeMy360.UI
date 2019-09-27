@@ -24,30 +24,54 @@ export class CompanyComponent implements OnInit {
   ngOnInit() {
 
     this.cols = [
-      { header: 'Company Name', field: 'companyName' },
-      { header: 'Established Year', field: 'establishedYear' },
-      { header: 'Is Active', field: 'isActive' }
+      { header: 'Company Name', field: 'CompanyName' }
     ];
 
-    this.companyDetailsList = [{ companyName: "icici", establishedYear: 1989, isActive: true }, { companyName: "abc", establishedYear: 2019, isActive: true },
-    { companyName: "hdfc", establishedYear: 2000, isActive: false }, { companyName: "abc", establishedYear: 2019, isActive: true },
-    { companyName: "ggk", establishedYear: 2019, isActive: true }]
+    // this.companyDetailsList = [{ companyName: "icici" },
+    //  { companyName: "abc" },
+    // { companyName: "hdfc" }, 
+    // { companyName: "abc" },
+    // { companyName: "ggk" }]
 
-    console.log(this.companyDetailsList);
-    // this.service.get(UrlConstants.getCompanyDetails).subscribe(resp => {
-    //   this.companyDetailsList =  resp;
-    // });
+
+    this.getCompanyDetails();
+  }
+
+
+  getCompanyDetails()
+  {
+    this.service.get(UrlConstants.getCompanyDetails).subscribe((resp:any[]) => {
+    
+      this.companyDetailsList=resp;
+     
+
+    });
   }
 
   addCompany() {
+    this.companyDetails={};
     this.hideCompanyDetails = false;
   }
 
   saveCompany() {
-    this.service.post(UrlConstants.companyDetails, this.companyDetails);
-    this.hideCompanyDetails = true;
+    // this.service.post(UrlConstants.companyDetails, this.companyDetails).subscribe((resp:any[]) => {
+    //   this.getCompanyDetails();
+    //   this.hideCompanyDetails = true;
+    // });
+        
+    
   }
 
+  updateCompany()
+  {
+    this.service.put(UrlConstants.companyDetails, this.companyDetails).subscribe((resp=>{
+      this.getCompanyDetails();
+      this.hideCompanyDetails = true;    
+
+    }));
+    
+   
+  }
   clickOnEdit(data) {
     this.companyDetails = data;
   }
