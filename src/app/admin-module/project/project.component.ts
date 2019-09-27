@@ -17,7 +17,8 @@ export class ProjectComponent implements OnInit {
     hideProjectDetails: boolean = true;
     showFilter: boolean = false;
     showSavebtn: boolean = false;
-    companyNamesList=[];
+    companyNamesList: any[];
+    imagedata:any[];
 
     constructor(private service: baseService) { }
 
@@ -55,6 +56,7 @@ export class ProjectComponent implements OnInit {
     }
 
     saveProject() {
+        this.projectDetails.images =  this.imagedata;
         this.service.post(UrlConstants.projectDetails, this.projectDetails);
         this.hideProjectDetails = true;
     }
@@ -68,6 +70,7 @@ export class ProjectComponent implements OnInit {
     clickOnDelete() { }
 
     imagesDetailsUpdated(data){
+        this.imagedata =  data;
 
     }
 }
