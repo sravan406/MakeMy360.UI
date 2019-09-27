@@ -6,7 +6,7 @@ import { Component,  OnInit, Output, EventEmitter  } from '@angular/core';
   styleUrls: ['./app-header.component.css']
 })
 export class AppHeaderComponent implements OnInit {
-
+  visibleSidebar:boolean = false;
   @Output() public sidenavToggle = new EventEmitter();
  
   constructor() { }

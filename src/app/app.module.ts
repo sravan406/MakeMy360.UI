@@ -10,7 +10,8 @@ import { LoginModule } from './login/login.module';
 import { baseService } from './@core/data/base-service.service';
 import { AppHeaderComponent } from './layout/app-header/app-header.component';
 import { UserModule } from './user-module/user-module.module';
-
+import { SidebarModule } from 'ng-sidebar';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { UserModule } from './user-module/user-module.module';
     AdminModule,
     AppRoutingModule,
     LoginModule,
-    UserModule
+    UserModule,
+    SidebarModule,
+    ButtonModule  
   ],
   providers: [baseService],
   bootstrap: [AppComponent]
