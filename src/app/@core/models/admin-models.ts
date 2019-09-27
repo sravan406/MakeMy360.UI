@@ -20,7 +20,7 @@ export interface ProjectDetails {
     companyId?: number;
     projectName?: string;
     location?: string;
-    images?:ImagesDetails[];
+    images?:FileToUpload[];
 }
 
 export interface ImagesDetails{
@@ -29,3 +29,15 @@ export interface ImagesDetails{
     projectId?:number;
     data?:string;
 }
+
+
+export class FileToUpload {
+    fileName: string ;
+    fileSize: number;
+    fileType: string;
+    lastModifiedTime: number;
+    lastModifiedDate: Date;
+    fileAsBase64: string;
+    data?:string;
+    ChangedFileName?:string;
+  }

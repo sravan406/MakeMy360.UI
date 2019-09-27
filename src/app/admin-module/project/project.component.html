@@ -21,14 +21,12 @@
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.location"
                     [ngModelOptions]="{standalone: true}">
             </div>
+            <file-upload (imagesDetails)='imagesDetailsUpdated($event)'></file-upload>
             <div class="form-group">
-                <label for="paranoma">Paranoma</label>
-                <img class="logo"
-                    src="C:\Users\preethi.chiluveri\source\repos\MakeMy360Angular-master\src\app\@core\themes\images\paranoma.jpg">
-            </div>
-            <div class="form-group">
-                <label for="paranoma">Video</label>
-                <!-- <img class="logo" src="C:\Users\preethi.chiluveri\source\repos\MakeMy360Angular-master\src\app\@core\themes\images\paranoma.jpg"> -->
+                <button *ngIf="showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
+                    (click)="saveProject()">Save</button>
+                <button *ngIf="!showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
+                    (click)="updateProject()">Update</button>
             </div>
         </div>
         <div [hidden]="!hideProjectDetails">

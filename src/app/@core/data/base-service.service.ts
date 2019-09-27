@@ -4,8 +4,15 @@ import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { map, concatAll, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { FileToUpload, ProjectDetails } from '../models/admin-models';
 // import { GlobalEventsManager } from '../../data/global-events-manager';
+const httpOptions = {
+    headers: new HttpHeaders({
 
+      'ContentType': 'application/json;utf-8'
+        
+    })
+  };
 @Injectable()
 export class baseService {
 
@@ -25,7 +32,10 @@ export class baseService {
      * @param body
      */
     public post(url: string, body: any) {
-        return this.http.post(this.getApiUrl(url), body).subscribe(
+        const HttpUploadOptions = {
+            headers: new HttpHeaders({ "Content-Type": "multipart/form-data" })
+          }
+        return this.http.post(url, body,HttpUploadOptions).subscribe(
            data=>{
                alert('ok');
            },
@@ -35,6 +45,14 @@ export class baseService {
            }
         );
     }
+
+    public uploadFile(url:string,theFile: ProjectDetails)  {
+        return this.http.post<ProjectDetails>(
+            this.getApiUrl(url), theFile, httpOptions).subscribe(data=>{alert('ok');},error=>{
+
+                console.log(error);
+            });
+      } 
 
    
 
@@ -122,5 +140,6 @@ export class baseService {
     private getApiUrl(url) {
         return this.baseApiUrl + url;
     }
+
 
 }

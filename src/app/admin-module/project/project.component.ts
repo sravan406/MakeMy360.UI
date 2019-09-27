@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { baseService } from '../../@core/data/base-service.service';
-import { ProjectDetails, CompanyDetails } from '../../@core/models/admin-models';
+import { ProjectDetails, CompanyDetails, FileToUpload } from '../../@core/models/admin-models';
 //import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
 
@@ -17,10 +17,12 @@ export class ProjectComponent implements OnInit {
     hideProjectDetails: boolean = true;
     showFilter: boolean = false;
     showSavebtn: boolean = false;
-    companyNamesList: any[];
-    imagedata:any[];
+    companyNamesList: any[]=[];
+    imagedata:FileToUpload[]=[];
 
-    constructor(private service: baseService) { }
+    constructor(private service: baseService) { 
+        this.getAllCompanyDetails();
+    }
 
     ngOnInit() {
         
@@ -35,7 +37,7 @@ export class ProjectComponent implements OnInit {
         { companyName: "infosys", projectName: "State project", location: "Bangalore" }, { companyName: "value labs", projectName: "Krishnapatnam", location: "Chennai" },
         { companyName: "capgemini", projectName: "Water Board", location: "Hyderabad" }]
 
-        this.getAllCompanyDetails();
+        
       
     }
 
@@ -57,7 +59,7 @@ export class ProjectComponent implements OnInit {
 
     saveProject() {
         this.projectDetails.images =  this.imagedata;
-        this.service.post(UrlConstants.projectDetails, this.projectDetails);
+        this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails);
         this.hideProjectDetails = true;
     }
 
