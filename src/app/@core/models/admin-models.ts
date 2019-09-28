@@ -32,12 +32,12 @@ export interface ImagesDetails{
 
 
 export class FileToUpload {
-    fileName: string ;
-    fileSize: number;
-    fileType: string;
-    lastModifiedTime: number;
-    lastModifiedDate: Date;
-    fileAsBase64: string;
+    fileName?: string ;
+    fileSize?: number;
+    fileType?: string;
+    lastModifiedTime?: number;
+    lastModifiedDate?: Date;
+    fileAsBase64?: string;
     data?:string;
     ChangedFileName?:string;
   }

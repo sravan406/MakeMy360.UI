@@ -1,21 +1,28 @@
 <div class="container">
   <form>
-    <div cdkDropList class="example-list" cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+    <!-- <div cdkDropList class="example-list" cdkDropListOrientation="vertical" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let i of images" cdkDrag>
         <div class="form-group">
-          <img [src]="i.data" height="200">
+          <img [src]="i.data" height="200" style="width: 250px;">
           <figcaption class="caption"><input type="text" class="form-control" [(ngModel)]="i.ChangedFileName"
-            [ngModelOptions]="{standalone: true}"></figcaption>
-          <!-- <input type="text" class="form-control" id="fileName" [(ngModel)]="i.fileName"
-            [ngModelOptions]="{standalone: true}"> -->
+              [ngModelOptions]="{standalone: true}"></figcaption>
+        </div>
+      </div>
+    </div> -->
+    <div class="example-container" cdkDropListGroup>
+      <div cdkDropList [cdkDropListEnterPredicate]="enter" (cdkDropListDropped)="drop()" #placeholder></div>
+      <div cdkDropList *ngFor="let i of images" [cdkDropListEnterPredicate]="enter" (cdkDropListDropped)="drop()">
+        <div cdkDrag class="example-box">
+          <figure>
+            <img [src]="i.data" style="width: 250px;margin-top: 75px;height: 250px;">
+            <figcaption class="caption"><input type="text" class="form-control" [(ngModel)]="i.ChangedFileName"
+                [ngModelOptions]="{standalone: true}"></figcaption>
+          </figure>
         </div>
       </div>
     </div>
-
-    <!-- <img *ngFor='let url of urls'  [src]="url" height="200"> <br/> -->
-    <div class="form-group">
-      <input type='file' (change)="onSelectFile($event)" multiple>
-      <button type="submit" class="btn btn-primary" (click)="upload()">Upload</button>
+    <div class="form-group" style="margin-top: 50px;margin-left: -15px;">
+      <input type='file' (change)="onSelectFile($event)" multiple><button type="submit" class="btn btn-primary" (click)="upload()">Upload</button>
     </div>
   </form>
 </div>
