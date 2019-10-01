@@ -17,15 +17,17 @@ export class ProjectComponent implements OnInit {
     hideProjectDetails: boolean = true;
     showFilter: boolean = false;
     showSavebtn: boolean = false;
-    companyNamesList: any[]=[];
-    imagedata:FileToUpload[]=[];
+    companyNamesList: any[] = [];
+    projectTypeList: any[] = [];
+    imagedata: FileToUpload[] = [];
 
-    constructor(private service: baseService) { 
+    constructor(private service: baseService) {
         this.getAllCompanyDetails();
+        this.getAllProjectDetails();
     }
 
     ngOnInit() {
-        
+
 
         this.cols = [
             { header: 'Company Name', field: 'companyName' },
@@ -37,28 +39,33 @@ export class ProjectComponent implements OnInit {
         { companyName: "infosys", projectName: "State project", location: "Bangalore" }, { companyName: "value labs", projectName: "Krishnapatnam", location: "Chennai" },
         { companyName: "capgemini", projectName: "Water Board", location: "Hyderabad" }]
 
-        
-      
+
+
     }
 
-    getAllCompanyDetails()
-    {
-        this.service.get(UrlConstants.getCompanyDetails).subscribe((resp : any[]) => {
-           
-            for(let i=0;i<=resp.length;i++)
-           {
-                this.companyNamesList.push({label:resp[i].CompanyName,value:resp[i].CompanyId});
-           }
-          });
+    getAllCompanyDetails() {
+        this.service.get(UrlConstants.getCompanyDetails).subscribe((resp: any[]) => {
+            for (let i = 0; i <= resp.length; i++) {
+                this.companyNamesList.push({ label: resp[i].CompanyName, value: resp[i].CompanyId });
+            }
+        });
+    }
+
+    getAllProjectDetails() {
+        this.service.get(UrlConstants.projectType).subscribe((resp: any[]) => {
+            resp.forEach(element => {
+                this.projectTypeList.push({ label: element.ProjectType, value: element.ProjectTypeId });
+            });
+        });
     }
 
     addProject() {
-      this.projectDetails={};  
+        this.projectDetails = {};
         this.hideProjectDetails = false;
     }
 
     saveProject() {
-        this.projectDetails.images =  this.imagedata;
+        this.projectDetails.images = this.imagedata;
         this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails);
         this.hideProjectDetails = true;
     }
@@ -71,8 +78,8 @@ export class ProjectComponent implements OnInit {
 
     clickOnDelete() { }
 
-    imagesDetailsUpdated(data){
-        this.imagedata =  data;
+    imagesDetailsUpdated(data) {
+        this.imagedata = data;
 
     }
 }
