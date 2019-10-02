@@ -3,5 +3,6 @@ export const UrlConstants ={
     companyDetails:"AddOrUpdateCompanyDetails",
     getCompanyDetails:"GetAllCompanyDetails",
     projectDetails:"FileUploads",
-    projectType:"GetProjectTypes"
+    projectType:"GetProjectTypes",
+    customerDetailsById:"GetProjectDetailsBySearchId"
 }; //no NEED TO USE Controller Name always as we are using attribute routing.

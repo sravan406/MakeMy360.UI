@@ -20,7 +20,12 @@ export interface ProjectDetails {
     companyId?: number;
     projectName?: string;
     location?: string;
+    ProjectImage?:string;
+    videoFrame?:string;
+    projectEndDate?:string;
     images?:FileToUpload[];
+    paranomaPath?:string;
+    
 }
 
 export interface ImagesDetails{

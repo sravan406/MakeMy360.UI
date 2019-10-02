@@ -16,9 +16,11 @@ import { ProjectComponent } from './project/project.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ParanomaDetailsComponent } from './paranoma-details/paranoma-details.component';
 import { LocationAutocompleteComponent } from 'src/common/location-auto-complete.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+
 
 @NgModule({
-  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent, LocationAutocompleteComponent],
+  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent, ProjectDetailsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

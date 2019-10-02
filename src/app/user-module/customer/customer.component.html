@@ -3,18 +3,40 @@
         <h1>Customer Details</h1>
         <div class="form-group">
             <label for="companyName">Company Name:&emsp;</label>
-            <label>{{customerDetails.companyName}}</label>
+            <label>{{customerDetails.CompanyName}}</label>
         </div>
         <div class="form-group">
             <label for="projectName">Project Name:&emsp;</label>
-            <label>{{customerDetails.projectName}}</label>
+            <label>{{customerDetails.ProjectName}}</label>
         </div>
         <div class="form-group">
             <label for="location">Location:&emsp;</label>
-            <label>{{customerDetails.location}}</label>
+            <label>{{customerDetails.ProjectLocation}}</label>
         </div>
         <div class="form-group">
-            <p-tabMenu [model]="items"></p-tabMenu>
+            <iframe width="650" height="400" src="http://localhost:60468/Projects/gvk1/Index.htm"></iframe>
         </div>
+        <div class="form-group">
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/1-q3mKpEMsc"></iframe>
+        </div>
+        <!-- <div class="form-group">
+            <p-tabMenu [model]="items"></p-tabMenu>
+        </div> -->
+        <!-- <div class="form-group">    
+<div class="tab">
+    <button class="tablinks" (click)="toggleTabs(event, 'Paranoma')"><i class="fa fa-fw fa-support"></i>Paranoma</button>
+    <button class="tablinks" (click)="toggleTabs(event, 'Video')"><i class="fa fa-fw fa-twitter"></i>Video</button>
+   
+  </div>
+        </div>
+  <div id="Paranoma" class="tabcontent">
+    <iframe [src]="customerDetails.ParanomaPath"></iframe>
+   
+  </div>
+  
+  <div id="Video" class="tabcontent">
+    <iframe [src]="customerDetails.VideoFrame"></iframe>
+   
+  </div> -->
     </form>
 </div>

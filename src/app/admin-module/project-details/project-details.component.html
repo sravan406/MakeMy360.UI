@@ -1,0 +1,96 @@
+<div class="container">
+    <form>
+        <h1>Project Details</h1>
+        <div class="form-group">
+            <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
+                (click)="hideProjectDetails = true;showBackbtn = false;">Back</button>
+        </div>
+        <div [hidden]="hideProjectDetails">
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <p-dropdown [options]="companyNamesList" [(ngModel)]="projectDetails.companyId"
+                    [ngModelOptions]="{standalone: true}"></p-dropdown>
+            </div>
+            <div class="form-group">
+                <label for="projectName">Project Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.projectName"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.location"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group" style="margin-top: 50px;margin-left: -15px;">
+                <label for="Project Initial Image">Project Initial Image</label>
+                <input type='file' (change)="onSelectInitialFile($event)">
+              </div>
+            <!-- <div class="form-group" style="margin-top: 50px;margin-left: -15px;">
+                <label for="Upload Paranoma">Upload Paranoma</label>
+                <input type='file' (change)="onSelectFile($event)" multiple>
+              </div>
+              <input type="file" id="ctrl" webkitdirectory directory multiple/> -->
+              <div class="form-group">
+                <label for="Project Location">Project Location</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.projectLocation"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="VideoFrame">Video Frame</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.VideoFrame"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="Project End Date">Project End Date</label>
+            <input type="date" class="form-control" id="name" [(ngModel)]="projectDetails.projectEndDate"
+            [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <!-- <input type="file" id="FileUpload" onchange="selectFolder(event)" webkitdirectory mozdirectory msdirectory odirectory directory multiple /> -->
+            <div class="form-group">
+                <button *ngIf="showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
+                    (click)="saveProject()">Save</button>
+                <button *ngIf="!showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
+                    (click)="updateProject()">Update</button>
+            </div>
+        </div>
+        <div [hidden]="!hideProjectDetails">
+            <button type="submit" class="btn btn-primary" style="align-content: right;"
+                (click)="addProject();showSavebtn = true;showBackbtn = true;">Add</button>
+            <br />
+            <p-table #dt1 [columns]="cols" [value]="projectDetailsList" [paginator]="true" [rows]="10" dataKey="vin"
+                [resizableColumns]="true" [reorderableColumns]="true" selectionMode="single">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of cols" [pSortableColumn]="col.field" pResizableColumn pReorderableColumn>
+                            {{col.header}}
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                        <th pResizableColumn pReorderableColum>Action<i class="pi pi-filter"
+                                (click)="showFilter = !showFilter" style="float: right;"></i></th>
+                    </tr>
+                    <tr *ngIf="showFilter">
+                        <th *ngFor="let col of cols" [ngSwitch]="col.field" class="ui-fluid">
+                            <input pInputText type="text"
+                                (input)="dt1.filter($event.target.value, col.field, 'contains')"
+                                [value]="dt1.filters[col.field]?.value">
+                        </th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr [pSelectableRow]="rowData">
+                        <td *ngFor="let col of columns">
+                            {{rowData[col.field]}}
+                        </td>
+                        <td><i class="fa fa-eye" style="font-size:20px;color:#337ab7;"
+                                (click)="clickOnEdit(rowData);showSavebtn = false;hideProjectDetails=false;showBackbtn = true;"
+                                aria-placeholder="View"></i><i class="fa fa-trash-o"
+                                style="font-size:20px;color:rgb(226, 109, 109);padding-left: 20px;"
+                                aria-placeholder="Delete" (click)="clickOnDelete()"></i></td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </form>
+</div>

@@ -8,6 +8,7 @@ import { UrlConstants } from '../../@core/service-urls.constant';
     selector: 'app-paranoma-details',
     templateUrl: './paranoma-details.component.html',
     styleUrls: ['./paranoma-details.component.css']
+    
 })
 export class ParanomaDetailsComponent implements OnInit {
 
