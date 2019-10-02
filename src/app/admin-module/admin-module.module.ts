@@ -20,7 +20,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 
 
 @NgModule({
-  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent, ProjectDetailsComponent],
+  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent, ProjectDetailsComponent, LocationAutocompleteComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
