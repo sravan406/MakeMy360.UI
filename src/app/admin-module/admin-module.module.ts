@@ -15,9 +15,10 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ProjectComponent } from './project/project.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ParanomaDetailsComponent } from './paranoma-details/paranoma-details.component';
+import { LocationAutocompleteComponent } from 'src/common/location-auto-complete.component';
 
 @NgModule({
-  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent],
+  declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent, LocationAutocompleteComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
