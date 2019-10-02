@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerComponent } from './customer/customer.component';
 import { UserRoutingModule } from './user-module.routing';
 import { TableModule } from 'primeng/table';
-import {TabMenuModule} from 'primeng/tabmenu';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [CustomerComponent],
@@ -24,8 +24,9 @@ import {TabMenuModule} from 'primeng/tabmenu';
     HttpClientModule,
     UserRoutingModule,
     TableModule,
-    TabMenuModule
+    MatTabsModule
   ],
+  exports: [MatTabsModule],
   providers: [baseService],
 })
 export class UserModule { }
