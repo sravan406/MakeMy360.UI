@@ -7,6 +7,11 @@
         </div>
         <div [hidden]="hideProjectDetails">
             <div class="form-group">
+                <label for="companyName">Project Type</label>
+                <p-dropdown [options]="projectTypeList" [(ngModel)]="projectDetails.ProjectTypeId"
+                    [ngModelOptions]="{standalone: true}"></p-dropdown>
+            </div>
+            <div class="form-group">
                 <label for="companyName">Company Name</label>
                 <p-dropdown [options]="companyNamesList" [(ngModel)]="projectDetails.companyId"
                     [ngModelOptions]="{standalone: true}"></p-dropdown>
