@@ -3,7 +3,11 @@ export interface CustomerDetails {
     companyId?: number;
     projectName?: string;
     location?: string;
-    images?:ImagesDetails[];
+    ProjectImage?:string;
+    videoFrame?:string;
+    projectEndDate?:string;
+    images?:FileToUpload[];
+    paranomaPath?:string;
 }
 
 export interface ImagesDetails{

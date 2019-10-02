@@ -31,7 +31,7 @@ export class baseService {
      * @param url
      * @param body
      */
-    public post(url: string, body: any) {
+    public postFile(url: string, body: any) {
         const HttpUploadOptions = {
             headers: new HttpHeaders({ "Content-Type": "multipart/form-data" })
           }
@@ -46,16 +46,37 @@ export class baseService {
         );
     }
 
+
+    public post(url: string, body: any) {
+        return this.http.post(this.getApiUrl(url), body).subscribe(
+           data=>{
+               alert('ok');
+           },
+           error=>{
+               console.log("hi");
+             console.log(JSON.stringify(error.json()));
+           }
+        );
+    }
+
     public uploadFile(url:string,theFile: ProjectDetails)  {
+        const HttpUploadOptions = {
+                     headers: new HttpHeaders({ "Content-Type": "multipart/form-data" })
+                 }
         return this.http.post<ProjectDetails>(
-            this.getApiUrl(url), theFile, httpOptions).subscribe(data=>{alert('ok');},error=>{
+            this.getApiUrl(url), theFile).subscribe(data=>{alert('ok');},error=>{
 
                 console.log(error);
             });
       } 
 
    
-
+    //   public post(url: string, body: any) {
+    //     return this.http.put(this.getApiUrl(url), body)
+    //         .pipe(
+    //             catchError((e) => this.handleError(e))
+    //         );
+    // }
     /**
      * Post
      * @param url
@@ -95,6 +116,7 @@ export class baseService {
         return this.http.get<T>(this.getApiUrl(url));
     }
 
+  
  
 
  
