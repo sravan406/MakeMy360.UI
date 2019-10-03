@@ -8,7 +8,5 @@ export const UrlConstants ={
     getAllProjectDetails:"GetAllProjectDetails",
     updateProjcetInfo:"UpdateProjectInfo",
     getProjectDetailsByProjectId:"GetProjectDetailsByProjectId",
-
-    customerDetailsById:"GetProjectDetailsBySearchId",
     addProjectType:"AddProjectType"
 }; //no NEED TO USE Controller Name always as we are using attribute routing.

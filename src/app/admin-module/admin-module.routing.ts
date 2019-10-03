@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'file-upload', component: FileUploadComponent },
   { path: 'Company', component: CompanyComponent },
   { path: 'project', component: ProjectDetailsComponent },
-  { path: 'project-type', component: ProjectTypeComponent }
+  { path: 'project-type', component: ProjectTypeComponent },
   { path: 'ParanomaDetails', component: ParanomaDetailsComponent },
   {path:'Paranoma',component:ParanomaComponentComponent}
 ];
