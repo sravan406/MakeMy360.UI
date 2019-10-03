@@ -4,12 +4,14 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { CompanyComponent } from './company/company.component';
 import { ParanomaDetailsComponent } from './paranoma-details/paranoma-details.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ProjectTypeComponent } from './project-type/project-type.component';
 
 const routes: Routes = [
   { path: 'file-upload', component: FileUploadComponent },
   { path: 'Company', component: CompanyComponent },
   { path: 'project', component: ProjectDetailsComponent },
-  { path: 'paranoma', component: ParanomaDetailsComponent }
+  { path: 'paranoma', component: ParanomaDetailsComponent },
+  { path: 'project-type', component: ProjectTypeComponent }
 ];
 
 @NgModule({

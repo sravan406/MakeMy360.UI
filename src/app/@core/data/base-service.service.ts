@@ -47,15 +47,22 @@ export class baseService {
     }
 
 
+    // public post(url: string, body: any) {
+    //     return this.http.post(this.getApiUrl(url), body).subscribe(
+    //        data=>{
+    //            alert('ok');
+    //        },
+    //        error=>{
+    //            console.log("hi");
+    //          console.log(JSON.stringify(error.json()));
+    //        }
+    //     );
+    // }
     public post(url: string, body: any) {
-        return this.http.post(this.getApiUrl(url), body).subscribe(
-           data=>{
-               alert('ok');
-           },
-           error=>{
-               console.log("hi");
-             console.log(JSON.stringify(error.json()));
-           }
+        return this.http.post(this.getApiUrl(url), body).pipe(
+            catchError((e) => {
+                return this.handleError(e);
+            })
         );
     }
 
