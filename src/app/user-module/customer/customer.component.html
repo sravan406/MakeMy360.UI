@@ -13,12 +13,24 @@
             <label for="location">Location:&emsp;</label>
             <label>{{customerDetails.ProjectLocation}}</label>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <iframe width="650" height="400" src="http://localhost:60468/Projects/gvk1/Index.htm"></iframe>
         </div>
         <div class="form-group">
             <iframe width="420" height="315" src="https://www.youtube.com/embed/1-q3mKpEMsc"></iframe>
-        </div>
+        </div> -->
+        <mat-tab-group animationDuration="0ms">
+            <mat-tab label="Paranoma">
+                <div class="form-group">
+                    <iframe width="650" height="400" src="http://localhost:60468/Projects/gvk1/Index.htm"></iframe>
+                </div>
+            </mat-tab>
+            <mat-tab label="Video">
+                <div class="form-group"><iframe width="420" height="315"
+                        src="https://www.youtube.com/embed/1-q3mKpEMsc"></iframe>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
         <!-- <div class="form-group">
             <p-tabMenu [model]="items"></p-tabMenu>
         </div> -->

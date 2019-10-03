@@ -12,6 +12,7 @@ import { AppHeaderComponent } from './layout/app-header/app-header.component';
 import { UserModule } from './user-module/user-module.module';
 import { SidebarModule } from 'ng-sidebar';
 import { ButtonModule } from 'primeng/button';
+import { ContactComponent } from './contact-us/contact-us.component';
 import { ParanomaComponentComponent } from './paranoma-component/paranoma-component.component';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ParanomaComponentComponent } from './paranoma-component/paranoma-compon
     PageNotFoundComponent,
     HomeComponent,
     AppHeaderComponent,
+    ContactComponent
     ParanomaComponentComponent,
   ],
   imports: [

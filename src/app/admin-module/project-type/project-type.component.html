@@ -1,0 +1,16 @@
+<div class="container">
+    <form name="form" (ngSubmit)="f.form.valid && saveProjectType()" #f="ngForm" novalidate>
+        <h1>Project Type Add</h1>
+        <div class="form-group col-md-6">
+            <label for="name">Project Type</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="projectType" #name="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required>
+            <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                <div *ngIf="name.errors.required">Project Type is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" style="align-content: right;">Save</button>
+        </div>
+    </form>
+</div>
