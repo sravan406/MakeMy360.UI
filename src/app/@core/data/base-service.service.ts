@@ -58,7 +58,7 @@ export class baseService {
     //        }
     //     );
     // }
-    public post(url: string, body: any) {
+    public post(url: string, body: any) : Observable<any> {
         return this.http.post(this.getApiUrl(url), body).pipe(
             catchError((e) => {
                 return this.handleError(e);

@@ -38,39 +38,35 @@ export class CompanyComponent implements OnInit {
   }
 
 
-  getCompanyDetails()
-  {
-    this.service.get(UrlConstants.getCompanyDetails).subscribe((resp:any[]) => {
-    
-      this.companyDetailsList=resp;
-     
+  getCompanyDetails() {
+    this.service.get(UrlConstants.getCompanyDetails).subscribe((resp: any[]) => {
+
+      this.companyDetailsList = resp;
+
 
     });
   }
 
   addCompany() {
-    this.companyDetails={};
+    this.companyDetails = {};
     this.hideCompanyDetails = false;
   }
 
   saveCompany() {
-    this.service.post(UrlConstants.companyDetails, this.companyDetails);
+    this.service.post(UrlConstants.companyDetails, this.companyDetails).subscribe(resp => {
       this.getCompanyDetails();
       this.hideCompanyDetails = true;
-  
-        
-    
+    });
   }
 
-  updateCompany()
-  {
-    this.service.put(UrlConstants.companyDetails, this.companyDetails).subscribe((resp=>{
+  updateCompany() {
+    this.service.put(UrlConstants.companyDetails, this.companyDetails).subscribe((resp => {
       this.getCompanyDetails();
-      this.hideCompanyDetails = true;    
+      this.hideCompanyDetails = true;
 
     }));
-    
-   
+
+
   }
   clickOnEdit(data) {
     this.companyDetails = data;
