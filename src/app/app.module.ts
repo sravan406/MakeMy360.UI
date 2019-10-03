@@ -12,6 +12,7 @@ import { AppHeaderComponent } from './layout/app-header/app-header.component';
 import { UserModule } from './user-module/user-module.module';
 import { SidebarModule } from 'ng-sidebar';
 import { ButtonModule } from 'primeng/button';
+import { ParanomaComponentComponent } from './paranoma-component/paranoma-component.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ButtonModule } from 'primeng/button';
     PageNotFoundComponent,
     HomeComponent,
     AppHeaderComponent,
+    ParanomaComponentComponent,
   ],
   imports: [
     FormsModule,

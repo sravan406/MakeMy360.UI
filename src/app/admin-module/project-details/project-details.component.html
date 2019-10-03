@@ -8,17 +8,17 @@
         <div [hidden]="hideProjectDetails">
             <div class="form-group">
                 <label for="companyName">Company Name</label>
-                <p-dropdown [options]="companyNamesList" [(ngModel)]="projectDetails.companyId"
+                <p-dropdown [options]="companyNamesList" [(ngModel)]="projectDetails.CompanyId"
                     [ngModelOptions]="{standalone: true}"></p-dropdown>
             </div>
             <div class="form-group">
                 <label for="projectName">Project Name</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.projectName"
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.ProjectName"
                     [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
                 <label for="location">Location</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.location"
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.Location"
                     [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group" style="margin-top: 50px;margin-left: -15px;">
@@ -31,8 +31,8 @@
               </div>
               <input type="file" id="ctrl" webkitdirectory directory multiple/> -->
               <div class="form-group">
-                <label for="Project Location">Project Location</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.projectLocation"
+                <label for="Pranoma Location">Pranoma Location</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.ParanomaPath"
                     [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label for="Project End Date">Project End Date</label>
-            <input type="date" class="form-control" id="name" [(ngModel)]="projectDetails.projectEndDate"
+            <input type="date" class="form-control" id="name" [(ngModel)]="projectDetails.ProjectEndDate"
             [ngModelOptions]="{standalone: true}">
             </div>
 
@@ -83,9 +83,10 @@
                         <td *ngFor="let col of columns">
                             {{rowData[col.field]}}
                         </td>
-                        <td><i class="fa fa-eye" style="font-size:20px;color:#337ab7;"
+                        <td>
+                            <i class="fa fa-edit" style="font-size:20px;color:#337ab7;"
                                 (click)="clickOnEdit(rowData);showSavebtn = false;hideProjectDetails=false;showBackbtn = true;"
-                                aria-placeholder="View"></i><i class="fa fa-trash-o"
+                                aria-placeholder="Edit"></i><i class="fa fa-trash-o"
                                 style="font-size:20px;color:rgb(226, 109, 109);padding-left: 20px;"
                                 aria-placeholder="Delete" (click)="clickOnDelete()"></i></td>
                     </tr>

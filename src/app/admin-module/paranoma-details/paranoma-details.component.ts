@@ -24,14 +24,14 @@ export class ParanomaDetailsComponent implements OnInit {
     ngOnInit() {
 
         this.cols = [
-            { header: 'Company Name', field: 'companyName' },
+            { header: 'Company Name', field: 'CompanyName' },
             { header: 'Project Name', field: 'projectName' },
             { header: 'Location', field: 'location' }
         ];
 
-        this.projectDetailsList = [{ companyName: "icici", projectName: "Ecolab", location: "Pune" }, { companyName: "ggk", projectName: "Ktc", location: "Hyderabad" },
-        { companyName: "infosys", projectName: "State project", location: "Bangalore" }, { companyName: "value labs", projectName: "Krishnapatnam", location: "Chennai" },
-        { companyName: "capgemini", projectName: "Water Board", location: "Hyderabad" }]
+        this.projectDetailsList = [{ CompanyName: "icici", ProjectName: "Ecolab", Location: "Pune" }, { CompanyName: "ggk", ProjectName: "Ktc", Location: "Hyderabad" },
+        { CompanyName: "infosys", ProjectName: "State project", Location: "Bangalore" }, { CompanyName: "value labs", ProjectName: "Krishnapatnam", Location: "Chennai" },
+        { CompanyName: "capgemini", ProjectName: "Water Board", Location: "Hyderabad" }]
 
         console.log(this.projectDetailsList);
         // this.service.get(UrlConstants.getCompanyDetails).subscribe(resp => {

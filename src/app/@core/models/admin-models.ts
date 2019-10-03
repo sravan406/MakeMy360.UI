@@ -5,7 +5,7 @@ export interface fileUploadData {
 
 export interface companyNamesList {
     companyId: number;
-    companyName: string;
+    CompanyName: string;
 }
 
 export interface CompanyDetails
@@ -16,13 +16,14 @@ export interface CompanyDetails
 }
 
 export interface ProjectDetails {
-    companyName?: string;
-    companyId?: number;
-    projectName?: string;
-    location?: string;
+    CompanyName?: string;
+    CompanyId?: number;
+    ProjectId?:number;
+    ProjectName?: string;
+    Location?: string;
     ProjectImage?:string;
     videoFrame?:string;
-    projectEndDate?:string;
+    ProjectEndDate?:Date;
     images?:FileToUpload[];
     paranomaPath?:string;
     

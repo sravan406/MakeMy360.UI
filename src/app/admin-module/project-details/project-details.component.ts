@@ -30,17 +30,23 @@ export class ProjectDetailsComponent implements OnInit {
         
 
         this.cols = [
-            { header: 'Company Name', field: 'companyName' },
-            { header: 'Project Name', field: 'projectName' },
-            { header: 'Location', field: 'location' }
+            { header: 'Company Name', field: 'CompanyName' },
+            { header: 'Project Name', field: 'ProjectName' },
+            { header: 'Location', field: 'Location' }
         ];
 
-        this.projectDetailsList = [{ companyName: "icici", projectName: "Ecolab", location: "Pune" }, { companyName: "ggk", projectName: "Ktc", location: "Hyderabad" },
-        { companyName: "infosys", projectName: "State project", location: "Bangalore" }, { companyName: "value labs", projectName: "Krishnapatnam", location: "Chennai" },
-        { companyName: "capgemini", projectName: "Water Board", location: "Hyderabad" }]
-
-        
+       
+       this.getAllProjectDetails(); 
       
+    }
+
+
+    getAllProjectDetails()
+    {
+      this.service.get(UrlConstants.getAllProjectDetails).subscribe((resp : any[]) => {
+           
+      this.projectDetailsList=resp;
+      });
     }
 
     getAllCompanyDetails()
@@ -101,7 +107,12 @@ export class ProjectDetailsComponent implements OnInit {
     updateProject() { }
 
     clickOnEdit(data) {
-        this.projectDetails = data;
+       
+        this.service.get(UrlConstants.getProjectDetailsByProjectId+'/'+data.ProjectId).subscribe((resp : any) => {
+           
+          this.projectDetails = resp;
+          this.hideProjectDetails = false;
+        });
     }
 
     clickOnDelete() { }
