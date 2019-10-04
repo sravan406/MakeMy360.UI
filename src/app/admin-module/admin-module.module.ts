@@ -20,6 +20,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { ProjectTypeComponent } from './project-type/project-type.component';
 
 
+
 @NgModule({
   declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent,
      ProjectDetailsComponent, ProjectTypeComponent],

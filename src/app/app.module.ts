@@ -14,6 +14,7 @@ import { SidebarModule } from 'ng-sidebar';
 import { ButtonModule } from 'primeng/button';
 import { ContactComponent } from './contact-us/contact-us.component';
 import { ParanomaComponentComponent } from './paranoma-component/paranoma-component.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { ParanomaComponentComponent } from './paranoma-component/paranoma-compon
     PageNotFoundComponent,
     HomeComponent,
     AppHeaderComponent,
-    ContactComponent
+    ContactComponent,
     ParanomaComponentComponent,
+    NavbarComponent
   ],
   imports: [
     FormsModule,

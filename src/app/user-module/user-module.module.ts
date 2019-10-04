@@ -12,6 +12,7 @@ import { UserRoutingModule } from './user-module.routing';
 import { TableModule } from 'primeng/table';
 import { MatTabsModule } from '@angular/material/tabs';
 
+
 @NgModule({
   declarations: [CustomerComponent],
   imports: [
