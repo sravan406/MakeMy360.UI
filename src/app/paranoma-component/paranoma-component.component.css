@@ -1,4 +1,49 @@
-#content
-            {
-                position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
-            }
+#content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0px;
+}
+
+#overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.mat-drawer-container {
+    top: -20px;
+    background-color: rgba(19, 74, 107, 0.45);
+    padding-bottom: 750px;
+    position: absolute;
+    z-index: 1;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow: hidden;
+    right: -20px;
+    width: 70px;
+}
+
+.mat-drawer.mat-drawer-side {
+    z-index: 2;
+    background-color: rgba(19, 74, 107, 0.45);
+}
+
+.mat-list-icon {
+    color: white;
+}
+
+.smileycode {
+    display: inline-block;
+    color: white;
+    font-family: cursive;
+    font-size: 8px;
+    text-align: center;
+}
+
+.smileycode mat-icon {
+    display: block;
+}

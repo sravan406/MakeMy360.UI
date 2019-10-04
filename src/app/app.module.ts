@@ -13,7 +13,9 @@ import { UserModule } from './user-module/user-module.module';
 import { SidebarModule } from 'ng-sidebar';
 import { ButtonModule } from 'primeng/button';
 import { ContactComponent } from './contact-us/contact-us.component';
-import { ParanomaComponentComponent } from './paranoma-component/paranoma-component.component';
+import { ParanomaComponent } from './paranoma-component/paranoma-component.component';
+import { DemoMaterialModule } from 'src/common/material.module';
+import { DialogModelComponent } from 'src/common/dialog-model/dialog-model.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import { ParanomaComponentComponent } from './paranoma-component/paranoma-compon
     PageNotFoundComponent,
     HomeComponent,
     AppHeaderComponent,
-    ContactComponent
-    ParanomaComponentComponent,
+    ParanomaComponent,
+    ContactComponent,
+    DialogModelComponent
   ],
   imports: [
     FormsModule,
@@ -32,9 +35,11 @@ import { ParanomaComponentComponent } from './paranoma-component/paranoma-compon
     LoginModule,
     UserModule,
     SidebarModule,
-    ButtonModule  
+    ButtonModule  ,
+    DemoMaterialModule
   ],
   providers: [baseService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogModelComponent]
 })
 export class AppModule { }

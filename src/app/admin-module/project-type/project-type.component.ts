@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { baseService } from '../../@core/data/base-service.service';
 import { UrlConstants } from '../../@core/service-urls.constant';
-import { CustomerDetails } from 'src/app/@core/models/user-models';
-import { MenuItem } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

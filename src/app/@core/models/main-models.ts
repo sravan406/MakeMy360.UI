@@ -4,3 +4,7 @@ export interface ContactDetails {
     mobileNumber: number;
     message: string;
 }
+export interface DialogData {
+    animal: string;
+    name: string;
+  }

@@ -1,3 +1,86 @@
 <div id="content">
-        <iframe width="100%" height="100%" frameborder="0"  src="http://localhost:60468/Projects/gvk1/Index.htm"></iframe>
-    </div>
+    <iframe width="100%" height="100%" frameborder="0" src="http://localhost:60468/Projects/gvk1/Index.htm"></iframe>
+    <!-- <span id="foreground-text">Some text</span> -->
+</div>
+<div id="overlay">
+    <mat-drawer-container>
+        <mat-drawer #drawer mode="side" disableClose="true" opened="true" position="end">
+            <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="margin: 10px;">
+                <mat-icon aria-label="Menu">menu</mat-icon>
+            </button>
+
+            <mat-nav-list>
+                <mat-list-item>
+                    <span class="smileycode">
+                        <mat-icon mat-list-icon>info</mat-icon>INFO
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span class="smileycode">
+                        <mat-icon mat-list-icon>book</mat-icon>BOOK NOW
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span class="smileycode">
+                        <mat-icon mat-list-icon>add_location</mat-icon>MAP
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span class="smileycode">
+                        <mat-icon mat-list-icon>share</mat-icon>SHARE
+                    </span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span class="smileycode">
+                        <mat-icon mat-list-icon  (click)="openDialog()">contacts</mat-icon>CONTACT
+                    </span>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <span class="smileycode">
+                        <mat-icon mat-list-icon>fullscreen</mat-icon>FULL
+                    </span>
+                </mat-list-item>
+
+            </mat-nav-list>
+        </mat-drawer>
+
+        <!-- <div class="example-sidenav-content">
+      You cards and screen Contents goes here..
+      Will be pushed towards right on expanding side navbar.
+    </div>  -->
+    </mat-drawer-container>
+</div>
+<!-- <mat-drawer-container style="padding-bottom: 550px;background-color: white;">
+        <mat-drawer #drawer mode="side" disableClose="true" opened="true" position="end">
+          <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="margin: 10px;">
+            <mat-icon aria-label="Menu">menu</mat-icon>
+          </button>
+      
+          <mat-nav-list>
+            <mat-list-item>
+              <mat-icon mat-list-icon>info</mat-icon>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>share</mat-icon>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>contacts</mat-icon>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>add_location</mat-icon>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>fullscreen</mat-icon>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>book</mat-icon>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-drawer>
+      
+         <div class="example-sidenav-content">
+          You cards and screen Contents goes here..
+          Will be pushed towards right on expanding side navbar.
+        </div> 
+</mat-drawer-container> -->
