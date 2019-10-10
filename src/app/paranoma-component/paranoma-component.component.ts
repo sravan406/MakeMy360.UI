@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { DialogModelComponent } from 'src/common/dialog-model/dialog-model.component';
 
 @Component({
@@ -16,7 +16,11 @@ export class ParanomaComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogModelComponent, {
-      width: '250px',
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      height: '100%',
+      width: '100%',
+      
       data: {name: this.name, animal: this.animal}
     });
 

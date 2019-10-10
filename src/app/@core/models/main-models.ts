@@ -8,3 +8,13 @@ export interface DialogData {
     animal: string;
     name: string;
   }
+
+  export interface Users
+  {
+      UserId?:number,
+      UserName?:string,
+      Pwd?:string,
+      EmailId?:string,
+      PhoneNumber?:number,
+      UserType?:number
+  }

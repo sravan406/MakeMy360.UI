@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { baseService } from '../../@core/data/base-service.service';
-import { ProjectDetails, CompanyDetails, FileToUpload } from '../../@core/models/admin-models';
+import { ProjectDetails, CompanyDetails, FileToUpload, ProjectHighlights } from '../../@core/models/admin-models';
 //import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
+import { NavbarService } from 'src/app/navbar/navbar-service';
 
 
 @Component({
@@ -21,14 +22,16 @@ export class ProjectDetailsComponent implements OnInit {
     companyNamesList: any[]=[];
     imagedata:FileToUpload[]=[];
     public images: FileToUpload[] = [];
+    pointsArray : ProjectHighlights[] = [];
+    point:ProjectHighlights={};
 
-    constructor(private service: baseService) { 
+    constructor(private service: baseService,public nav:NavbarService) { 
         this.getAllCompanyDetails();
     }
 
     ngOnInit() {
         
-
+this.nav.show();
         this.cols = [
             { header: 'Company Name', field: 'CompanyName' },
             { header: 'Project Name', field: 'ProjectName' },
@@ -62,8 +65,21 @@ export class ProjectDetailsComponent implements OnInit {
 
     addProject() {
       this.projectDetails={};  
+      this.projectDetails.projectHighlights=[];
         this.hideProjectDetails = false;
     }
+
+    addFieldValue() {
+      //this.projectDetails.projectHighlights.push(this.point);
+      //console.log(this.pointsArray);
+     this.pointsArray.push(this.point);
+     this.point={};
+      
+  }
+
+  deleteFieldValue(index) {
+    this.pointsArray.splice(index, 1);
+}
 
     // onSelectFile(event) {
     //   if (event.target.files && event.target.files[0]) {
@@ -92,9 +108,12 @@ export class ProjectDetailsComponent implements OnInit {
       }
     }
     saveProject() {
-       // this.projectDetails.images =  this.images;
-        this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails);
-        this.hideProjectDetails = true;
+        this.projectDetails.projectHighlights =  this.pointsArray;
+        this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails).subscribe(resp => {
+          this.getAllProjectDetails();
+          this.hideProjectDetails = true;
+        });;
+        
     }
 
     // selectFolder(e)
@@ -104,15 +123,31 @@ export class ProjectDetailsComponent implements OnInit {
     // var folder = relativePath.split("/");
     // alert(folder[0]);
     // }
-    updateProject() { }
+    updateProject() { 
+
+      this.projectDetails.projectHighlights =  this.pointsArray;
+      this.service.put(UrlConstants.updateProjcetInfo, this.projectDetails).subscribe(resp => {
+        this.getAllProjectDetails();
+        this.hideProjectDetails = true;
+      });;
+      
+    }
 
     clickOnEdit(data) {
        
         this.service.get(UrlConstants.getProjectDetailsByProjectId+'/'+data.ProjectId).subscribe((resp : any) => {
            
           this.projectDetails = resp;
+          this.pointsArray=this.projectDetails.projectHighlights;
+         
           this.hideProjectDetails = false;
         });
+    }
+
+    downloadImage()
+    {
+      
+      window.open(this.projectDetails.ProjectImage, "_blank")
     }
 
     clickOnDelete() { }

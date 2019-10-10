@@ -6,20 +6,44 @@
                 (click)="hideProjectDetails = true;showBackbtn = false;">Back</button>
         </div>
         <div [hidden]="hideProjectDetails">
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="companyName">Company Name</label>
                 <p-dropdown [options]="companyNamesList" [(ngModel)]="projectDetails.CompanyId"
                     [ngModelOptions]="{standalone: true}"></p-dropdown>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="projectName">Project Name</label>
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.ProjectName"
                     [ngModelOptions]="{standalone: true}">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="location">Location</label>
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.Location"
                     [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group" style="margin-top: 50px;margin-left: -15px;">
+                <label for="Project Initial Image">Project Initial Image</label>
+                <input type='file' (change)="onSelectInitialFile($event)">
+              </div>
+            <!-- <div class="form-group" style="margin-top: 50px;margin-left: -15px;">
+                <label for="Upload Paranoma">Upload Paranoma</label>
+                <input type='file' (change)="onSelectFile($event)" multiple>
+              </div>
+              <input type="file" id="ctrl" webkitdirectory directory multiple/> -->
+              <div class="form-group">
+                <label for="Pranoma Location">Pranoma Location</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.ParanomaPath"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="VideoFrame">Video Frame</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.VideoFrame"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="Project End Date">Project End Date</label>
+            <input type="date" class="form-control" id="name" [(ngModel)]="projectDetails.ProjectEndDate"
+            [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group col-md-6">
                 <label for="location">Mobile Number</label>
@@ -41,33 +65,9 @@
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.Description"
                     [ngModelOptions]="{standalone: true}">
             </div>
-            <div class="form-group col-md-6" style="margin-top: 50px;margin-left: -15px;">
-                <label for="Project Initial Image">Project Initial Image</label>
-                <input type='file' (change)="onSelectInitialFile($event)">
-              </div>
-            <!-- <div class="form-group" style="margin-top: 50px;margin-left: -15px;">
-                <label for="Upload Paranoma">Upload Paranoma</label>
-                <input type='file' (change)="onSelectFile($event)" multiple>
-              </div>
-              <input type="file" id="ctrl" webkitdirectory directory multiple/> -->
-              <div class="form-group col-md-6">
-                <label for="Pranoma Location">Pranoma Location</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.ParanomaPath"
-                    [ngModelOptions]="{standalone: true}">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="VideoFrame">Video Frame</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.VideoFrame"
-                    [ngModelOptions]="{standalone: true}">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="Project End Date">Project End Date</label>
-            <input type="date" class="form-control" id="name" [(ngModel)]="projectDetails.ProjectEndDate"
-            [ngModelOptions]="{standalone: true}">
-            </div>
 
             <!-- <input type="file" id="FileUpload" onchange="selectFolder(event)" webkitdirectory mozdirectory msdirectory odirectory directory multiple /> -->
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <button *ngIf="showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
                     (click)="saveProject()">Save</button>
                 <button *ngIf="!showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"

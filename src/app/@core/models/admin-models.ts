@@ -30,6 +30,8 @@ export interface ProjectDetails {
     Website?:string;
     EmailId?:string;
     Description?:string;
+    GoogleMap?:string;
+    projectHighlights?:ProjectHighlights[];    
 }
 
 export interface ImagesDetails{
@@ -49,4 +51,12 @@ export class FileToUpload {
     fileAsBase64?: string;
     data?:string;
     ChangedFileName?:string;
+  }
+
+  export class ProjectHighlights
+  {
+    ProjectHighlightsId?:number;
+    ProjectId?:number;
+    Points?:string;
+    IsDelete?:string;
   }
