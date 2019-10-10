@@ -25,6 +25,10 @@
                 <label for="Project Initial Image">Project Initial Image</label>
                 <input type='file' (change)="onSelectInitialFile($event)">
               </div>
+              <div class="form-group" *ngIf="!showSavebtn">
+                    <a  (click)="downloadImage()">Uploaded Image Path</a>
+                    
+                    </div>
             <!-- <div class="form-group" style="margin-top: 50px;margin-left: -15px;">
                 <label for="Upload Paranoma">Upload Paranoma</label>
                 <input type='file' (change)="onSelectFile($event)" multiple>
@@ -40,12 +44,41 @@
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.VideoFrame"
                     [ngModelOptions]="{standalone: true}">
             </div>
+            
+            <div class="form-group">
+                    <label for="Google Map Link">Google Map Link</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.GoogleMap"
+                [ngModelOptions]="{standalone: true}">
+                </div>
+                
+        
             <div class="form-group">
                 <label for="Project End Date">Project End Date</label>
             <input type="date" class="form-control" id="name" [(ngModel)]="projectDetails.ProjectEndDate"
             [ngModelOptions]="{standalone: true}">
             </div>
 
+            <div class="form-group"> 
+            <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+            <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Highlight Points</th>     
+                            <th>Action</th>                      
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let field of pointsArray; let i = index">
+                                    <td>
+                                         <input [(ngModel)]="field.Points" class="form-control" type="text" name="{{field.Points}}"   [ngModelOptions]="{standalone: true}" />
+                                        </td>
+                                        <td>
+                                                <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+                                            </td>
+                            </tr>
+                    </tbody>
+            </table>
+        </div>
             <!-- <input type="file" id="FileUpload" onchange="selectFolder(event)" webkitdirectory mozdirectory msdirectory odirectory directory multiple /> -->
             <div class="form-group">
                 <button *ngIf="showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"

@@ -26,7 +26,8 @@ export interface ProjectDetails {
     ProjectEndDate?:Date;
     images?:FileToUpload[];
     paranomaPath?:string;
-    
+    GoogleMap?:string;
+    projectHighlights?:ProjectHighlights[];    
 }
 
 export interface ImagesDetails{
@@ -46,4 +47,12 @@ export class FileToUpload {
     fileAsBase64?: string;
     data?:string;
     ChangedFileName?:string;
+  }
+
+  export class ProjectHighlights
+  {
+    ProjectHighlightsId?:number;
+    ProjectId?:number;
+    Points?:string;
+    IsDelete?:string;
   }

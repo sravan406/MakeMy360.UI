@@ -4,6 +4,7 @@ import { CompanyDetails } from '../../@core/models/admin-models';
 //import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
 import { Location } from '@angular/common';
+import { NavbarService } from 'src/app/navbar/navbar-service';
 
 @Component({
   selector: 'app-company',
@@ -19,10 +20,10 @@ export class CompanyComponent implements OnInit {
   showFilter: boolean = false;
   showSavebtn: boolean = false;
 
-  constructor(private service: baseService, private _location: Location) { }
+  constructor(private service: baseService, private _location: Location,public nav:NavbarService) { }
 
   ngOnInit() {
-
+this.nav.show();
     this.cols = [
       { header: 'Company Name', field: 'CompanyName' }
     ];

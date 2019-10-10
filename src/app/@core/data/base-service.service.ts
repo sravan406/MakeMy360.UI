@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse, } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
@@ -6,10 +6,12 @@ import { map, concatAll, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { FileToUpload, ProjectDetails } from '../models/admin-models';
 // import { GlobalEventsManager } from '../../data/global-events-manager';
+
 const httpOptions = {
     headers: new HttpHeaders({
 
-      'ContentType': 'application/json;utf-8'
+      'ContentType': 'application/json;utf-8',
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
         
     })
   };
@@ -33,7 +35,9 @@ export class baseService {
      */
     public postFile(url: string, body: any) {
         const HttpUploadOptions = {
-            headers: new HttpHeaders({ "Content-Type": "multipart/form-data" })
+            headers: new HttpHeaders({ "Content-Type": "multipart/form-data" }
+          
+            )
           }
         return this.http.post(url, body,HttpUploadOptions).subscribe(
            data=>{
@@ -59,6 +63,7 @@ export class baseService {
     //     );
     // }
     public post(url: string, body: any) : Observable<any> {
+
         return this.http.post(this.getApiUrl(url), body).pipe(
             catchError((e) => {
                 return this.handleError(e);
@@ -71,10 +76,11 @@ export class baseService {
                      headers: new HttpHeaders({ "Content-Type": "multipart/form-data" })
                  }
         return this.http.post<ProjectDetails>(
-            this.getApiUrl(url), theFile).subscribe(data=>{alert('ok');},error=>{
-
-                console.log(error);
-            });
+            this.getApiUrl(url), theFile).pipe(
+            catchError((e) => {
+                return this.handleError(e);
+            })
+        );
       } 
 
    
@@ -119,8 +125,20 @@ export class baseService {
      * @param url
      * @param options
      */
-    public get<T>(url: string, options?: HttpParams): Observable<T> {
-        return this.http.get<T>(this.getApiUrl(url));
+    public get(url: string, options?: HttpParams): Observable<any> {
+        const httpOptionsforget = {
+            headers: new HttpHeaders({
+        
+              'ContentType': 'application/json;utf-8',
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+                
+            })
+          };
+        return this.http.get(this.getApiUrl(url),httpOptionsforget).pipe(  
+            catchError((e) => {
+                return this.handleError(e);
+            })          
+        );
     }
 
   
@@ -135,6 +153,15 @@ export class baseService {
      * @param options
      */
     public getFile(url: string, options?: HttpParams) {
+        console.log('Bearer ' + localStorage.getItem('token'));
+        const httpOptions1 = {
+            headers: new HttpHeaders({
+        
+              'ContentType': 'application/json;utf-8',
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+                
+            })
+          };
         window.open(this.getApiUrl(url));
     }
 
@@ -145,6 +172,11 @@ export class baseService {
     private handleError(errorResponse: HttpErrorResponse) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
+        if (errorResponse.status == 401) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('currentUser');
+           return this.router.navigate(['/login']);      
+        }
         let errorStatus = '404'
         console.log("error occured.", errorResponse);
 

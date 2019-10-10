@@ -16,8 +16,12 @@ import { ContactComponent } from './contact-us/contact-us.component';
 import { ParanomaComponent } from './paranoma-component/paranoma-component.component';
 import { DemoMaterialModule } from 'src/common/material.module';
 import { DialogModelComponent } from 'src/common/dialog-model/dialog-model.component';
-import { ParanomaComponentComponent } from './paranoma-component/paranoma-component.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarService } from './navbar/navbar-service';
+import * as $ from 'jquery';
+import { AuthenticationService } from './login/AuthenticationService';
+import { DashBoardComponent } from './dash-board/dash-board.component';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +30,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     AppHeaderComponent,
     ContactComponent,
-    ParanomaComponentComponent,
-    NavbarComponent
+    
+    NavbarComponent,
     ParanomaComponent,
     ContactComponent,
-    DialogModelComponent
+    DialogModelComponent,
+    DashBoardComponent
   ],
   imports: [
     FormsModule,
@@ -43,7 +48,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ButtonModule  ,
     DemoMaterialModule
   ],
-  providers: [baseService],
+  providers: [baseService,NavbarService,AuthenticationService],
   bootstrap: [AppComponent],
   entryComponents: [DialogModelComponent]
 })
