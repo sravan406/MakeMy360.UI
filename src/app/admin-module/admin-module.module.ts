@@ -34,7 +34,8 @@ import { ProjectTypeComponent } from './project-type/project-type.component';
     AccordionModule,
     HttpClientModule,
     TableModule,
-    CheckboxModule,BrowserAnimationsModule
+    CheckboxModule,
+    BrowserAnimationsModule
   ],
   providers: [baseService],
 })

@@ -13,6 +13,9 @@ import { UserModule } from './user-module/user-module.module';
 import { SidebarModule } from 'ng-sidebar';
 import { ButtonModule } from 'primeng/button';
 import { ContactComponent } from './contact-us/contact-us.component';
+import { ParanomaComponent } from './paranoma-component/paranoma-component.component';
+import { DemoMaterialModule } from 'src/common/material.module';
+import { DialogModelComponent } from 'src/common/dialog-model/dialog-model.component';
 import { ParanomaComponentComponent } from './paranoma-component/paranoma-component.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -25,6 +28,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     ContactComponent,
     ParanomaComponentComponent,
     NavbarComponent
+    ParanomaComponent,
+    ContactComponent,
+    DialogModelComponent
   ],
   imports: [
     FormsModule,
@@ -34,9 +40,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginModule,
     UserModule,
     SidebarModule,
-    ButtonModule  
+    ButtonModule  ,
+    DemoMaterialModule
   ],
   providers: [baseService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogModelComponent]
 })
 export class AppModule { }
