@@ -1,61 +1,64 @@
 <div class="container">
   <form>
     <div [hidden]="hideCompanyDetails">
-    <div class="form-group">
-      <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
-        (click)="hideCompanyDetails = true;showBackbtn = false;">Back</button>
-    </div>
-    
       <div class="form-group">
-        <label for="name">Company Name</label>
+        <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
+          (click)="hideCompanyDetails = true;showBackbtn = false;">Back</button>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for=" name">Company Name</label>
         <input type="text" class="form-control" id="name" [(ngModel)]="companyDetails.CompanyName"
           [ngModelOptions]="{standalone: true}">
       </div>
-     
-      <div class="form-group">
-        <button *ngIf="showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
-          (click)="saveCompany()">Save</button>
+      <div class="form-group col-md-6">
+        <label for=" Project Initial Image">Company logo</label>
+        <input type='file' class="form-control" (change)="onSelectInitialFile($event)">
+      </div>
+      <div class="form-group col-md-6">
+        <button *ngIf=" showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
+        (click)="saveCompany()">Save</button>
         <button *ngIf="!showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
           (click)="updateCompany()">Update</button>
       </div>
     </div>
-</form>
-    <div [hidden]="!hideCompanyDetails">
-      <button type="submit" class="btn btn-primary" style="align-content: right;"
-        (click)="addCompany();showSavebtn = true;showBackbtn = true;">Add</button>
-      <br />
-      <p-table #dt1 [columns]="cols" [value]="companyDetailsList" [paginator]="true" [rows]="10" dataKey="vin"
-        [resizableColumns]="true" [reorderableColumns]="true" selectionMode="single">
-        <ng-template pTemplate="header" let-columns>
-          <tr>
-            <th *ngFor="let col of cols" [pSortableColumn]="col.field" pResizableColumn pReorderableColumn>
-              {{col.header}}
-              <p-sortIcon [field]="col.field"></p-sortIcon>
-            </th>
-            <th pResizableColumn pReorderableColum>Action<i class="pi pi-filter" (click)="showFilter = !showFilter"
-                style="float: right;"></i></th>
-          </tr>
-          <tr *ngIf="showFilter">
-            <th *ngFor="let col of cols" [ngSwitch]="col.field" class="ui-fluid">
-              <input pInputText type="text" (input)="dt1.filter($event.target.value, col.field, 'contains')"
-                [value]="dt1.filters[col.field]?.value">
-            </th>
-            <th></th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
-          <tr [pSelectableRow]="rowData">
-            <td *ngFor="let col of columns">
-              {{rowData[col.field]}}
-            </td>
-            <td><i class="fa fa-edit" style="font-size:20px;color:#337ab7;"
-                (click)="clickOnEdit(rowData);showSavebtn = false;hideCompanyDetails=false;showBackbtn = true;"
-                aria-placeholder="Edit"></i><i class="fa fa-trash-o"
-                style="font-size:20px;color:rgb(226, 109, 109);padding-left: 20px;" aria-placeholder="Delete"
-                (click)="clickOnDelete()"></i></td>
-          </tr>
-        </ng-template>
-      </p-table>
-    </div>
-  
+  </form>
+  <div [hidden]="!hideCompanyDetails">
+    <button type="submit" class="btn btn-primary" style="align-content: right;"
+      (click)="addCompany();showSavebtn = true;showBackbtn = true;">Add</button>
+    <br />
+    <p-table #dt1 [columns]="cols" [value]="companyDetailsList" [paginator]="true" [rows]="10" dataKey="vin"
+      [resizableColumns]="true" [reorderableColumns]="true" selectionMode="single">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of cols" [pSortableColumn]="col.field" pResizableColumn pReorderableColumn>
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </th>
+          <th pResizableColumn pReorderableColum>Action<i class="pi pi-filter" (click)="showFilter = !showFilter"
+              style="float: right;"></i></th>
+        </tr>
+        <tr *ngIf="showFilter">
+          <th *ngFor="let col of cols" [ngSwitch]="col.field" class="ui-fluid">
+            <input pInputText type="text" (input)="dt1.filter($event.target.value, col.field, 'contains')"
+              [value]="dt1.filters[col.field]?.value">
+          </th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+          <td><i class="fa fa-edit" style="font-size:20px;color:#337ab7;"
+              (click)="clickOnEdit(rowData);showSavebtn = false;hideCompanyDetails=false;showBackbtn = true;"
+              aria-placeholder="Edit"></i><i class="fa fa-trash-o"
+              style="font-size:20px;color:rgb(226, 109, 109);padding-left: 20px;" aria-placeholder="Delete"
+              (click)="clickOnDelete()"></i></td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
 </div>

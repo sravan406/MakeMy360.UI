@@ -12,7 +12,7 @@ export interface CompanyDetails
 {
     CompanyName?:string;
     CompanyId?:number;
-   
+    companyLogo?:string;
 }
 
 export interface ProjectDetails {
@@ -26,7 +26,10 @@ export interface ProjectDetails {
     ProjectEndDate?:Date;
     images?:FileToUpload[];
     paranomaPath?:string;
-    
+    MobileNumber?:number;
+    Website?:string;
+    EmailId?:string;
+    Description?:string;
 }
 
 export interface ImagesDetails{

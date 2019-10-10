@@ -65,9 +65,19 @@ export class CompanyComponent implements OnInit {
       this.hideCompanyDetails = true;
 
     }));
-
-
   }
+
+  onSelectInitialFile(event)
+  {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+      this.companyDetails.companyLogo=event.target.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
   clickOnEdit(data) {
     this.companyDetails = data;
   }
