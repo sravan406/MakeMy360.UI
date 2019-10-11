@@ -64,7 +64,15 @@ export class baseService {
     // }
     public post(url: string, body: any) : Observable<any> {
 
-        return this.http.post(this.getApiUrl(url), body).pipe(
+        const httpOptionsforpostcall = {
+            headers: new HttpHeaders({
+        
+              'ContentType': 'application/json;utf-8',
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+                
+            })
+          };
+        return this.http.post(this.getApiUrl(url), body,httpOptionsforpostcall).pipe(
             catchError((e) => {
                 return this.handleError(e);
             })
@@ -73,10 +81,11 @@ export class baseService {
 
     public uploadFile(url:string,theFile: ProjectDetails)  {
         const HttpUploadOptions = {
-                     headers: new HttpHeaders({ "Content-Type": "multipart/form-data" })
+                     headers: new HttpHeaders({ "Content-Type": "application/json;utf-8" ,
+                     'Authorization': 'Bearer ' + localStorage.getItem('token')})
                  }
         return this.http.post<ProjectDetails>(
-            this.getApiUrl(url), theFile).pipe(
+            this.getApiUrl(url), theFile,HttpUploadOptions).pipe(
             catchError((e) => {
                 return this.handleError(e);
             })
@@ -126,7 +135,7 @@ export class baseService {
      * @param options
      */
     public get(url: string, options?: HttpParams): Observable<any> {
-        const httpOptionsforget = {
+        const httpOptionsforgetcall = {
             headers: new HttpHeaders({
         
               'ContentType': 'application/json;utf-8',
@@ -134,7 +143,7 @@ export class baseService {
                 
             })
           };
-        return this.http.get(this.getApiUrl(url),httpOptionsforget).pipe(  
+        return this.http.get(this.getApiUrl(url),httpOptionsforgetcall).pipe(  
             catchError((e) => {
                 return this.handleError(e);
             })          

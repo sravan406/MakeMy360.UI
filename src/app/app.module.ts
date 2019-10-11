@@ -8,7 +8,6 @@ import { AdminModule } from './admin-module/admin-module.module';
 import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
 import { baseService } from './@core/data/base-service.service';
-import { AppHeaderComponent } from './layout/app-header/app-header.component';
 import { UserModule } from './user-module/user-module.module';
 import { SidebarModule } from 'ng-sidebar';
 import { ButtonModule } from 'primeng/button';
@@ -21,6 +20,10 @@ import { NavbarService } from './navbar/navbar-service';
 import * as $ from 'jquery';
 import { AuthenticationService } from './login/AuthenticationService';
 import { DashBoardComponent } from './dash-board/dash-board.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
+import { AppHeaderService } from './app-header/app-header-service';
+import { AppFooterService } from './app-footer/app-footer.service';
+import { AppHeaderComponent } from './app-header/app-header.component';
 
 
 @NgModule({
@@ -28,13 +31,14 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
     AppComponent,
     PageNotFoundComponent,
     HomeComponent,
-    AppHeaderComponent,
     ContactComponent,
     NavbarComponent,
     ParanomaComponent,
     ContactComponent,
     DialogModelComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    AppFooterComponent,
+    AppHeaderComponent
   ],
   imports: [
     FormsModule,
@@ -47,7 +51,7 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
     ButtonModule  ,
     DemoMaterialModule
   ],
-  providers: [baseService,NavbarService,AuthenticationService],
+  providers: [baseService,NavbarService,AuthenticationService,AppHeaderService,AppFooterService],
   bootstrap: [AppComponent],
   entryComponents: [DialogModelComponent]
 })

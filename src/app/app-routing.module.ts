@@ -6,7 +6,7 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
 
 const routes: Routes = [
   { path: 'contact-us', component: ContactComponent },
-  { path: 'paranoma', component: ParanomaComponent },
+  { path: 'paranoma/:id', component: ParanomaComponent },
   {path :'DashBoard',component:DashBoardComponent}
 ];
 
