@@ -21,6 +21,7 @@ import { NavbarService } from './navbar/navbar-service';
 import * as $ from 'jquery';
 import { AuthenticationService } from './login/AuthenticationService';
 import { DashBoardComponent } from './dash-board/dash-board.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -32,9 +33,9 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
     ContactComponent,
     NavbarComponent,
     ParanomaComponent,
-    ContactComponent,
     DialogModelComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    AboutUsComponent
   ],
   imports: [
     FormsModule,

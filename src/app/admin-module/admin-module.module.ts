@@ -18,7 +18,7 @@ import { ParanomaDetailsComponent } from './paranoma-details/paranoma-details.co
 // import { LocationAutocompleteComponent } from 'src/common/location-auto-complete.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectTypeComponent } from './project-type/project-type.component';
-
+import {DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -37,6 +37,6 @@ import { ProjectTypeComponent } from './project-type/project-type.component';
     CheckboxModule,
     BrowserAnimationsModule
   ],
-  providers: [baseService],
+  providers: [baseService, DatePipe],
 })
 export class AdminModule { }
