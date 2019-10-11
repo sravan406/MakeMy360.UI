@@ -1,0 +1,65 @@
+ul {
+    list-style-type: none;
+  }
+  footer {
+    background-color:#222222;
+    padding: 80px 0px 80px 0px;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    color: #ffffff; 
+    box-sizing:border-box;
+  }
+  a{
+      color: #ffffff;
+  }
+  a:hover {
+     filter: contrast(25%);
+     text-decoration:none;
+  }
+  
+  .social_media-icons a{
+      font-size: 110%;
+      padding:0 2% 0 0;
+  }
+  .btn{
+      background-color: #444!important;
+  }
+  .btn:hover, .btn:focus, .btn:active, .btn.active{
+      background-color: #222222 !important;
+      color: white !important;
+      border-color: black!important
+  }
+   .Newsletter {
+    margin-top:5%; 
+  }
+  .company{
+      margin-top: -60px;
+    margin-left: 11%;
+  }
+  
+  .com-ul ul{
+      padding-top:5%;
+  
+      
+  }
+  .com-ul li{
+      padding-top: 5%;
+    }
+  .com-news ul{
+      padding-top:8%;
+      margin-left: -40px
+  }
+  
+  .footer-copywrite .container{
+    padding-top:2%;
+    padding-bottom: 2%;
+    color: #222222;
+        text-align: center;
+        font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+  }

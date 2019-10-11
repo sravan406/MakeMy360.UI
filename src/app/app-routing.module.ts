@@ -9,7 +9,9 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactComponent },
   { path: 'paranoma', component: ParanomaComponent },
   { path: 'DashBoard', component: DashBoardComponent },
-  { path: 'about-us', component: AboutUsComponent }
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'paranoma/:id', component: ParanomaComponent },
+  { path :'DashBoard',component:DashBoardComponent}
 ];
 
 @NgModule({
