@@ -19,6 +19,7 @@ import { ParanomaDetailsComponent } from './paranoma-details/paranoma-details.co
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectTypeComponent } from './project-type/project-type.component';
 import {DatePipe} from '@angular/common';
+import { NavbarService } from '../navbar/navbar-service';
 
 
 @NgModule({
@@ -37,6 +38,6 @@ import {DatePipe} from '@angular/common';
     CheckboxModule,
     BrowserAnimationsModule
   ],
-  providers: [baseService, DatePipe],
+  providers: [baseService, DatePipe,NavbarService],
 })
 export class AdminModule { }

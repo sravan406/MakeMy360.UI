@@ -6,6 +6,7 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
 import { SiteComponentComponent } from './Site-Layout/site-component/site-component.component';
 import { AppLayOutComponent } from './App-Layout/app-lay-out/app-lay-out.component';
 import { HomeComponent } from './home/home.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   children: [
     {path:'',component:HomeComponent,pathMatch: 'full'},
     {path:'Home',component:HomeComponent},
+    {path:'About-us',component:AboutUsComponent},
     { path: 'contact-us', component: ContactComponent },
 
 

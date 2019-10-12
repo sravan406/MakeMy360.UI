@@ -18,7 +18,6 @@ import { NavbarService } from './navbar/navbar-service';
 import * as $ from 'jquery';
 import { AuthenticationService } from './login/AuthenticationService';
 import { DashBoardComponent } from './dash-board/dash-board.component';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppHeaderService } from './app-header/app-header-service';
 import { AppFooterService } from './app-footer/app-footer.service';
@@ -26,6 +25,8 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { SiteComponentComponent } from './Site-Layout/site-component/site-component.component';
 import { AppLayOutComponent } from './App-Layout/app-lay-out/app-lay-out.component';
 import { routing } from './app-routing.module';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { routing } from './app-routing.module';
     AppHeaderComponent,
     SiteComponentComponent,
     AppLayOutComponent
+    
   ],
   imports: [
     FormsModule,
