@@ -22,9 +22,38 @@ export class ParanomaComponent implements OnInit {
   ngOnInit() {
     const routeParams = this.route.snapshot.params.id;
     this.getProjectDetails(routeParams);
+    this.applyStyleForToggleSwitch();
   }
   
   
+applyStyleForToggleSwitch()
+{
+  $('#menu').css("right","-75px");
+  $('.menu_icon').on('click',function(){
+    if($('.menu_icon').hasClass('open')){
+      $(this).removeClass('open');
+      $(this).animate({
+        "right":"0px",
+        "background-position":"0px"
+      });
+      $('#menu').animate({"right":"-75px"});
+     
+    }
+    else{
+      $(this).addClass('open');
+      $(this).animate({
+        "right":"50px",
+        "background-position":"-40px"
+      });
+      $('#menu').animate({"right":"0px"});
+     
+    
+    }
+  });
+ 
+
+}
+
   getProjectDetails(id: string) {
     this.service.get(UrlConstants.customerDetailsById + '/' + id).subscribe((resp: any) => {
 
@@ -48,5 +77,7 @@ export class ParanomaComponent implements OnInit {
       this.animal = result;
     });
   }
+
+
 
 }

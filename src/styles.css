@@ -56,7 +56,7 @@ h1 {
   }
   
   /* Navigation link styles */
-  nav a {
+  /* nav a {
     padding: 5px 10px;
     text-decoration: none;
     margin-right: 10px;
@@ -64,8 +64,8 @@ h1 {
     display: inline-block;
     background-color: #eee;
     border-radius: 4px;
-  }
-  nav a:visited, a:link {
+  } */
+  /* nav a:visited, a:link {
     color: #607D8B;
   }
   nav a:hover {
@@ -74,7 +74,7 @@ h1 {
   }
   nav a.active {
     color: #039be5;
-  }
+  } */
   
   /* everywhere else */
   * {

@@ -37,17 +37,17 @@ ul {
     margin-top:5%; 
   }
   .company{
-      margin-top: -60px;
-    margin-left: 11%;
+      margin-top: 5%;
   }
   
   .com-ul ul{
-      padding-top:5%;
+      padding-top:2%;
+      margin-left: -40px;
   
       
   }
   .com-ul li{
-      padding-top: 5%;
+      padding-top: 2%;
     }
   .com-news ul{
       padding-top:8%;

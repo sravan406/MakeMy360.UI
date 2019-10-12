@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         this.token = resp.access_token;
         localStorage.setItem('token', this.token);
         this.getUserDetailsByUserName();
-        this.router.navigate(['/DashBoard']);
+        this.router.navigate(['/admin/DashBoard']);
 
       }
     

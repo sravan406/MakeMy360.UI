@@ -1,14 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminModule } from './admin-module/admin-module.module';
 import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
 import { baseService } from './@core/data/base-service.service';
-import { UserModule } from './user-module/user-module.module';
 import { SidebarModule } from 'ng-sidebar';
 import { ButtonModule } from 'primeng/button';
 import { ContactComponent } from './contact-us/contact-us.component';
@@ -24,6 +22,9 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppHeaderService } from './app-header/app-header-service';
 import { AppFooterService } from './app-footer/app-footer.service';
 import { AppHeaderComponent } from './app-header/app-header.component';
+import { SiteComponentComponent } from './Site-Layout/site-component/site-component.component';
+import { AppLayOutComponent } from './App-Layout/app-lay-out/app-lay-out.component';
+import { routing } from './app-routing.module';
 
 
 @NgModule({
@@ -38,15 +39,16 @@ import { AppHeaderComponent } from './app-header/app-header.component';
     DialogModelComponent,
     DashBoardComponent,
     AppFooterComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    SiteComponentComponent,
+    AppLayOutComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AdminModule,
-    AppRoutingModule,
+    routing,
     LoginModule,
-    UserModule,
     SidebarModule,
     ButtonModule  ,
     DemoMaterialModule
