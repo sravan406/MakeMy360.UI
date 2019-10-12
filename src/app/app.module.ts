@@ -18,6 +18,7 @@ import { NavbarService } from './navbar/navbar-service';
 import * as $ from 'jquery';
 import { AuthenticationService } from './login/AuthenticationService';
 import { DashBoardComponent } from './dash-board/dash-board.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppHeaderService } from './app-header/app-header-service';
 import { AppFooterService } from './app-footer/app-footer.service';
@@ -35,9 +36,9 @@ import { routing } from './app-routing.module';
     ContactComponent,
     NavbarComponent,
     ParanomaComponent,
-    ContactComponent,
     DialogModelComponent,
     DashBoardComponent,
+    AboutUsComponent,
     AppFooterComponent,
     AppHeaderComponent,
     SiteComponentComponent,

@@ -4,6 +4,7 @@ import { ProjectDetails, CompanyDetails, FileToUpload, ProjectHighlights } from 
 //import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
 import { NavbarService } from 'src/app/navbar/navbar-service';
+import {DatePipe} from '@angular/common';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class ProjectDetailsComponent implements OnInit {
     pointsArray : ProjectHighlights[] = [];
     point:ProjectHighlights={};
 
-    constructor(private service: baseService,public nav:NavbarService) { 
+    constructor(private service: baseService,public nav:NavbarService, private datePipe: DatePipe) { 
         this.getAllCompanyDetails();
     }
 
@@ -109,6 +110,7 @@ this.nav.show();
     }
     saveProject() {
         this.projectDetails.projectHighlights =  this.pointsArray;
+        this.projectDetails.ProjectEndDate = this.datePipe.transform(this.projectDetails.ProjectEndDate,"dd-MM-yyyy");
         this.projectDetails.CompanyName=this.companyNamesList.filter(t=>t.value===this.projectDetails.CompanyId)[0].label;
         this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails).subscribe(resp => {
           this.getAllProjectDetails();
@@ -131,7 +133,7 @@ this.nav.show();
       this.service.put(UrlConstants.updateProjcetInfo, this.projectDetails).subscribe(resp => {
         this.getAllProjectDetails();
         this.hideProjectDetails = true;
-      });;
+      });
       
     }
 

@@ -1,0 +1,53 @@
+.h2{
+    font-size: 3rem;
+    color: #222222;
+    line-height: 1.2;
+    text-align: left;
+    text-transform: none;
+    color: black;
+    font-family: cursive !important;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+p {
+    margin-top: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    word-wrap: break-word;
+    font-family: cursive;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 2.0;
+}
+.wpb_text_column {
+    letter-spacing: .05em;
+}
+
+.row{
+    margin-top: 150px;
+}
+
+.setcontent{
+    margin-top: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    word-wrap: break-word;
+    font-family: cursive;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.0;
+}

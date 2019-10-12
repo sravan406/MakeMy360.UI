@@ -23,7 +23,7 @@ export interface ProjectDetails {
     Location?: string;
     ProjectImage?:string;
     videoFrame?:string;
-    ProjectEndDate?:Date;
+    ProjectEndDate?:string;
     images?:FileToUpload[];
     paranomaPath?:string;
     MobileNumber?:number;
