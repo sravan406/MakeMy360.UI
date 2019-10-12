@@ -6,22 +6,22 @@
                 (click)="hideProjectDetails = true;showBackbtn = false;">Back</button>
         </div>
         <div [hidden]="hideProjectDetails">
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="companyName">Company Name</label>
                 <p-dropdown [options]="companyNamesList" [(ngModel)]="projectDetails.CompanyId"
                     [ngModelOptions]="{standalone: true}"></p-dropdown>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="projectName">Project Name</label>
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.ProjectName"
                     [ngModelOptions]="{standalone: true}">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="location">Location</label>
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.Location"
                     [ngModelOptions]="{standalone: true}">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="Project Initial Image">Project Initial Image</label>
                 <input type='file' (change)="onSelectInitialFile($event)">
             </div>
@@ -30,12 +30,12 @@
                 <input type='file' (change)="onSelectFile($event)" multiple>
               </div>
               <input type="file" id="ctrl" webkitdirectory directory multiple/> -->
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="Pranoma Location">Pranoma Location</label>
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.ParanomaPath"
                     [ngModelOptions]="{standalone: true}">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group">
                 <label for="VideoFrame">Video Frame</label>
                 <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.VideoFrame"
                     [ngModelOptions]="{standalone: true}">
@@ -75,7 +75,7 @@
 
             
             <div class="form-group"> 
-                <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+                <button class="btn btn-primary" type="button" (click)="addFieldValue()">Add</button>
                 <table class="table table-striped table-bordered">
                         <thead>
                             <tr>

@@ -3,11 +3,7 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\@core",
-    "\\src\\app\\@core\\data",
-    "\\src\\app\\admin-module",
-    "\\src\\app\\admin-module\\company"
+    "\\src\\app\\paranoma-component"
   ],
-  "SelectedNode": "\\src\\app\\admin-module\\company\\company.component.ts",
   "PreviewInSolutionExplorer": false
 }
