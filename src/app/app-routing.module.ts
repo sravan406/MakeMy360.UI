@@ -7,6 +7,7 @@ import { SiteComponentComponent } from './Site-Layout/site-component/site-compon
 import { AppLayOutComponent } from './App-Layout/app-lay-out/app-lay-out.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 
 
 const routes: Routes = [
@@ -18,9 +19,7 @@ const routes: Routes = [
     {path:'Home',component:HomeComponent},
     {path:'About-us',component:AboutUsComponent},
     { path: 'contact-us', component: ContactComponent },
-
-
-  
+    { path: 'Virtual-tour', component: VirtualTourComponent }
   ]
 },
 {

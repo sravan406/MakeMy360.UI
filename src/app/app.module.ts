@@ -26,6 +26,7 @@ import { SiteComponentComponent } from './Site-Layout/site-component/site-compon
 import { AppLayOutComponent } from './App-Layout/app-lay-out/app-lay-out.component';
 import { routing } from './app-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 
 
 
@@ -43,8 +44,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     AppFooterComponent,
     AppHeaderComponent,
     SiteComponentComponent,
-    AppLayOutComponent
-    
+    AppLayOutComponent,
+    VirtualTourComponent
   ],
   imports: [
     FormsModule,
