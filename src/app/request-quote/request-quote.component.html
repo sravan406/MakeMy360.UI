@@ -1,0 +1,63 @@
+<div class="container">
+    <h2>GET <b>VIRTUAL TOUR </b> QUOTE</h2>
+
+    <h6>Send us your requirement in detail and we <br>
+        can suggest you the best shots ideal to <br>
+        highlight your business. Why waiting? Get a<br>
+        free virtual tour quote!</h6>
+
+    <form name="form" (ngSubmit)="f.form.valid && send()" #f="ngForm" novalidate>
+        <div class="form-group col-md-6">
+            <label for="businessprofile">Business Profile (required)</label>
+            <select name="businessprofile" class="form-control" [(ngModel)]="requestQuote.BusinessProfile">
+                <option *ngFor="let method of BusinessProfileList" [value]="method.id">{{ method.label }}</option>
+            </select>
+            <div *ngIf="f.submitted && businessprofile.invalid" class="invalid-feedback">
+                <div *ngIf="businessprofile.errors.required">Business Profile is required</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="timeperiod">I would like to go for a virtual tour </label>
+            <select name="timeperiod" class="form-control" [(ngModel)]="requestQuote.TimePeriod">
+                <option *ngFor="let method of TimePeriodList" [value]="method.id">{{ method.label }}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name">Your Name (required)</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="requestQuote.Name" #name="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" maxlength="10" required>
+            <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                <div *ngIf="name.errors.required">Your Name is required</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="projectName">Your Email (required)</label>
+            <input type="number" class="form-control" name="emailId" [(ngModel)]="requestQuote.EmailId"
+                #emailId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" maxlength="10" required>
+            <div *ngIf="f.submitted && emailId.invalid" class="invalid-feedback">
+                <div *ngIf="emailId.errors.required">EmailId is required</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Phone">Phone</label>
+            <input type="number" class="form-control" name="phone" [(ngModel)]="requestQuote.Phone" maxlength="10">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Country">Country</label>
+            <select name="country" class="form-control" [(ngModel)]="requestQuote.Country">
+                <option *ngFor="let method of CountriesList" [value]="method.id">{{ method.label }}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Description">Tell us about the location to cover</label>
+            <textarea type="text" class="form-control" name="message" [(ngModel)]="requestQuote.Description"></textarea>
+        </div>
+        <div class="form-group col-md-6">
+            <input name="CheckIn"  type="checkbox" [(ngModel)]="requestQuote.CheckIn" (change)="toggleVisibility($event)" />
+            Sign me up for the newsletter! Know about offers and updates!
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary" style="align-content: right;">Send</button>
+        </div>
+    </form>
+</div>

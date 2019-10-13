@@ -27,8 +27,10 @@ import { AppLayOutComponent } from './App-Layout/app-lay-out/app-lay-out.compone
 import { routing } from './app-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
-
-
+import { RequestQuoteComponent } from './request-quote/request-quote.component';
+import { DropdownModule } from 'primeng/dropdown';
+import { DialogInfoComponent } from 'src/common/dialog-info/dialog-info.component';
+import { DialogContactComponent } from 'src/common/dialog-contact/dialog-contact.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,10 @@ import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
     AppHeaderComponent,
     SiteComponentComponent,
     AppLayOutComponent,
-    VirtualTourComponent
+    VirtualTourComponent,
+    RequestQuoteComponent,
+    DialogInfoComponent,
+    DialogContactComponent
   ],
   imports: [
     FormsModule,
@@ -55,10 +60,11 @@ import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
     LoginModule,
     SidebarModule,
     ButtonModule  ,
-    DemoMaterialModule
+    DemoMaterialModule,
+    DropdownModule
   ],
   providers: [baseService,NavbarService,AuthenticationService,AppHeaderService,AppFooterService],
   bootstrap: [AppComponent],
-  entryComponents: [DialogModelComponent]
+  entryComponents: [DialogModelComponent, DialogInfoComponent, DialogContactComponent]
 })
 export class AppModule { }

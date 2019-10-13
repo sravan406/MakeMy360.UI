@@ -1,0 +1,44 @@
+<i class="fa fa-times" style="font-size: 30px; padding-left: 290px;" (click)="onNoClick()"></i>
+
+
+<div mat-dialog-content>
+    <h1>Make My 360 (Google Street View)</h1>
+    <p> GAR Building</p>
+    <p> Nanakramguda, Gachibowli</p>
+    <p> 500048</p>
+    <p> www.MakeMy360.com</p>
+    <p> CALL:(966) 699-2987</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()"><span style="color: white;">CALL</span></button>
+    <button style="padding-left: 100px !important;" mat-button [mat-dialog-close]="data.animal" cdkFocusInitial><span style="color: white;">DIRECTIONS</span></button>
+</div>
+<style>
+    #closebutton {
+        position: absolute;
+        background: rgba(19, 74, 107, 0.75);
+        color: black;
+        top: -10px;
+        width: 5%;
+        height: 5%;
+        margin-right: 6px;
+    }
+
+    .fa {
+        color: white;
+        font-size: 40px;
+        padding-left: 15px;
+    }
+
+    p {
+        color: white;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    h1 {
+        color: white;
+        font-size: 18px;
+        text-align: center;
+    }
+</style>

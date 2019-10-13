@@ -5,6 +5,8 @@ import { baseService } from '../@core/data/base-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { UrlConstants } from '../@core/service-urls.constant';
 import { ProjectDetails } from '../@core/models/admin-models';
+import { DialogInfoComponent } from 'src/common/dialog-info/dialog-info.component';
+import { DialogContactComponent } from 'src/common/dialog-contact/dialog-contact.component';
 
 @Component({
   selector: 'app-paranoma-component',
@@ -64,20 +66,40 @@ applyStyleForToggleSwitch()
 }
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogModelComponent, {
-      maxWidth: '100vw',
-      maxHeight: '100vh',
-      height: '100%',
-      width: '100%',
-      
-      data: {name: this.name, animal: this.animal}
+      width: '350px',
+      height: '200px',
+      data: +{name: this.name, animal: this.animal}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.animal = result;
     });
   }
 
+  openInfo(): void {
+    const dialogRef = this.dialog.open(DialogInfoComponent, {
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      height: '100%',
+      width: '100%',
+      data: {name: this.name, animal: this.animal}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      this.animal = result;
+    });
+  }
+
+  openContact(): void {
+    const dialogRef = this.dialog.open(DialogContactComponent, {
+      width: '360px',
+      height: '280px',
+      data: +{name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.animal = result;
+    });
+  }
 
 }

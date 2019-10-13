@@ -1,28 +1,32 @@
-<i class="fa fa-times" (click)="onNoClick()"></i>
-<!-- <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/53504-200.png' (click)="onNoClick()" id="closebutton"/> -->
+<i class="fa fa-times" style="font-size: 30px; padding-left: 290px;" (click)="onNoClick()"></i>
 
 <div mat-dialog-content>
-    <h1>Contact Details</h1>
-
-    <p>Make My 360 (Google Street View)</p>
-    <p> GAR Building</p>
-    <p> Nanakramguda, Gachibowli</p>
-    <p> 500048</p>
-    <p> www.MakeMy360.com</p>
-    <p> CALL:(966) 699-2987</p>
-</div>
-<div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+    <h1 style="color: white; text-align: center; color: white; text-align: center;font-size: 12px;font-family: 'Roboto Condensed',sans-serif;
+    letter-spacing: 1px;">Share this tour...</h1>
+    <br>
+    <div style="text-align: center;">
+        <i class="fa fa-facebook-square"></i>
+        <i class="fa fa-linkedin-square"></i>
+        <i class="fa fa-google-plus-square"></i>
+        <i class="fa fa-twitter-square"></i>
+    </div>
+    <br>
+    <input type="text" class="form-control" style="text-align: center;" [(ngModel)]="textContent" />
 </div>
 <style>
-    #closebutton
-    {
+    #closebutton {
         position: absolute;
-    background:  rgba(19, 74, 107, 0.75);
-    color:black;
-    top: -10px;
-    width: 5%;
-    height: 5%;
-    margin-right: 6px;
+        background: rgba(19, 74, 107, 0.75);
+        color: black;
+        top: -10px;
+        width: 5%;
+        height: 5%;
+        margin-right: 6px;
+    }
+
+    .fa {
+        color: white;
+        font-size: 40px;
+        padding-left: 15px;
     }
 </style>

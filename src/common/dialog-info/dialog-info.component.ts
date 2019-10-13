@@ -3,14 +3,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogData } from 'src/app/@core/models/main-models';
 
 @Component({
-    selector: 'dialog-model',
-    templateUrl: 'dialog-model.component.html',
+    selector: 'dialog-info',
+    templateUrl: 'dialog-info.component.html',
 })
 
-export class DialogModelComponent {
-    textContent: string = "http://makemy360.in/5c3755ec6637290ecd59c24b";
+export class DialogInfoComponent {
     constructor(
-        public dialogRef: MatDialogRef<DialogModelComponent>,
+        public dialogRef: MatDialogRef<DialogInfoComponent>,
         @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
     onNoClick(): void {

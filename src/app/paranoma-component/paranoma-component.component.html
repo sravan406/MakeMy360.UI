@@ -1,70 +1,75 @@
-
-  <div id="content">
-    <iframe width="100%" height="100%" frameborder="0" src="http://localhost:60468/Projects/gvk1/Index.htm"></iframe>
+<div id="content">
+  <iframe width="100%" height="100%" frameborder="0" src="http://localhost:60468/Projects/gvk1/Index.htm"></iframe>
 
 </div>
 
-<button class="menu_icon"  ></button>
-  <!-- <a href="#" class="menu_icon"></a> -->
-<div id="menu" >
+<button class="menu_icon"></button>
+<!-- <a href="#" class="menu_icon"></a> -->
+<div id="menu">
   <div class="menu_list">
     <ul>
-    <li>
-   <a (click)="openDialog()">
-      <span class="fa fa-info icon"></span>
-      <div class="text-down"> INFO</div>
-   </a>
-  </li>
-    <li>
-      <a href="#">
-    <span class="fa fa-bed icon"></span>
-    <div class="text-down">  BOOK</div></a>
-  </li>
-    <li>
-      <a href="#">
-    <span class="fa fa-map-marker icon"></span>
-    <div class="text-down"> MAP </div></a>
-  </li>
-    <li><a href="#">
-    <span class="fa fa-share-alt icon"></span>
-    <div class="text-down shareid" data-toggle="modal" data-target="#share" data-backdrop="false"> SHARE 
+      <li>
+        <a (click)="openInfo()">
+          <span class="fa fa-info icon"></span>
+          <div class="text-down"> INFO</div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="fa fa-bed icon"></span>
+          <div class="text-down"> BOOK</div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="fa fa-map-marker icon"></span>
+          <div class="text-down"> MAP </div>
+        </a>
+      </li>
+      <li><a (click)="openDialog()">
+          <span class="fa fa-share-alt icon"></span>
+          <div class="text-down shareid" data-toggle="modal" data-target="#share" data-backdrop="false"> SHARE
 
-    </div></a></li>
-    <li><a href="#">
-    <span class="glyphicon glyphicon-envelope icon"></span>
-    <div class="text-down" data-toggle="modal" data-target="#share" data-backdrop="false"> CONTACT</div></a></li>
-    <li><a onclick="openFullscreen()">
-    <span class="glyphicon glyphicon-fullscreen icon"></span>
-    <div class="text-down"> FULL</div></a></li>
-  </ul></div>
+          </div>
+        </a></li>
+      <li><a (click)="openContact()">
+          <span class="glyphicon glyphicon-envelope icon"></span>
+          <div class="text-down" data-toggle="modal" data-target="#share" data-backdrop="false"> CONTACT</div>
+        </a></li>
+      <li><a onclick="openFullscreen()">
+          <span class="glyphicon glyphicon-fullscreen icon"></span>
+          <div class="text-down"> FULL</div>
+        </a></li>
+    </ul>
+  </div>
 </div>
 
 
 
-  <!-- Modal -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-      
-        <!-- Modal content-->
-        <div class="modal-content" style="background-color: black">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title" style="color:white">Modal Header</h4>
-          </div>
-          <div class="modal-body">
-            <p style="color:white">Some text in the modal.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
+<!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color: black">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="color:white">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p style="color:white">Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
 
-       
+  </div>
+</div>
+
+
 <!-- <mat-drawer-container style="padding-bottom: 550px;background-color: white;">
         <mat-drawer #drawer mode="side" disableClose="true" opened="true" position="end">
           <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="margin: 10px;">
@@ -98,4 +103,3 @@
           Will be pushed towards right on expanding side navbar.
         </div> 
 </mat-drawer-container> -->
-
