@@ -19,14 +19,19 @@ export interface Users {
 }
 
 export interface RequestQuoteDetails {
-    BusinessProfile?: string,
-    TimePeriod?: string,
+    RequestQuoteId?: number,
+    BusinessProfileId?: number,
+    TimePeriodId?: number,
     Name?: string,
     EmailId?: string,
-    Phone?: number,
-    Country?: number,
+    PhoneNumber?: string,
+    CountryId?: number,
     Description?: string,
-    CheckIn?: boolean
+    CheckInForOffers?: boolean,
+    CreatedDate?: string,
+    UpdatedDate?: string,
+    CreatedUserId?: number,
+    UpdateUserId?: number,
 }
 
 export interface BookNowDetails {
@@ -37,4 +42,6 @@ export interface BookNowDetails {
     Message?: string,
     CreatedDate?:Date,
     UpdatedDate?:Date,
+    CreatedUserId?:number,
+    UpdateUserId?:number
 }
