@@ -34,6 +34,11 @@ export interface ProjectDetails {
     projectHighlights?:ProjectHighlights[];    
 }
 
+export interface ProjectType {
+    ProjectType: string;
+    ProjectTypeId: number;
+}
+
 export interface ImagesDetails{
     path?:string;
     imageName?:string;

@@ -28,3 +28,13 @@ export interface RequestQuoteDetails {
     Description?: string,
     CheckIn?: boolean
 }
+
+export interface BookNowDetails {
+    ProjectId?:number,
+    Name?: string,
+    EmailId?: string,
+    PhoneNumber?: number,
+    Message?: string,
+    CreatedDate?:Date,
+    UpdatedDate?:Date,
+}

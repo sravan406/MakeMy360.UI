@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse, } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse, HttpRequest, } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
@@ -75,7 +75,8 @@ export class baseService {
         return this.http.post(this.getApiUrl(url), body,httpOptionsforpostcall).pipe(
             catchError((e) => {
                 return this.handleError(e);
-            })
+            }),
+            map((data) => this.onSuccess(data))
         );
     }
 
@@ -146,7 +147,8 @@ export class baseService {
         return this.http.get(this.getApiUrl(url),httpOptionsforgetcall).pipe(  
             catchError((e) => {
                 return this.handleError(e);
-            })          
+            }),
+            // map((data) => this.onSuccess(data)),          
         );
     }
 
@@ -202,7 +204,9 @@ export class baseService {
 
     }
 
-
+    private onSuccess(data: Object) {
+        console.log(data);
+    }
     /**
      * getApiUrl
      * @param url

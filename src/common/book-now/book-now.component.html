@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Book Now</h1>
+    <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+        <div class="form-group col-md-6">
+            <label for="name">Name </label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="details.Name" #name="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" maxlength="10" required>
+            <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                <div *ngIf="name.errors.required">Name is required</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="projectName">EmailId</label>
+            <input type="text" class="form-control" name="emailId" [(ngModel)]="details.EmailId" #emailId="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" maxlength="50" required>
+            <div *ngIf="f.submitted && emailId.invalid" class="invalid-feedback">
+                <div *ngIf="emailId.errors.required">EmailId is required</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Phone">Phone Number</label>
+            <input type="text" class="form-control" name="phone" [(ngModel)]="details.PhoneNumber" maxlength="10"
+                #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required>
+            <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+                <div *ngIf="phone.errors.required">Phone Number is required</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Description">Message</label>
+            <textarea type="text" class="form-control" name="message" [(ngModel)]="details.Message"></textarea>
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary" style="align-content: right;">Submit</button>
+        </div>
+    </form>
+</div>

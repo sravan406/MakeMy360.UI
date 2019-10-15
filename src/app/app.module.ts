@@ -31,6 +31,8 @@ import { RequestQuoteComponent } from './request-quote/request-quote.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { DialogInfoComponent } from 'src/common/dialog-info/dialog-info.component';
 import { DialogContactComponent } from 'src/common/dialog-contact/dialog-contact.component';
+import { AgmCoreModule } from '@agm/core';
+import { BookNowComponent } from '../common/book-now/book-now.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { DialogContactComponent } from 'src/common/dialog-contact/dialog-contact
     VirtualTourComponent,
     RequestQuoteComponent,
     DialogInfoComponent,
-    DialogContactComponent
+    DialogContactComponent,
+    BookNowComponent
   ],
   imports: [
     FormsModule,
@@ -61,7 +64,8 @@ import { DialogContactComponent } from 'src/common/dialog-contact/dialog-contact
     SidebarModule,
     ButtonModule  ,
     DemoMaterialModule,
-    DropdownModule
+    DropdownModule,
+    AgmCoreModule
   ],
   providers: [baseService,NavbarService,AuthenticationService,AppHeaderService,AppFooterService],
   bootstrap: [AppComponent],

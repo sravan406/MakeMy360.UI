@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 import { RequestQuoteComponent } from './request-quote/request-quote.component';
+import { BookNowComponent } from '../common/book-now/book-now.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
       { path: 'About-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactComponent },
       { path: 'Request-Quote', component: RequestQuoteComponent },
-      { path: 'Virtual-tour', component: VirtualTourComponent }
+      { path: 'Virtual-tour', component: VirtualTourComponent },
+      { path: 'Book-now', component: BookNowComponent }
     ]
   },
   {

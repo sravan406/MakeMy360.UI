@@ -6,17 +6,17 @@
           (click)="hideCompanyDetails = true;showBackbtn = false;">Back</button>
       </div>
 
-      <div class="form-group">
+      <div class="form-group col-md-6">
         <label for=" name">Company Name</label>
         <input type="text" class="form-control" id="name" [(ngModel)]="companyDetails.CompanyName"
           [ngModelOptions]="{standalone: true}">
       </div>
-      <div class="form-group">
+      <div class="form-group col-md-6">
         <label for=" Project Initial Image">Company logo</label>
-        <input type='file' class="form-control" (change)="onSelectInitialFile($event)">
+        <input type='file' (change)="onSelectInitialFile($event)">
       </div>
-      <div class="form-group">
-        <button *ngIf=" showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
+      <div class="form-group col-md-12">
+        <button *ngIf=" showSavebtn" type="submit" class="btn btn-primary" style="align-content: left;"
         (click)="saveCompany()">Save</button>
         <button *ngIf="!showSavebtn" type="submit" class="btn btn-primary" style="align-content: right;"
           (click)="updateCompany()">Update</button>
