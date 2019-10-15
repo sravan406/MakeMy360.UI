@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarService } from '../../app/navbar/navbar-service';
 import { RequestQuoteDetails, BookNowDetails } from '../../app/@core/models/main-models';
 import { UrlConstants } from 'src/app/@core/service-urls.constant';
 import { baseService } from 'src/app/@core/data/base-service.service';
@@ -14,11 +13,11 @@ export class BookNowComponent implements OnInit {
 
     details: BookNowDetails = {};
 
-    constructor(private nav: NavbarService, private service: baseService, private _snackBar: MatSnackBar) {
+    constructor(private service: baseService, private _snackBar: MatSnackBar) {
     }
 
     ngOnInit() {
-        this.nav.show();
+        
     }
 
     submit() {
