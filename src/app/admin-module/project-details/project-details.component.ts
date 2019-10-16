@@ -108,7 +108,7 @@ export class ProjectDetailsComponent implements OnInit {
   }
   saveProject() {
     this.projectDetails.projectHighlights = this.pointsArray;
-    this.projectDetails.ProjectEndDate = this.datePipe.transform(this.projectDetails.ProjectEndDate, "dd-MM-yyyy");
+   // this.projectDetails.ProjectEndDate = this.datePipe.transform(this.projectDetails.ProjectEndDate, "dd-MM-yyyy");
     this.projectDetails.CompanyName = this.companyNamesList.filter(t => t.value === this.projectDetails.CompanyId)[0].label;
     this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails).subscribe(resp => {
       this.getAllProjectDetails();

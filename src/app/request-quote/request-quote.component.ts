@@ -22,12 +22,12 @@ export class RequestQuoteComponent implements OnInit {
     { CountryName: "China", CountryId: 2 }, { CountryName: "United States", CountryId: 3 },
     { CountryName: "Australia", CountryId: 4 }, { CountryName: "Canada", CountryId: 5 }];
 
-    constructor(private nav: NavbarService, private service: baseService, private _snackBar: MatSnackBar) {
+    constructor(private service: baseService, private _snackBar: MatSnackBar) {
     }
 
     ngOnInit() {
         this.reqDetails.CheckInForOffers = false;
-        this.nav.show();
+      
         this.getProjectTypes();
     }
 

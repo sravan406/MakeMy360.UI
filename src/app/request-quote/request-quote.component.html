@@ -8,6 +8,8 @@
 
     <form name="form" (ngSubmit)="f.form.valid && send()" #f="ngForm" novalidate>
         <div class="form-group">
+                <div class="row">
+                        <div class="col-md-4"> 
             <label for="businessprofile">Business Profile (required)</label>
             <select name="businessprofile" class="form-control" [(ngModel)]="reqDetails.BusinessProfileId">
                 <option [value]="0">--Select--</option>
@@ -18,6 +20,10 @@
                 <div *ngIf="businessprofile.errors.required">Business Profile is required</div>
             </div>
         </div>
+        </div>
+        </div>
+        <div class="row">
+                <div class="col-md-4"> 
         <div class="form-group">
             <label for="timeperiod">I would like to go for a virtual tour </label>
             <select name="timeperiod" class="form-control" [(ngModel)]="reqDetails.TimePeriodId">
@@ -25,6 +31,9 @@
                 <option *ngFor="let method of TimePeriodList" [value]="method.TimePeriodId">{{ method.TimePeriod }}</option>
             </select>
         </div>
+                </div></div>
+                <div class="row">
+                        <div class="col-md-6">      
         <div class="form-group">
             <label for="name">Your Name (required)</label>
             <input type="text" class="form-control" name="name" [(ngModel)]="reqDetails.Name" #name="ngModel"
@@ -33,6 +42,10 @@
                 <div *ngIf="name.errors.required">Your Name is required</div>
             </div>
         </div>
+        </div>
+        </div>
+        <div class="row">
+                <div class="col-md-6"> 
         <div class="form-group">
             <label for="projectName">Your Email (required)</label>
             <input type="text" class="form-control" name="emailId" [(ngModel)]="reqDetails.EmailId" #emailId="ngModel"
@@ -41,10 +54,18 @@
                 <div *ngIf="emailId.errors.required">EmailId is required</div>
             </div>
         </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6"> 
         <div class="form-group">
             <label for="Phone">Phone</label>
             <input type="number" class="form-control" name="phone" [(ngModel)]="reqDetails.PhoneNumber" maxlength="10">
         </div>
+        </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6"> 
         <div class="form-group">
             <label for="Country">Country</label>
             <select name="country" class="form-control" [(ngModel)]="reqDetails.CountryId">
@@ -53,16 +74,29 @@
                 </option>
             </select>
         </div>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6"> 
         <div class="form-group">
             <label for="Description">Tell us about the location to cover</label>
             <textarea type="text" class="form-control" name="message" [(ngModel)]="reqDetails.Description"></textarea>
         </div>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6"> 
         <div class="form-group">
             <input name="CheckIn" type="checkbox" [(ngModel)]="reqDetails.CheckInForOffers"/>
             Sign me up for the newsletter! Know about offers and updates!
         </div>
+                    </div>
+            </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" style="align-content: right;">Send</button>
+            <button type="submit"  style="align-content: right;height: 50px;width: 100px;padding: 12px 30px;
+            border-color:coral;
+            border-radius: 40px;
+            letter-spacing: .2em;">Send</button>
         </div>
     </form>
 </div>
