@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { NavbarService } from '../../app/navbar/navbar-service';
-import { RequestQuoteDetails, BookNowDetails } from '../../app/@core/models/main-models';
+import { RequestQuoteDetails, BookNowDetails, DialogData } from '../../app/@core/models/main-models';
 import { UrlConstants } from 'src/app/@core/service-urls.constant';
 import { baseService } from 'src/app/@core/data/base-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
     selector: 'book-now',
@@ -11,16 +12,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     // styleUrls: ['./request-quote.component.css']
 })
 export class BookNowComponent implements OnInit {
-
     details: BookNowDetails = {};
 
-    constructor(private nav: NavbarService, private service: baseService, private _snackBar: MatSnackBar) {
+    constructor(public dialogRef: MatDialogRef<BookNowComponent>,
+        @Inject(MAT_DIALOG_DATA) public data: DialogData,private nav: NavbarService, private service: baseService, private _snackBar: MatSnackBar) {
     }
 
     ngOnInit() {
         this.nav.show();
     }
-
+    onNoClick(): void {
+        this.dialogRef.close();
+    }
     submit() {
         this.service.post(UrlConstants.submitUserDetails, this.details).subscribe((resp: any) => {
             // if (resp) {

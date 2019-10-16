@@ -1,7 +1,8 @@
-<div class="container">
-    <h1>Book Now</h1>
-    <form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
-        <div class="form-group col-md-6">
+<i class="fa fa-times" style="padding-left: 330px; color: white;font-size: 30px;" (click)="onNoClick()"></i>
+
+<form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+    <div mat-dialog-content>
+        <div class="form-group">
             <label for="name">Name </label>
             <input type="text" class="form-control" name="name" [(ngModel)]="details.Name" #name="ngModel"
                 [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" maxlength="10" required>
@@ -9,7 +10,7 @@
                 <div *ngIf="name.errors.required">Name is required</div>
             </div>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group">
             <label for="projectName">EmailId</label>
             <input type="text" class="form-control" name="emailId" [(ngModel)]="details.EmailId" #emailId="ngModel"
                 [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" maxlength="50" required>
@@ -17,7 +18,7 @@
                 <div *ngIf="emailId.errors.required">EmailId is required</div>
             </div>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group">
             <label for="Phone">Phone Number</label>
             <input type="text" class="form-control" name="phone" [(ngModel)]="details.PhoneNumber" maxlength="10"
                 #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required>
@@ -25,12 +26,24 @@
                 <div *ngIf="phone.errors.required">Phone Number is required</div>
             </div>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group">
             <label for="Description">Message</label>
             <textarea type="text" class="form-control" name="message" [(ngModel)]="details.Message"></textarea>
         </div>
-        <div class="form-group col-md-6">
-            <button type="submit" class="btn btn-primary" style="align-content: right;">Submit</button>
+    </div>
+    <div mat-dialog-actions>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" style="align-content: right;letter-spacing: 0.1em;font-family: 'Roboto Condensed', sans-serif">Submit</button>
         </div>
-    </form>
-</div>
+    </div>
+</form>
+<style>
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        color: white;
+        font-size: 12px;
+        font-family: 'Roboto Condensed', sans-serif;
+        letter-spacing: 0.1em;
+    }
+</style>

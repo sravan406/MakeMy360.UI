@@ -7,6 +7,7 @@ import { UrlConstants } from '../@core/service-urls.constant';
 import { ProjectDetails } from '../@core/models/admin-models';
 import { DialogInfoComponent } from 'src/common/dialog-info/dialog-info.component';
 import { DialogContactComponent } from 'src/common/dialog-contact/dialog-contact.component';
+import { BookNowComponent } from 'src/common/book-now/book-now.component';
 
 @Component({
   selector: 'app-paranoma-component',
@@ -89,7 +90,17 @@ applyStyleForToggleSwitch()
       this.animal = result;
     });
   }
+  openBookNow(): void{
+    const dialogRef = this.dialog.open(BookNowComponent, {
+      width: '400px',
+      height: '350px',
+      data: {name: this.name, animal: this.animal}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      this.animal = result;
+    });
+  }
   openContact(): void {
     const dialogRef = this.dialog.open(DialogContactComponent, {
       width: '360px',
