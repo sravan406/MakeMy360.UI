@@ -8,6 +8,7 @@ import { ProjectDetails } from '../@core/models/admin-models';
 import { DialogInfoComponent } from 'src/common/dialog-info/dialog-info.component';
 import { DialogContactComponent } from 'src/common/dialog-contact/dialog-contact.component';
 import { BookNowComponent } from 'src/common/book-now/book-now.component';
+import { DailogMapsComponent } from 'src/common/dailog-maps/dailog-maps.component';
 
 @Component({
   selector: 'app-paranoma-component',
@@ -113,4 +114,22 @@ applyStyleForToggleSwitch()
     });
   }
 
-}
+  openMaps():void{
+    const dialogRef = this.dialog.open(DailogMapsComponent, {
+      width: '400',
+      height: '300',
+      
+      data: +{name: this.name, animal: this.animal}
+
+    
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.animal = result;
+    });
+  }
+
+
+  }
+
+

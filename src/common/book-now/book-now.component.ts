@@ -15,11 +15,10 @@ export class BookNowComponent implements OnInit {
     details: BookNowDetails = {};
 
     constructor(public dialogRef: MatDialogRef<BookNowComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: DialogData,private nav: NavbarService, private service: baseService, private _snackBar: MatSnackBar) {
+        @Inject(MAT_DIALOG_DATA) public data: DialogData, private nav: NavbarService, private service: baseService, private _snackBar: MatSnackBar) {
     }
-
     ngOnInit() {
-        this.nav.show();
+
     }
     onNoClick(): void {
         this.dialogRef.close();
@@ -27,9 +26,9 @@ export class BookNowComponent implements OnInit {
     submit() {
         this.service.post(UrlConstants.submitUserDetails, this.details).subscribe((resp: any) => {
             // if (resp) {
-                this._snackBar.open("User Saved Successfully", "Success!", {
-                    duration: 20000000,
-                });
+            this._snackBar.open("User Saved Successfully", "Success!", {
+                duration: 20000000,
+            });
             //}
         });
     }
