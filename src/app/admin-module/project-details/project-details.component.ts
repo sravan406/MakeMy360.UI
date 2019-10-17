@@ -20,7 +20,7 @@ export class ProjectDetailsComponent implements OnInit {
   hideProjectDetails: boolean = true;
   showFilter: boolean = false;
   showSavebtn: boolean = false;
-  companyNamesList: any[] = [];
+  companyNamesList: any[] = [{ CompanyName: "", CompanyId: 0 }];
   imagedata: FileToUpload[] = [];
   public images: FileToUpload[] = [];
   pointsArray: ProjectHighlights[] = [];
@@ -56,10 +56,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   getAllCompanyDetails() {
     this.service.get(UrlConstants.getCompanyDetails).subscribe((resp: any[]) => {
-
-      for (let i = 0; i <= resp.length; i++) {
-        this.companyNamesList.push({ label: resp[i].CompanyName, value: resp[i].CompanyId });
-      }
+      this.companyNamesList = resp;
     });
   }
 
@@ -109,7 +106,7 @@ export class ProjectDetailsComponent implements OnInit {
   saveProject() {
     this.projectDetails.projectHighlights = this.pointsArray;
    // this.projectDetails.ProjectEndDate = this.datePipe.transform(this.projectDetails.ProjectEndDate, "dd-MM-yyyy");
-    this.projectDetails.CompanyName = this.companyNamesList.filter(t => t.value === this.projectDetails.CompanyId)[0].label;
+    // this.projectDetails.CompanyName = this.companyNamesList.filter(t => t.value === this.projectDetails.CompanyId)[0].label;
     this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails).subscribe(resp => {
       this.getAllProjectDetails();
       this.hideProjectDetails = true;

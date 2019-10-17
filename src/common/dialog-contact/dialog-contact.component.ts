@@ -1,6 +1,6 @@
 import { Component, Inject, InjectionToken } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogData } from 'src/app/@core/models/main-models';
+import { ProjectDetails } from 'src/app/@core/models/admin-models';
 
 @Component({
     selector: 'dialog-contact',
@@ -8,10 +8,16 @@ import { DialogData } from 'src/app/@core/models/main-models';
 })
 
 export class DialogContactComponent {
+    projectDetails: ProjectDetails = {};
+
     constructor(
         public dialogRef: MatDialogRef<DialogContactComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+        @Inject(MAT_DIALOG_DATA) public data: ProjectDetails) { }
 
+    ngOnInit() {
+        this.projectDetails = this.data;
+    }
+    
     onNoClick(): void {
         this.dialogRef.close();
     }

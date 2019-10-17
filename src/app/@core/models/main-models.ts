@@ -4,10 +4,6 @@ export interface ContactDetails {
     mobileNumber: number;
     message: string;
 }
-export interface DialogData {
-    animal: string;
-    name: string;
-}
 
 export interface Users {
     UserId?: number,

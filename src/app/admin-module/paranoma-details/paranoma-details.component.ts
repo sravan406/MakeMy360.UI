@@ -3,12 +3,13 @@ import { baseService } from '../../@core/data/base-service.service';
 import { ProjectDetails } from '../../@core/models/admin-models';
 //import { Constants } from '../../../Constants';
 import { UrlConstants } from '../../@core/service-urls.constant';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-paranoma-details',
     templateUrl: './paranoma-details.component.html',
     styleUrls: ['./paranoma-details.component.css']
-    
+
 })
 export class ParanomaDetailsComponent implements OnInit {
 
@@ -19,7 +20,7 @@ export class ParanomaDetailsComponent implements OnInit {
     showFilter: boolean = false;
     showSavebtn: boolean = false;
 
-    constructor(private service: baseService) { }
+    constructor(private service: baseService,private route: ActivatedRoute) { }
 
     ngOnInit() {
 
@@ -29,14 +30,20 @@ export class ParanomaDetailsComponent implements OnInit {
             { header: 'Location', field: 'location' }
         ];
 
-        this.projectDetailsList = [{ CompanyName: "icici", ProjectName: "Ecolab", Location: "Pune" }, { CompanyName: "ggk", ProjectName: "Ktc", Location: "Hyderabad" },
-        { CompanyName: "infosys", ProjectName: "State project", Location: "Bangalore" }, { CompanyName: "value labs", ProjectName: "Krishnapatnam", Location: "Chennai" },
-        { CompanyName: "capgemini", ProjectName: "Water Board", Location: "Hyderabad" }]
-
+        this.getAllProjectDetails();
+        this.route.paramMap.subscribe(params => {
+            console.log(params);
+        });
         console.log(this.projectDetailsList);
         // this.service.get(UrlConstants.getCompanyDetails).subscribe(resp => {
         //   this.companyDetailsList =  resp;
         // });
+    }
+
+    getAllProjectDetails() {
+        this.service.get(UrlConstants.getAllProjectDetails).subscribe((resp: any[]) => {
+            this.projectDetailsList = resp;
+        });
     }
 
     addProject() {
@@ -56,7 +63,7 @@ export class ParanomaDetailsComponent implements OnInit {
 
     clickOnDelete() { }
 
-    imagesDetailsUpdated(data){
+    imagesDetailsUpdated(data) {
 
     }
 }

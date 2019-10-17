@@ -3,31 +3,18 @@
 <div mat-dialog-content>
     <div class="row">
         <div class="col-md-4" style="padding-left: 10%;padding-top: 5%;">
-            <h3>Reliance Trendz</h3>
-            <p>Kothapet</p>
-            <p>dilsukhnagar</p>
-            <p>Hyderabad</p>
-            <p>Pincode: 500035</p>
-            <p>040-22113366</p>
+            <h3>{{projectDetails.ProjectName}}</h3>
+            <p>{{projectDetails.CompanyName}}</p>
+            <p>{{projectDetails.Location}}</p>
+            <p>{{projectDetails.Website}}</p>
+            <p>{{projectDetails.EmailId}}</p>
+            <p>{{projectDetails.MobileNumber}}</p>
+            <p>{{projectDetails.Description}}</p>
         </div>
         <div class="col-md-8" style="padding-top: 5%;">
             <p><b><span style="font-size: 18px;">Enticing highlights</span></b></p>
-            <p class="setcontent">
-                <mat-icon>keyboard_arrow_right</mat-icon><span class="settext">Fantastic proximity to restaurants, bars,
-                    shops and sports facilities</span>
-            </p>
-            <p class="setcontent">
-                <mat-icon>keyboard_arrow_right</mat-icon><span class="settext">Oceanside dining at S3 offering shareable
-                    seafood, steak and sushi</span>
-            </p>
-            <p class="setcontent">
-                <mat-icon>keyboard_arrow_right</mat-icon><span class="settext">Amazing adults-only outdoor lounge
-                    BalQony, perfect for any event</span>
-            </p>
-            <p class="setcontent">
-                <mat-icon>keyboard_arrow_right</mat-icon><span class="settext">Spa Q's luxurious indoor and outdoor
-                    beauty treatments and massagesResort-style, outdoor swimming pool and hot tub available
-                    year-round</span>
+            <p *ngFor="let point of points" class="setcontent">
+                <mat-icon>keyboard_arrow_right</mat-icon><span class="settext">{{point.Points}}</span>
             </p>
         </div>
     </div>

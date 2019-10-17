@@ -2,12 +2,11 @@
 
 
 <div mat-dialog-content>
-    <h1>Make My 360 (Google Street View)</h1>
-    <p> GAR Building</p>
-    <p> Nanakramguda, Gachibowli</p>
-    <p> 500048</p>
-    <p> www.MakeMy360.com</p>
-    <p> CALL:(966) 699-2987</p>
+    <h1>{{projectDetails.ProjectName}}</h1>
+    <p>{{projectDetails.Location}}</p>
+    <p>{{projectDetails.Website}}</p>
+    <p>{{projectDetails.EmailId}}</p>
+    <p>{{projectDetails.MobileNumber}}</p>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()"><span style="color: white;">CALL</span></button>
