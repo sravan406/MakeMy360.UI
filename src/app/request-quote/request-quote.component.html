@@ -37,7 +37,7 @@
         <div class="form-group">
             <label for="name">Your Name (required)</label>
             <input type="text" class="form-control" name="name" [(ngModel)]="reqDetails.Name" #name="ngModel"
-                [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" maxlength="10" required>
+                [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" maxlength="50" required>
             <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
                 <div *ngIf="name.errors.required">Your Name is required</div>
             </div>

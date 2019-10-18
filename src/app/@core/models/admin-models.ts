@@ -31,6 +31,7 @@ export interface ProjectDetails {
     EmailId?:string;
     Description?:string;
     GoogleMap?:string;
+    SearchId?:string;
     projectHighlights?:ProjectHighlights[];    
 }
 

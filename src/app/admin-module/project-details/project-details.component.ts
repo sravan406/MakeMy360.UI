@@ -36,7 +36,8 @@ export class ProjectDetailsComponent implements OnInit {
     this.cols = [
       { header: 'Company Name', field: 'CompanyName' },
       { header: 'Project Name', field: 'ProjectName' },
-      { header: 'Location', field: 'Location' }
+      { header: 'Location', field: 'Location' },
+      { header: 'Path', field: 'SearchId' }
     ];
     this.getAllProjectDetails();
     this.getProjectTypes();

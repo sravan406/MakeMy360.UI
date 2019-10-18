@@ -23,7 +23,7 @@ export class ParanomaComponent implements OnInit {
   constructor(public dialog: MatDialog, private service: baseService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const routeParams = parseInt(this.route.snapshot.params.id);
+    const routeParams = this.route.snapshot.params.id;
     this.getProjectDetails(routeParams);
     this.applyStyleForToggleSwitch();
   }
@@ -53,7 +53,7 @@ export class ParanomaComponent implements OnInit {
   }
 
   getProjectDetails(id: number) {
-    this.service.get(UrlConstants.getProjectDetailsByProjectId + '/' + id).subscribe((resp: any) => {
+    this.service.get(UrlConstants.customerDetailsById + '/' + id).subscribe((resp: any) => {
       this.projectDetails = resp;
     });
   }
