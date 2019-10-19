@@ -26,7 +26,8 @@ import { BookNowUsersListComponent } from './book-now-users-list/book-now-users-
 
 @NgModule({
   declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent,
-     ProjectDetailsComponent, ProjectTypeComponent,RequestQuoteListComponent],
+     ProjectDetailsComponent, ProjectTypeComponent,RequestQuoteListComponent,
+     BookNowUsersListComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -38,8 +39,7 @@ import { BookNowUsersListComponent } from './book-now-users-list/book-now-users-
     HttpClientModule,
     TableModule,
     CheckboxModule,
-    BrowserAnimationsModule,
-    BookNowUsersListComponent
+    BrowserAnimationsModule
   ],
   providers: [baseService, DatePipe,NavbarService],
 })
