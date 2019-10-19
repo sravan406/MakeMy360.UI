@@ -6,11 +6,11 @@ import { baseService } from 'src/app/@core/data/base-service.service';
 import { UrlConstants } from 'src/app/@core/service-urls.constant';
 
 @Component({
-    selector: 'request-quote-list',
-    templateUrl: './request-quote-list.component.html',
+    selector: 'book-now-users-list',
+    templateUrl: './book-now-users-list.component.html',
     // styleUrls: ['./request-quote-list.component.css']
 })
-export class RequestQuoteListComponent implements OnInit {
+export class BookNowUsersListComponent implements OnInit {
     cols: any[];
     requestQuoteList: RequestQuoteDetails[] = [];
     reqDetails: RequestQuoteDetails = {};
@@ -27,11 +27,10 @@ export class RequestQuoteListComponent implements OnInit {
 
     ngOnInit() {
         this.cols = [
-            { header: 'Name', field: 'CompanyName' },
-            { header: 'EmailId', field: 'ProjectName' },
-            { header: 'Phone Number', field: 'Location' },
-            { header: 'Country', field: 'Location' },
-            { header: 'BusinessProfile', field: 'Location' }
+            { header: 'Name', field: 'Name' },
+            { header: 'Email Id', field: 'EmailId' },
+            { header: 'Phone Number', field: 'PhoneNumber' },
+            { header: 'IsContacted', field: 'IsContacted' }
         ];
         this.getAllRequestQuotesDetails();
     }

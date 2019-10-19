@@ -20,11 +20,13 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { ProjectTypeComponent } from './project-type/project-type.component';
 import {DatePipe} from '@angular/common';
 import { NavbarService } from '../navbar/navbar-service';
+import { RequestQuoteListComponent } from './request-quote-list/request-quote-list.component';
+import { BookNowUsersListComponent } from './book-now-users-list/book-now-users-list.component';
 
 
 @NgModule({
   declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent,
-     ProjectDetailsComponent, ProjectTypeComponent],
+     ProjectDetailsComponent, ProjectTypeComponent,RequestQuoteListComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -36,7 +38,8 @@ import { NavbarService } from '../navbar/navbar-service';
     HttpClientModule,
     TableModule,
     CheckboxModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BookNowUsersListComponent
   ],
   providers: [baseService, DatePipe,NavbarService],
 })

@@ -3,6 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Routes
 export const routes: Routes = [
-    {path:'login',component:LoginComponent}
+    {path:'Login',component:LoginComponent}
 ];
 export const loginrouting = RouterModule.forChild(routes);

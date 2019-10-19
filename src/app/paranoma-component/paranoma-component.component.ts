@@ -86,7 +86,7 @@ export class ParanomaComponent implements OnInit {
   openBookNow(): void {
     const dialogRef = this.dialog.open(BookNowComponent, {
       width: '400px',
-      height: '350px',
+      height: '420px',
       data: this.projectDetails
     });
 

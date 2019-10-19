@@ -1,67 +1,35 @@
 <div class="container">
     <form>
         <div *ngIf="hideRequestDetails">
-            <h1>Update Request Quote Details</h1>
+            <h1>Book Now User Details</h1>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="companyName">Business Profile</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.ProjectName"
-                            [ngModelOptions]="{standalone: true}" disabled>
+                        <label for="name">Name </label>
+                        <input type="text" class="form-control" name="name" [(ngModel)]="details.Name" disabled>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="projectName">I would like to go for a virtual tour</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.ProjectName"
-                            [ngModelOptions]="{standalone: true}" disabled>
+                        <label for="projectName">EmailId</label>
+                        <input type="text" class="form-control" name="emailId" [(ngModel)]="details.EmailId" disabled>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="projectName">Your Name</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.ProjectName"
-                            [ngModelOptions]="{standalone: true}" disabled>
+                        <label for="Phone">Phone Number</label>
+                        <input type="text" class="form-control" name="phone" [(ngModel)]="details.PhoneNumber" disabled>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="location">Your Email</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.Location"
-                            [ngModelOptions]="{standalone: true}" disabled>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="Project Initial Image">Phone Number</label>
-                        <input type='file' (change)="onSelectInitialFile($event)" disabled>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="Pranoma Location">Country</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.ParanomaPath"
-                            [ngModelOptions]="{standalone: true}" disabled>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="VideoFrame">Tell us about the location to cover</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.VideoFrame"
-                            [ngModelOptions]="{standalone: true}" disabled>
-                    </div>
+                    <label for="Description">Message</label>
+                    <textarea type="text" class="form-control" name="message" [(ngModel)]="details.Message"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -90,7 +58,7 @@
             </div>
         </div>
         <div *ngIf="!hideRequestDetails">
-            <h1>Request Quote List</h1>
+            <h1>Book Now Users List</h1>
             <div class="form-group">
                 <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
                     (click)="hideProjectDetails = true;showBackbtn = false;">Back</button>

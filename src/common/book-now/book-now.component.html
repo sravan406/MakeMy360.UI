@@ -7,7 +7,7 @@
             <input type="text" class="form-control" name="name" [(ngModel)]="details.Name" #name="ngModel"
                 [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" maxlength="10" required>
             <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
-                <div *ngIf="name.errors.required">Name is required</div>
+                <div class="required-popup-text" *ngIf="name.errors.required">Name is required</div>
             </div>
         </div>
         <div class="form-group">
@@ -15,7 +15,7 @@
             <input type="text" class="form-control" name="emailId" [(ngModel)]="details.EmailId" #emailId="ngModel"
                 [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" maxlength="50" required>
             <div *ngIf="f.submitted && emailId.invalid" class="invalid-feedback">
-                <div *ngIf="emailId.errors.required">EmailId is required</div>
+                <div class="required-popup-text" *ngIf="emailId.errors.required">EmailId is required</div>
             </div>
         </div>
         <div class="form-group">
@@ -23,7 +23,7 @@
             <input type="text" class="form-control" name="phone" [(ngModel)]="details.PhoneNumber" maxlength="10"
                 #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" required>
             <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
-                <div *ngIf="phone.errors.required">Phone Number is required</div>
+                <div class="required-popup-text" *ngIf="phone.errors.required">Phone Number is required</div>
             </div>
         </div>
         <div class="form-group">
@@ -33,7 +33,9 @@
     </div>
     <div mat-dialog-actions>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" style="align-content: right;letter-spacing: 0.1em;font-family: 'Roboto Condensed', sans-serif">Submit</button>
+            <button type="submit" class="btn-popup-submit">Submit</button>
+            <!-- <button type="submit" class="btn btn-primary"
+                style="align-content: right;letter-spacing: 0.1em;font-family: 'Roboto Condensed', sans-serif">Submit</button> -->
         </div>
     </div>
 </form>
@@ -46,4 +48,8 @@
         font-family: 'Roboto Condensed', sans-serif;
         letter-spacing: 0.1em;
     }
+
+    /* 
+    .form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: gold;} */
 </style>

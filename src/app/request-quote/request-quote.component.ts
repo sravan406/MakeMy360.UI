@@ -14,7 +14,15 @@ import { ProjectType } from '../@core/models/admin-models';
 })
 export class RequestQuoteComponent implements OnInit {
 
-    reqDetails: RequestQuoteDetails = {};
+    reqDetails: RequestQuoteDetails = {
+        // BusinessProfileId:0,
+        Name:"",
+        EmailId:"",
+        PhoneNumber:"",
+        TimePeriodId:0,
+        CountryId:0,
+        CheckInForOffers:false
+    };
     BusinessProfileList: ProjectType[] = [{ ProjectType: "", ProjectTypeId: 0 }];
     TimePeriodList: any[] = [{ TimePeriodId: 1, TimePeriod: "Within one month" },
     { TimePeriodId: 2, TimePeriod: "Within six months" }, { TimePeriodId: 3, TimePeriod: "Within one year" }];

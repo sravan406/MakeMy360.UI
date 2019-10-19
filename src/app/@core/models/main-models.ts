@@ -28,6 +28,8 @@ export interface RequestQuoteDetails {
     UpdatedDate?: string,
     CreatedUserId?: number,
     UpdateUserId?: number,
+    IsContacted?: string,
+    Comments?: string
 }
 
 export interface BookNowDetails {
