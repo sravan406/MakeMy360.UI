@@ -41,5 +41,7 @@ export interface BookNowDetails {
     CreatedDate?:Date,
     UpdatedDate?:Date,
     CreatedUserId?:number,
-    UpdateUserId?:number
+    UpdateUserId?:number,
+    IsContacted?:string,
+    Comments?:string
 }

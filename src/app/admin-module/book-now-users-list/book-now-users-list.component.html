@@ -36,7 +36,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="VideoFrame">IsContacted</label>
-                        <select name="timeperiod" class="form-control" [(ngModel)]="reqDetails.ProjectTypeId">
+                        <select name="timeperiod" class="form-control" [(ngModel)]="reqDetails.IsContacted">
                             <option [value]="Yes">Yes</option>
                             <option [value]="No">No</option>
                         </select>
@@ -61,7 +61,7 @@
             <h1>Book Now Users List</h1>
             <div class="form-group">
                 <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
-                    (click)="hideProjectDetails = true;showBackbtn = false;">Back</button>
+                    (click)="hideBookNowDetails = true;showBackbtn = false;">Back</button>
             </div>
             <p-table #dt1 [columns]="cols" [value]="requestQuoteList" [paginator]="true" [rows]="10" dataKey="vin"
                 [resizableColumns]="true" [reorderableColumns]="true" selectionMode="single">
@@ -90,7 +90,7 @@
                         </td>
                         <td>
                             <i class="fa fa-edit" style="font-size:20px;color:#337ab7;"
-                                (click)="clickOnEdit(rowData);showSavebtn = false;hideProjectDetails=false;showBackbtn = true;"
+                                (click)="clickOnEdit(rowData);showSavebtn = false;hideBookNowDetails=false;showBackbtn = true;"
                                 aria-placeholder="Edit"></i><i class="fa fa-trash-o"
                                 style="font-size:20px;color:rgb(226, 109, 109);padding-left: 20px;"
                                 aria-placeholder="Delete" (click)="clickOnDelete()"></i></td>

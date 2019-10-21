@@ -26,6 +26,8 @@ export class ProjectDetailsComponent implements OnInit {
   pointsArray: ProjectHighlights[] = [];
   point: ProjectHighlights = {};
   projectTypeList: ProjectType[] = [{ ProjectType: "", ProjectTypeId: 0 }];
+  showBackbtn: boolean = false;
+
   constructor(private service: baseService, public nav: NavbarService, private datePipe: DatePipe) {
     this.getAllCompanyDetails();
   }

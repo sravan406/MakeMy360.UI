@@ -33,6 +33,7 @@ export interface ProjectDetails {
     GoogleMap?:string;
     SearchId?:string;
     projectHighlights?:ProjectHighlights[];    
+    ProjectTypeId?:number;
 }
 
 export interface ProjectType {

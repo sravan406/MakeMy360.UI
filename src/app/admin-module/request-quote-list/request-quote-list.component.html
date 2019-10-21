@@ -6,7 +6,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="companyName">Business Profile</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.ProjectName"
+                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.BusinessProfileId"
                             [ngModelOptions]="{standalone: true}" disabled>
                     </div>
                 </div>
@@ -15,7 +15,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="projectName">I would like to go for a virtual tour</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.ProjectName"
+                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.TimePeriodId"
                             [ngModelOptions]="{standalone: true}" disabled>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="projectName">Your Name</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.ProjectName"
+                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.Name"
                             [ngModelOptions]="{standalone: true}" disabled>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="location">Your Email</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.Location"
+                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.EmailId"
                             [ngModelOptions]="{standalone: true}" disabled>
                     </div>
                 </div>
@@ -42,7 +42,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="Project Initial Image">Phone Number</label>
-                        <input type='file' (change)="onSelectInitialFile($event)" disabled>
+                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.PhoneNumber"
+                            [ngModelOptions]="{standalone: true}" disabled>
                     </div>
                 </div>
             </div>
@@ -50,7 +51,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="Pranoma Location">Country</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.ParanomaPath"
+                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.CountryId"
                             [ngModelOptions]="{standalone: true}" disabled>
                     </div>
                 </div>
@@ -59,7 +60,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="VideoFrame">Tell us about the location to cover</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.VideoFrame"
+                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.Description"
                             [ngModelOptions]="{standalone: true}" disabled>
                     </div>
                 </div>
@@ -68,7 +69,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="VideoFrame">IsContacted</label>
-                        <select name="timeperiod" class="form-control" [(ngModel)]="reqDetails.ProjectTypeId">
+                        <select name="timeperiod" class="form-control" [(ngModel)]="reqDetails.IsContacted">
+                            <option [value]="">--select--</option>
                             <option [value]="Yes">Yes</option>
                             <option [value]="No">No</option>
                         </select>
@@ -93,7 +95,7 @@
             <h1>Request Quote List</h1>
             <div class="form-group">
                 <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
-                    (click)="hideProjectDetails = true;showBackbtn = false;">Back</button>
+                    (click)="hideRequestDetails = true;showBackbtn = false;">Back</button>
             </div>
             <p-table #dt1 [columns]="cols" [value]="requestQuoteList" [paginator]="true" [rows]="10" dataKey="vin"
                 [resizableColumns]="true" [reorderableColumns]="true" selectionMode="single">
@@ -122,7 +124,7 @@
                         </td>
                         <td>
                             <i class="fa fa-edit" style="font-size:20px;color:#337ab7;"
-                                (click)="clickOnEdit(rowData);showSavebtn = false;hideProjectDetails=false;showBackbtn = true;"
+                                (click)="clickOnEdit(rowData);showSavebtn = false;hideRequestDetails=false;showBackbtn = true;"
                                 aria-placeholder="Edit"></i><i class="fa fa-trash-o"
                                 style="font-size:20px;color:rgb(226, 109, 109);padding-left: 20px;"
                                 aria-placeholder="Delete" (click)="clickOnDelete()"></i></td>

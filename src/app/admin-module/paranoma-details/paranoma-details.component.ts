@@ -19,7 +19,8 @@ export class ParanomaDetailsComponent implements OnInit {
     hideProjectDetails: boolean = true;
     showFilter: boolean = false;
     showSavebtn: boolean = false;
-
+    showBackbtn: boolean = false;
+    
     constructor(private service: baseService,private route: ActivatedRoute) { }
 
     ngOnInit() {
