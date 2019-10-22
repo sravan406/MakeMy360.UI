@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'project-type', component: ProjectTypeComponent },
   { path: 'ParanomaDetails', component: ParanomaDetailsComponent },
   { path: 'Request-quote-list', component: RequestQuoteListComponent},
-  { path: 'book-now-users', component: BookNowUsersListComponent}
+  { path: 'Book-now-users', component: BookNowUsersListComponent}
   ]
 
   }];

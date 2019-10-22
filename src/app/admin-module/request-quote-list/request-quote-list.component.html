@@ -1,12 +1,17 @@
 <div class="container">
-    <form>
+    <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
         <div *ngIf="hideRequestDetails">
+            <div class="form-group">
+                <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
+                    (click)="hideRequestDetails = false;showBackbtn = false;">Back</button>
+            </div>
+            <br />
             <h1>Update Request Quote Details</h1>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="companyName">Business Profile</label>
-                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.BusinessProfileId"
+                        <input type="text" class="form-control" id="name" [(ngModel)]="reqDetails.BusinessProfile"
                             [ngModelOptions]="{standalone: true}" disabled>
                     </div>
                 </div>
@@ -70,9 +75,9 @@
                     <div class="form-group">
                         <label for="VideoFrame">IsContacted</label>
                         <select name="timeperiod" class="form-control" [(ngModel)]="reqDetails.IsContacted">
-                            <option [value]="">--select--</option>
-                            <option [value]="Yes">Yes</option>
-                            <option [value]="No">No</option>
+                            <option [value]="null" selected="selected">--select--</option>
+                            <option [value]="'Yes'">Yes</option>
+                            <option [value]="'No'">No</option>
                         </select>
                     </div>
                 </div>
@@ -91,46 +96,45 @@
                 <button class="btn-submit">Update</button>
             </div>
         </div>
-        <div *ngIf="!hideRequestDetails">
-            <h1>Request Quote List</h1>
-            <div class="form-group">
-                <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
-                    (click)="hideRequestDetails = true;showBackbtn = false;">Back</button>
-            </div>
-            <p-table #dt1 [columns]="cols" [value]="requestQuoteList" [paginator]="true" [rows]="10" dataKey="vin"
-                [resizableColumns]="true" [reorderableColumns]="true" selectionMode="single">
-                <ng-template pTemplate="header" let-columns>
-                    <tr>
-                        <th *ngFor="let col of cols" [pSortableColumn]="col.field" pResizableColumn pReorderableColumn>
-                            {{col.header}}
-                            <p-sortIcon [field]="col.field"></p-sortIcon>
-                        </th>
-                        <th pResizableColumn pReorderableColum>Action<i class="pi pi-filter"
-                                (click)="showFilter = !showFilter" style="float: right;"></i></th>
-                    </tr>
-                    <tr *ngIf="showFilter">
-                        <th *ngFor="let col of cols" [ngSwitch]="col.field" class="ui-fluid">
-                            <input pInputText type="text"
-                                (input)="dt1.filter($event.target.value, col.field, 'contains')"
-                                [value]="dt1.filters[col.field]?.value">
-                        </th>
-                        <th></th>
-                    </tr>
-                </ng-template>
-                <ng-template pTemplate="body" let-rowData let-columns="columns">
-                    <tr [pSelectableRow]="rowData">
-                        <td *ngFor="let col of columns">
-                            {{rowData[col.field]}}
-                        </td>
-                        <td>
-                            <i class="fa fa-edit" style="font-size:20px;color:#337ab7;"
-                                (click)="clickOnEdit(rowData);showSavebtn = false;hideRequestDetails=false;showBackbtn = true;"
-                                aria-placeholder="Edit"></i><i class="fa fa-trash-o"
-                                style="font-size:20px;color:rgb(226, 109, 109);padding-left: 20px;"
-                                aria-placeholder="Delete" (click)="clickOnDelete()"></i></td>
-                    </tr>
-                </ng-template>
-            </p-table>
-        </div>
     </form>
+    <div *ngIf="!hideRequestDetails">
+        <h1>Request Quote List</h1>
+        <div class="form-group">
+            <button *ngIf="showBackbtn" type="submit" class="btn btn-primary" style="align-content: right;"
+                (click)="hideRequestDetails = true;showBackbtn = false;">Back</button>
+        </div>
+        <p-table #dt1 [columns]="cols" [value]="requestQuoteList" [paginator]="true" [rows]="10" dataKey="vin"
+            [resizableColumns]="true" [reorderableColumns]="true" selectionMode="single">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of cols" [pSortableColumn]="col.field" pResizableColumn pReorderableColumn>
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                    <th pResizableColumn pReorderableColum>Action<i class="pi pi-filter"
+                            (click)="showFilter = !showFilter" style="float: right;"></i></th>
+                </tr>
+                <tr *ngIf="showFilter">
+                    <th *ngFor="let col of cols" [ngSwitch]="col.field" class="ui-fluid">
+                        <input pInputText type="text" (input)="dt1.filter($event.target.value, col.field, 'contains')"
+                            [value]="dt1.filters[col.field]?.value">
+                    </th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                    <td>
+                        <i class="fa fa-edit" style="font-size:20px;color:#337ab7;"
+                            (click)="clickOnEdit(rowData);hideRequestDetails=true;showBackbtn = true;"
+                            aria-placeholder="Edit"></i><i class="fa fa-trash-o"
+                            style="font-size:20px;color:rgb(226, 109, 109);padding-left: 20px;"
+                            aria-placeholder="Delete" (click)="clickOnDelete()"></i></td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
 </div>

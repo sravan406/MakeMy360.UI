@@ -4,6 +4,7 @@ import { ProjectType } from 'src/app/@core/models/admin-models';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { baseService } from 'src/app/@core/data/base-service.service';
 import { UrlConstants } from 'src/app/@core/service-urls.constant';
+import { NavbarService } from 'src/app/navbar/navbar-service';
 
 @Component({
     selector: 'book-now-users-list',
@@ -12,9 +13,9 @@ import { UrlConstants } from 'src/app/@core/service-urls.constant';
 })
 export class BookNowUsersListComponent implements OnInit {
     cols: any[];
-    requestQuoteList: RequestQuoteDetails[] = [];
+    usersList: BookNowDetails[] = [];
     details: BookNowDetails = {};
-    hideBookNowDetails: boolean = true;
+    hideBookNowDetails: boolean = false;
     showBackbtn: boolean = false;
     showFilter: boolean = false;
     showSavebtn: boolean = false;
@@ -25,32 +26,44 @@ export class BookNowUsersListComponent implements OnInit {
     { CountryName: "China", CountryId: 2 }, { CountryName: "United States", CountryId: 3 },
     { CountryName: "Australia", CountryId: 4 }, { CountryName: "Canada", CountryId: 5 }];
 
-    constructor(private service: baseService, private _snackBar: MatSnackBar) {
+    constructor(private service: baseService, private _snackBar: MatSnackBar, private nav: NavbarService) {
     }
 
     ngOnInit() {
+        this.nav.show();
         this.cols = [
             { header: 'Name', field: 'Name' },
             { header: 'Email Id', field: 'EmailId' },
             { header: 'Phone Number', field: 'PhoneNumber' },
             { header: 'IsContacted', field: 'IsContacted' }
         ];
-        this.getAllRequestQuotesDetails();
+        this.getAllBookNowDetails();
     }
 
-    getAllRequestQuotesDetails() {
-        this.service.get(UrlConstants.getAllRequestQuoteDetails).subscribe((resp: any[]) => {
-            this.requestQuoteList = resp;
+    getAllBookNowDetails() {
+        this.service.get(UrlConstants.getAllBookNowDetails).subscribe((resp: any[]) => {
+            this.usersList = resp;
         });
     }
 
     clickOnEdit(data) {
-        this.service.get(UrlConstants.getAllRequestQuoteDetailsById + '/' + data.RequestQuoteId).subscribe((resp: any) => {
+        this.service.get(UrlConstants.getAllBookNowDetailsById + '/' + data.UserId).subscribe((resp: any) => {
             this.details = resp;
         });
     }
 
-    clickOnDelete(){
-        
+    clickOnDelete() {
+
+    }
+
+    update() { 
+        this.service.post(UrlConstants.updateBookNowDetails, this.details).subscribe((resp: any) => {
+            // if (resp) {
+            this._snackBar.open("User updated Successfully", "Success!", {
+                duration: 20000000,
+            });
+            this.hideBookNowDetails = false;
+            //}
+        });
     }
 }

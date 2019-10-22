@@ -29,7 +29,8 @@ export interface RequestQuoteDetails {
     CreatedUserId?: number,
     UpdateUserId?: number,
     IsContacted?: string,
-    Comments?: string
+    Comments?: string,
+    BusinessProfile?: string
 }
 
 export interface BookNowDetails {

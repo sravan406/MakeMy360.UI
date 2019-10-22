@@ -1,4 +1,4 @@
-input[type=text], select {
+/* input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -26,4 +26,12 @@ input[type=text], select {
   }
   input[type=submit]:hover {
     background-color: #45a049;
-  }
+  } */
+  h2{
+    font-size: 3.5rem;
+    color: #222222;
+    text-align: left;
+    text-transform: none;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+}
