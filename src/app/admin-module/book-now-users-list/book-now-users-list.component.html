@@ -34,18 +34,24 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="Description">Message</label>
-                    <textarea type="text" class="form-control" name="message" [(ngModel)]="details.Message" disabled></textarea>
+                    <textarea type="text" class="form-control" name="message" [(ngModel)]="details.Message"
+                        disabled></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="VideoFrame">IsContacted</label>
-                        <select name="timeperiod" class="form-control" [(ngModel)]="details.IsContacted">
+                        <select name="isContacted" class="form-control" [(ngModel)]="details.IsContacted"
+                            #isContacted="ngModel" [ngClass]="{ 'is-invalid': f.submitted && isContacted.invalid }"
+                            required>
                             <option [value]="null" selected="selected">--select--</option>
                             <option [value]="'Yes'">Yes</option>
                             <option [value]="'No'">No</option>
                         </select>
+                        <div *ngIf="f.submitted && details.IsContacted == null" class="invalid-feedback">
+                            <div class="required-text" *ngIf="isContacted.errors.required">IsContacted is required</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,8 +59,12 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="VideoFrame">Comments</label>
-                        <textarea type="text" class="form-control" name="message"
-                            [(ngModel)]="details.Comments"></textarea>
+                        <textarea type="text" class="form-control" name="Comments" [(ngModel)]="details.Comments"
+                            #Comments="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Comments.invalid }"
+                            required></textarea>
+                        <div *ngIf="f.submitted && Comments.invalid" class="invalid-feedback">
+                            <div class="required-text" *ngIf="Comments.errors.required">Comments is required</div>
+                        </div>
                     </div>
                 </div>
             </div>

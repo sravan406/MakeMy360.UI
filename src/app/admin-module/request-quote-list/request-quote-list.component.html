@@ -74,11 +74,16 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="VideoFrame">IsContacted</label>
-                        <select name="timeperiod" class="form-control" [(ngModel)]="reqDetails.IsContacted">
+                        <select name="isContacted" class="form-control" [(ngModel)]="reqDetails.IsContacted"
+                            #isContacted="ngModel" [ngClass]="{ 'is-invalid': f.submitted && isContacted.invalid }"
+                            required>
                             <option [value]="null" selected="selected">--select--</option>
                             <option [value]="'Yes'">Yes</option>
                             <option [value]="'No'">No</option>
                         </select>
+                        <div *ngIf="f.submitted && reqDetails.IsContacted == null" class="invalid-feedback">
+                            <div class="required-text" *ngIf="isContacted.errors.required">IsContacted is required</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,8 +91,12 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="VideoFrame">Comments</label>
-                        <textarea type="text" class="form-control" name="message"
-                            [(ngModel)]="reqDetails.Comments"></textarea>
+                        <textarea type="text" class="form-control" name="Comments" [(ngModel)]="reqDetails.Comments"
+                            #Comments="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Comments.invalid }"
+                            required></textarea>
+                        <div *ngIf="f.submitted && Comments.invalid" class="invalid-feedback">
+                            <div class="required-text" *ngIf="Comments.errors.required">Comments is required</div>
+                        </div>
                     </div>
                 </div>
             </div>
