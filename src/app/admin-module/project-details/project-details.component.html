@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="Pranoma Location">Pranoma Location</label>
+                        <label for="Pranoma Location">Paranoma Location</label>
                         <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.paranomaPath"
                             [ngModelOptions]="{standalone: true}">
                     </div>
@@ -132,6 +132,24 @@
                     <div class="form-group">
                         <label for="location">Description</label>
                         <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.Description"
+                            [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="location">No Of Images</label>
+                        <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.NoOfImages"
+                            [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="location">Total Amount</label>
+                        <input type="text" class="form-control" id="name" [(ngModel)]="projectDetails.TotalAmount"
                             [ngModelOptions]="{standalone: true}">
                     </div>
                 </div>

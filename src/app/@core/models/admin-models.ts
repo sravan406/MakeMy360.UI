@@ -34,6 +34,10 @@ export interface ProjectDetails {
     SearchId?:string;
     projectHighlights?:ProjectHighlights[];    
     ProjectTypeId?:number;
+    NoOfImages?:number;
+    TotalAmount?:number;
+    InvoicePath?:string;
+    BriefDescription?:string;
 }
 
 export interface ProjectType {
@@ -66,4 +70,20 @@ export class FileToUpload {
     ProjectId?:number;
     Points?:string;
     IsDelete?:string;
+  }
+
+  export interface InvoiceDetails{
+      CompanyName?: string;
+      CompanyAddress?: string;
+      CompanyWebsite?: string;
+      CompanyEmailId?: String;
+      CompanyContactNumber?: string;
+      invTableDetails?: InvoiceTable[];
+  }
+
+  export interface InvoiceTable{
+      SNo?: number;
+      Description?: string;
+      Quantity?: number;
+      Amount?: number;
   }
