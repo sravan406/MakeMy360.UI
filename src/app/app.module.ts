@@ -34,6 +34,7 @@ import { DialogContactComponent } from 'src/common/dialog-contact/dialog-contact
 
 import { BookNowComponent } from '../common/book-now/book-now.component';
 import { DailogMapsComponent } from 'src/common/dailog-maps/dailog-maps.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { DailogMapsComponent } from 'src/common/dailog-maps/dailog-maps.componen
     RequestQuoteComponent,
     DialogInfoComponent,
     DialogContactComponent,
-    BookNowComponent
+    BookNowComponent,
+    ComingSoonComponent
   ],
   imports: [
     FormsModule,

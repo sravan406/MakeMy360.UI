@@ -10,6 +10,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 import { RequestQuoteComponent } from './request-quote/request-quote.component';
 import { BookNowComponent } from '../common/book-now/book-now.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,6 @@ const routes: Routes = [
     path: '',
     component: SiteComponentComponent,
     children: [
-      { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'Home', component: HomeComponent },
       { path: 'About-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactComponent },
@@ -37,7 +37,10 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'paranoma/:id', component: ParanomaComponent }
+  { path: 'paranoma/:id', component: ParanomaComponent },
+  
+  { path: 'ComingSoon', component: ComingSoonComponent }
+
 
 ];
 

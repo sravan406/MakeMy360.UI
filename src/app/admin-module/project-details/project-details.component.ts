@@ -7,6 +7,7 @@ import { NavbarService } from 'src/app/navbar/navbar-service';
 import { DatePipe } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-project-details',
   templateUrl: './project-details.component.html',

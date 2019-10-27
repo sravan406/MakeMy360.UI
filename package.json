@@ -24,6 +24,7 @@
     "@angular/router": "~8.2.4",
     "@types/googlemaps": "^3.37.7",
     "@types/jquery": "^3.3.31",
+    "angular-aframe-pipe": "^1.0.0",
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
