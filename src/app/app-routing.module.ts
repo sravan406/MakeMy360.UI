@@ -10,7 +10,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 import { RequestQuoteComponent } from './request-quote/request-quote.component';
 import { BookNowComponent } from '../common/book-now/book-now.component';
-import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 
 
 const routes: Routes = [
@@ -37,9 +36,7 @@ const routes: Routes = [
     ]
   },
 
-  { path: 'paranoma/:id', component: ParanomaComponent },
-  
-  { path: 'ComingSoon', component: ComingSoonComponent }
+  { path: 'paranoma/:id', component: ParanomaComponent }
 
 
 ];
