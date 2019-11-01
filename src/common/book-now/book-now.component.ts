@@ -27,7 +27,7 @@ export class BookNowComponent implements OnInit {
         this.service.post(UrlConstants.submitUserDetails, this.details).subscribe((resp: any) => {
             // if (resp) {
             this._snackBar.open("User Saved Successfully", "Success!", {
-                duration: 20000000,
+                duration: 20000000, verticalPosition: 'top', horizontalPosition: 'end'
             });
             //}
         });

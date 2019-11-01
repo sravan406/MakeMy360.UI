@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { baseService } from '../@core/data/base-service.service';
 import { ContactDetails } from '../@core/models/main-models';
+import { UrlConstants } from '../@core/service-urls.constant';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'contact-us',
@@ -9,14 +11,10 @@ import { ContactDetails } from '../@core/models/main-models';
 })
 export class ContactComponent implements OnInit {
 
-    contactDet: ContactDetails = {
-        name: "",
-        emailId: "",
-        mobileNumber: null,
-        message: ""
-    };
+    submitted: boolean = false;
+    contactDet: ContactDetails = {};
 
-    constructor(private service: baseService) {
+    constructor(private service: baseService, private _snackBar: MatSnackBar) {
         // this.getAllCompanyDetails();
     }
 
@@ -25,15 +23,24 @@ export class ContactComponent implements OnInit {
     }
 
     saveContact() {
-        // this.service.post(UrlConstants.getCompanyDetails).subscribe((resp: any[]) => {
-        // });
+        this.service.post(UrlConstants.addContactUsDetails, this.contactDet).subscribe((resp: any[]) => {
+            if (resp == null) {
+                this._snackBar.open("Details saved successfully", "Success!", {
+                    duration: 20000000, verticalPosition: 'top', horizontalPosition: 'end'
+                });
+                this.contactDet = {};
+                this.submitted = false;
+            }
+        });
     }
 
-    // getAllCompanyDetails() {
-    //     this.service.get(UrlConstants.getCompanyDetails).subscribe((resp: any[]) => {
-    //         for (let i = 0; i <= resp.length; i++) {
-    //             this.companyNamesList.push({ label: resp[i].CompanyName, value: resp[i].CompanyId });
-    //         }
-    //     });
-    // }
+    updateContact() {
+        this.service.post(UrlConstants.addContactUsDetails, this.contactDet).subscribe((resp: any[]) => {
+            if (resp == null) {
+                this._snackBar.open("Details saved successfully", "Success!", {
+                    duration: 20000000, verticalPosition: 'top', horizontalPosition: 'end'
+                });
+            }
+        });
+    }
 }

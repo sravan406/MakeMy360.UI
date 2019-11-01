@@ -22,12 +22,13 @@ import {DatePipe} from '@angular/common';
 import { NavbarService } from '../navbar/navbar-service';
 import { RequestQuoteListComponent } from './request-quote-list/request-quote-list.component';
 import { BookNowUsersListComponent } from './book-now-users-list/book-now-users-list.component';
+import { ContactUsersListComponent } from './contacted-users-list/contacted-users-list.component';
 
 
 @NgModule({
   declarations: [FileUploadComponent, CompanyComponent, ProjectComponent, ParanomaDetailsComponent,
      ProjectDetailsComponent, ProjectTypeComponent,RequestQuoteListComponent,
-     BookNowUsersListComponent],
+     BookNowUsersListComponent, ContactUsersListComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

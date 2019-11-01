@@ -18,4 +18,8 @@ export const UrlConstants ={
     getAllBookNowDetailsById:"GetAllBookNowDetailsById",
     getAllBookNowDetails:"GetAllBookNowDetails",
     updateBookNowDetails:"UpdateBookNowDetails",
+    addContactUsDetails:"AddContactUsDetails",
+    getAllContactUsDetails:"GetAllContactUsDetails",
+    getContactDetailsById:"GetContactDetailsById",
+    updateContactedUserDetails:"UpdateConatctUsDetails"
 }; //no NEED TO USE Controller Name always as we are using attribute routing.

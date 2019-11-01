@@ -1,8 +1,14 @@
 export interface ContactDetails {
-    name: string;
-    emailId: string;
-    mobileNumber: number;
-    message: string;
+    UserId?:number;
+    Name?: string;
+    EmailId?: string;
+    PhoneNumber?: string;
+    Message?: string;
+    CreatedDate?: Date,
+    UpdatedDate?: Date,
+    IsContacted?: string;
+    Comments?: string;
+    UpdateUserId?: string;
 }
 
 export interface Users {
@@ -46,3 +52,5 @@ export interface BookNowDetails {
     IsContacted?:string,
     Comments?:string
 }
+
+

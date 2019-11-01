@@ -60,7 +60,7 @@ export class BookNowUsersListComponent implements OnInit {
         this.service.post(UrlConstants.updateBookNowDetails, this.details).subscribe((resp: any) => {
             // if (resp) {
             this._snackBar.open("User updated Successfully", "Success!", {
-                duration: 20000000,
+                duration: 20000000, verticalPosition: 'top', horizontalPosition: 'end'
             });
             this.hideBookNowDetails = false;
             //}
