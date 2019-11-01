@@ -5,7 +5,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { baseService } from 'src/app/@core/data/base-service.service';
 import { UrlConstants } from 'src/app/@core/service-urls.constant';
 import { NavbarService } from 'src/app/navbar/navbar-service';
-import { NotificationService } from 'src/common/notification-service/notification-service';
 
 @Component({
     selector: 'contacted-users-list',
@@ -21,7 +20,7 @@ export class ContactUsersListComponent implements OnInit {
     showFilter: boolean = false;
     showSavebtn: boolean = false;
 
-    constructor(private service: baseService, private _snackBar: MatSnackBar, private nav: NavbarService, private notifService: NotificationService) {
+    constructor(private service: baseService, private _snackBar: MatSnackBar, private nav: NavbarService) {
     }
 
     ngOnInit() {
@@ -50,10 +49,9 @@ export class ContactUsersListComponent implements OnInit {
     update() {
         this.service.post(UrlConstants.updateContactedUserDetails, this.details).subscribe((resp: any) => {
             if (resp == null) {
-                this.notifService.success("User updated Successfully");
-                // this._snackBar.open("User updated Successfully", "Success!", {
-                //     duration: 20000000, verticalPosition: 'top', horizontalPosition: 'end'
-                // });
+                this._snackBar.open("User updated Successfully", "Success!", {
+                    duration: 20000000, verticalPosition: 'top', horizontalPosition: 'end'
+                });
                 this.hideContactDetails = false;
             }
             this.getAllContactedUsers();
