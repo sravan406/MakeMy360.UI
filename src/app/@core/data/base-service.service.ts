@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { map, concatAll, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { FileToUpload, ProjectDetails } from '../models/admin-models';
+import { FileToUpload, ProjectDetails, CompanyDetails } from '../models/admin-models';
 // import { GlobalEventsManager } from '../../data/global-events-manager';
 
 const httpOptions = {
@@ -79,6 +79,20 @@ export class baseService {
             map((data) => this.onSuccess(data))
         );
     }
+
+    
+    public uploadCompany(url:string,companyDetails: CompanyDetails)  {
+        const HttpUploadOptions = {
+                     headers: new HttpHeaders({ "Content-Type": "application/json;utf-8" ,
+                     'Authorization': 'Bearer ' + localStorage.getItem('token')})
+                 }
+        return this.http.post<CompanyDetails>(
+            this.getApiUrl(url), companyDetails,HttpUploadOptions).pipe(
+            catchError((e) => {
+                return this.handleError(e);
+            })
+        );
+      } 
 
     public uploadFile(url:string,theFile: ProjectDetails)  {
         const HttpUploadOptions = {

@@ -45,9 +45,9 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Message<span class="required">*</span></label>
-                    <input type="text" class="form-control" name="message" [(ngModel)]="contactDet.message"
-                        #message="ngModel" [ngClass]="{ 'is-invalid': f.submitted && message.invalid }" maxlength="500"
-                        required>
+                    <textarea type="text" class="form-control" name="message" [(ngModel)]="contactDet.message"
+                        #message="ngModel" [ngClass]="{ 'is-invalid': f.submitted && message.invalid }" maxlength="8000"
+                        required></textarea>
                     <div *ngIf="f.submitted && message.invalid" class="invalid-feedback">
                         <div class="required-text" *ngIf="message.errors.required">Message is required</div>
                     </div>

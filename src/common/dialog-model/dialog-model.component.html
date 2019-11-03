@@ -5,13 +5,18 @@
     letter-spacing: 1px;">Share this tour...</h1>
     <br>
     <div style="text-align: center;">
+        <a href={{facebookUrl}} target="_blank">
         <i class="fa fa-facebook-square"></i>
-        <i class="fa fa-linkedin-square"></i>
-        <i class="fa fa-google-plus-square"></i>
-        <i class="fa fa-twitter-square"></i>
+    </a>
+    <a href={{whatsAppUrl}}>
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+        
     </div>
     <br>
-    <input type="text" class="form-control" style="text-align: center;" [(ngModel)]="textContent" />
+    <label  style="text-align: center;font-size: 13px;color: white;">{{textContent}}</label>
+  
 </div>
 <style>
     #closebutton {

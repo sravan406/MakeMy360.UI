@@ -17,6 +17,7 @@ const routes: Routes = [
     path: '',
     component: SiteComponentComponent,
     children: [
+      { path: '', component: HomeComponent },
       { path: 'Home', component: HomeComponent },
       { path: 'About-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactComponent },

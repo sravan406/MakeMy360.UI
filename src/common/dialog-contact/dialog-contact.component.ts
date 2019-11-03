@@ -22,4 +22,8 @@ export class DialogContactComponent {
         this.dialogRef.close();
     }
 
+    callAction()
+    {
+        window.location.href="tel:+917306553552"
+    }
 }

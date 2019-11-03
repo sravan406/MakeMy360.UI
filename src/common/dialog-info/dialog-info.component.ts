@@ -20,6 +20,8 @@ export class DialogInfoComponent {
 
     ngOnInit() {
         this.projectDetails = this.data;
+
+        console.log(this.projectDetails.ProjectImage);
         if(this.projectDetails.projectHighlights.length !=0){
             this.points = this.projectDetails.projectHighlights;
         }

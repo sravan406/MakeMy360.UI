@@ -2,15 +2,29 @@
 
 
 <div mat-dialog-content>
-    <h1>{{projectDetails.ProjectName}}</h1>
-    <p>{{projectDetails.Location}}</p>
-    <p>{{projectDetails.Website}}</p>
-    <p>{{projectDetails.EmailId}}</p>
-    <p>{{projectDetails.MobileNumber}}</p>
+    <h1 style="margin: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px">{{projectDetails.ProjectName}}</h1>
+    <p style="margin: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px">{{projectDetails.Location}}</p>
+    <p style="margin: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px">{{projectDetails.Website}}</p>
+    <p style="margin: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px">{{projectDetails.EmailId}}</p>
+    <p style="margin: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px">{{projectDetails.MobileNumber}}</p>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()"><span style="color: white;">CALL</span></button>
-    <button style="padding-left: 100px !important;" mat-button [mat-dialog-close]="data.CompanyName" cdkFocusInitial><span style="color: white;">DIRECTIONS</span></button>
+    <button mat-button (click)="callAction()"><span style="color: white;">CALL</span></button>
 </div>
 <style>
     #closebutton {
@@ -32,7 +46,6 @@
     p {
         color: white;
         font-size: 13px;
-        text-align: center;
     }
 
     h1 {
