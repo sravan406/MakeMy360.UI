@@ -53,7 +53,7 @@ export class RequestQuoteComponent implements OnInit {
         this.service.post(UrlConstants.sendRequestQuoteDetails, this.reqDetails).subscribe((resp: any) => {
             // if (resp) {
             this._snackBar.open("Your Request Sent Successfully", "Success!", {
-                duration: 20000000,
+                duration: 20000000, verticalPosition: 'top', horizontalPosition: 'end'
             });
             //}
         });

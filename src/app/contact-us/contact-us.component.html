@@ -1,11 +1,11 @@
 <div class="container">
     <h2>CONTACT <b>US </b></h2>
-    <form name="form" (ngSubmit)="f.form.valid && saveContact()" #f="ngForm" novalidate>
+    <form name="form" (ngSubmit)="f.form.valid && saveContact(); f.resetForm()" #f="ngForm" novalidate>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Name <span class="required">*</span></label>
-                    <input type="text" class="form-control" name="Name" [(ngModel)]="contactDet.name" #Name="ngModel"
+                    <input type="text" class="form-control" name="Name" [(ngModel)]="contactDet.Name" #Name="ngModel"
                         [ngClass]="{ 'is-invalid': f.submitted && Name.invalid }" maxlength="100" required>
                     <div *ngIf="f.submitted && Name.invalid" class="invalid-feedback">
                         <div class="required-text" *ngIf="Name.errors.required">Your Name is required</div>
@@ -17,7 +17,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Email Id <span class="required">*</span></label>
-                    <input type="text" class="form-control" name="emailId" [(ngModel)]="contactDet.emailId"
+                    <input type="text" class="form-control" name="emailId" [(ngModel)]="contactDet.EmailId"
                         #emailId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" maxlength="100"
                         required>
                     <div *ngIf="f.submitted && emailId.invalid" class="invalid-feedback">
@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Mobile Number<span class="required">*</span></label>
-                    <input type="text" class="form-control" name="mobileNumber" [(ngModel)]="contactDet.mobileNumber"
+                    <input type="text" class="form-control" name="mobileNumber" [(ngModel)]="contactDet.PhoneNumber"
                         #mobileNumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mobileNumber.invalid }" maxlength="10"
                         required>
                     <div *ngIf="f.submitted && mobileNumber.invalid" class="invalid-feedback">

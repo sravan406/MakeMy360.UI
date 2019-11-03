@@ -77,7 +77,7 @@ export class RequestQuoteListComponent implements OnInit {
         this.service.post(UrlConstants.updateRequestQuoteDetails, this.reqDetails).subscribe((resp: any) => {
             // if (resp) {
                 this._snackBar.open("Your Request Sent Successfully", "Success!", {
-                    duration: 20000000,
+                    duration: 20000000, verticalPosition: 'top', horizontalPosition: 'end'
                 });
             // }
             this.hideRequestDetails = false;
