@@ -21,6 +21,7 @@ export interface ProjectDetails {
     ProjectId?:number;
     ProjectName?: string;
     Location?: string;
+    ProjectLocation?:string;
     ProjectImage?:string;
     VideoFrame?:string;
     ProjectEndDate?:string;
