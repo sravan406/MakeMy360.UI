@@ -1,23 +1,23 @@
-nav{
+nav {
     font-size: 100% !important;
     background-color: transparent !important;
-  
-    letter-spacing:0.8px !important;
-line-height:24px !important;
- }
-
+    letter-spacing: 0.8px !important;
+    line-height: 24px !important;
+}
 
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin-left: -15px;
     margin-top: -20px;
     padding-bottom: 62px;
 }
- 
- .navbar-items{
-  padding-top: 0.5%;
+
+.navbar-items {
+    padding-top: 0.5%;
 }
 
-
+.nav> .li> .a {
+    color: black;
+}
 
 nav a {
     padding: 5px 10px;
@@ -27,4 +27,13 @@ nav a {
     display: inline-block;
     /* background-color: #eee; */
     border-radius: 4px;
+}
+
+.logo-branding {
+    margin-left: -26px;
+}
+
+#grad2 {
+    background-color: #C0C0C0;
+    background-image: linear-gradient(90deg, #C0C0C0, white);
 }
