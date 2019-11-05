@@ -1,8 +1,9 @@
 ul {
     list-style-type: none;
-  }
-  footer {
-    background-color:black;
+}
+
+footer {
+    background-color: #37475A;
     padding: 80px 0px 80px 0px;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     font-weight: 200;
@@ -10,59 +11,69 @@ ul {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.05em;
-    color: #ffffff; 
-    box-sizing:border-box;
-  }
-  a{
-      color: #ffffff;
-  }
-  a:hover {
-     filter: contrast(25%);
-     text-decoration:none;
-  }
-  
-  .social_media-icons a{
-      font-size: 110%;
-      padding:0 2% 0 0;
-  }
-  .btn{
-      background-color: #444!important;
-  }
-  .btn:hover, .btn:focus, .btn:active, .btn.active{
-      background-color: #222222 !important;
-      color: white !important;
-      border-color: black!important
-  }
-   .Newsletter {
-    margin-top:5%; 
-  }
-  .company{
-      margin-top: 5%;
-      padding-top:2%;
-      padding-left: 35px;
-      padding-top: 5px;
-  }
-  
-  .com-ul ul{
-      padding-top:2%;
-      margin-left: -40px;
-  
-      
-  }
-  .com-ul li{
-      padding-top: 2%;
-    }
-  .com-news ul{
-      padding-top:8%;
-      margin-left: -40px
-  }
-  
-  .footer-copywrite .container{
-    padding-top:2%;
+    color: white;
+    box-sizing: border-box;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    filter: contrast(25%);
+    text-decoration: none;
+}
+
+.social_media-icons a {
+    font-size: 110%;
+    padding: 0 2% 0 0;
+}
+/* 
+.btn {
+    background-color: white!important;
+} */
+
+.btn:hover, .btn:focus, .btn:active, .btn.active {
+    background-color: #222222 !important;
+    color: white !important;
+    border-color: black!important
+}
+
+.Newsletter {
+    margin-top: 5%;
+}
+
+.company {
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-left: 35px;
+    padding-top: 5px;
+}
+
+.com-ul ul {
+    padding-top: 2%;
+    margin-left: -40px;
+}
+
+.com-ul li {
+    padding-top: 2%;
+}
+
+.com-news ul {
+    padding-top: 8%;
+    margin-left: -40px
+}
+
+.footer-copywrite .container {
+    padding-top: 2%;
     padding-bottom: 2%;
     color: #222222;
-        text-align: center;
-        font-size: 16px;
-      line-height: 1.5;
-      letter-spacing: 0.05em;
-  }
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+.btn-submit {
+    width: 150px !important;
+}
