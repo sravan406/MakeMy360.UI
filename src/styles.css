@@ -4,11 +4,11 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 .mat-dialog-container {
-  background-color: rgba(19, 74, 107, 0.75) !important;
+  background-color: rgba(100, 100, 100, 0.5) !important;
 }
 
 .mat-dialog-title {
-  background-color: rgba(19, 74, 107, 0.75) !important;
+  background-color: rgba(100, 100, 100, 0.5) !important;
   color: black;
 }
 

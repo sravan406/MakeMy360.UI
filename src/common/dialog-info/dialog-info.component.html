@@ -2,20 +2,35 @@
 
 <div mat-dialog-content>
     <div class="row">
-        <div class="col-md-4" style="padding-left: 10%;padding-top: 5%;">
-            <h3>{{projectDetails.ProjectName}}</h3>
-            <p>{{projectDetails.CompanyName}}</p>
-            <p>{{projectDetails.Location}}</p>
-            <p>{{projectDetails.Website}}</p>
-            <p>{{projectDetails.EmailId}}</p>
-            <p>{{projectDetails.MobileNumber}}</p>
-            <p>{{projectDetails.Description}}</p>
+        <div class="col-md-6" >
+            <div style="padding-left: 35%; align-content;: center;">
+            <img height="125"  width="175" [src]="projectDetails.ProjectImage"/>
         </div>
-        <div class="col-md-8" style="padding-top: 5%;">
+            <br/>
+            <br/>
+            <br/>
+            <h3 style="margin: 10px 0;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px">{{projectDetails.ProjectName}}</h3>
+            <p style="margin: 10px 0;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px">{{projectDetails.ProjectLocation}}</p>
+            <p style="margin: 10px 0;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px">{{projectDetails.Website}}</p>
+            <p style="margin: 10px 0;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px">{{projectDetails.MobileNumber}}</p>
+        </div>
+        <div class="col-md-6" style="padding-top: 5%;">
             <p><b><span style="font-size: 18px;">Enticing highlights</span></b></p>
-            <p *ngFor="let point of points" class="setcontent">
-                <mat-icon>keyboard_arrow_right</mat-icon><span class="settext">{{point.Points}}</span>
-            </p>
+           <ul *ngFor="let point of points" class="setcontent">
+           <li> <span class="settext">{{point.Points}}</span></li>
+           </ul>
         </div>
     </div>
 </div>
@@ -37,6 +52,12 @@
     }
 
     p {
+        color: white;
+        font-size: 13px;
+    }
+
+    ul
+    {
         color: white;
         font-size: 13px;
     }

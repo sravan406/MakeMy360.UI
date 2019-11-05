@@ -5,6 +5,7 @@ import { UrlConstants } from 'src/app/@core/service-urls.constant';
 import { baseService } from 'src/app/@core/data/base-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProjectDetails } from 'src/app/@core/models/admin-models';
 
 @Component({
     selector: 'book-now',
@@ -15,7 +16,7 @@ export class BookNowComponent implements OnInit {
     details: BookNowDetails = {};
 
     constructor(public dialogRef: MatDialogRef<BookNowComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: BookNowDetails, private nav: NavbarService, private service: baseService, private _snackBar: MatSnackBar) {
+        @Inject(MAT_DIALOG_DATA) public data: ProjectDetails, private nav: NavbarService, private service: baseService, private _snackBar: MatSnackBar) {
     }
     ngOnInit() {
 
@@ -24,6 +25,7 @@ export class BookNowComponent implements OnInit {
         this.dialogRef.close();
     }
     submit() {
+        this.details.ProjectId=this.data.ProjectId;
         this.service.post(UrlConstants.submitUserDetails, this.details).subscribe((resp: any) => {
             // if (resp) {
             this._snackBar.open("User Saved Successfully", "Success!", {

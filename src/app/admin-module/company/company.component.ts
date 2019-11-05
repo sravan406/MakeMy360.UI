@@ -19,7 +19,7 @@ export class CompanyComponent implements OnInit {
   hideCompanyDetails: boolean = true;
   showFilter: boolean = false;
   showSavebtn: boolean = false;
-
+  companyPath:string;
   constructor(private service: baseService, private _location: Location,public nav:NavbarService) { }
 
   ngOnInit() {
@@ -54,10 +54,11 @@ this.nav.show();
   }
 
   saveCompany() {
-    this.service.post(UrlConstants.companyDetails, this.companyDetails).subscribe(resp => {
+    this.companyDetails.CompanyLogo=this.companyPath;
+    this.service.uploadCompany(UrlConstants.companyDetails, this.companyDetails).subscribe(resp => {
       this.getCompanyDetails();
       this.hideCompanyDetails = true;
-    });
+    });;
   }
 
   updateCompany() {
@@ -73,7 +74,7 @@ this.nav.show();
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
       reader.onload = (event: any) => {
-      this.companyDetails.companyLogo=event.target.result;
+      this.companyPath=event.target.result;
       };
       reader.readAsDataURL(event.target.files[0]);
     }
