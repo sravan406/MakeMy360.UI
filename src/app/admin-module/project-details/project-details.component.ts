@@ -5,6 +5,7 @@ import { ProjectDetails, CompanyDetails, FileToUpload, ProjectHighlights, Projec
 import { UrlConstants } from '../../@core/service-urls.constant';
 import { NavbarService } from 'src/app/navbar/navbar-service';
 import { DatePipe } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -29,7 +30,7 @@ export class ProjectDetailsComponent implements OnInit {
   projectTypeList: ProjectType[] = [{ ProjectType: "", ProjectTypeId: 0 }];
   showBackbtn: boolean = false;
 
-  constructor(private service: baseService, public nav: NavbarService, private datePipe: DatePipe) {
+  constructor(private service: baseService, public nav: NavbarService, private datePipe: DatePipe, private _snackBar: MatSnackBar) {
     this.getAllCompanyDetails();
   }
 
@@ -109,10 +110,14 @@ export class ProjectDetailsComponent implements OnInit {
   }
   saveProject() {
     this.projectDetails.projectHighlights = this.pointsArray;
-   // this.projectDetails.ProjectEndDate = this.datePipe.transform(this.projectDetails.ProjectEndDate, "dd-MM-yyyy");
-     this.projectDetails.CompanyName = this.companyNamesList.filter(t=>t.CompanyId==this.projectDetails.CompanyId)[0].CompanyName;
+    // this.projectDetails.ProjectEndDate = this.datePipe.transform(this.projectDetails.ProjectEndDate, "dd-MM-yyyy");
+    if (this.companyNamesList.length != 0)
+      this.projectDetails.CompanyName = this.companyNamesList.filter(t => t.CompanyId == this.projectDetails.CompanyId)[0].CompanyName;
     this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails).subscribe(resp => {
-      this.getAllProjectDetails();
+      this._snackBar.open("Project details saved successfully", "Success!", {
+        duration: 200000, verticalPosition: 'top', horizontalPosition: 'end'
+      });
+      window.location.reload();
       this.hideProjectDetails = true;
     });;
 
@@ -158,5 +163,4 @@ export class ProjectDetailsComponent implements OnInit {
     this.imagedata = data;
 
   }
-
 }

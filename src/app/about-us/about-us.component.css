@@ -13,15 +13,16 @@ p {
     font-weight: 200;
     letter-spacing: 0.1em;
 }
+
 .wpb_text_column {
     letter-spacing: .05em;
 }
 
-.row{
+.row {
     margin-top: 70px;
 }
 
-.setcontent{
+.setcontent {
     margin-top: 0;
     display: block;
     margin-block-start: 0em;
@@ -31,7 +32,7 @@ p {
     word-wrap: break-word;
 }
 
-.settext{
+.settext {
     position: absolute;
     padding-bottom: -200px;
     padding-top: 5px;
@@ -41,4 +42,8 @@ p {
     font-size: 13px;
     line-height: 0.5;
     letter-spacing: 0.1em;
+}
+
+.wbb_wrapper {
+    margin-top: 26px !important;
 }
