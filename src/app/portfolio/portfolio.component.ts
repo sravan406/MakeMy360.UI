@@ -11,7 +11,9 @@ import { ProjectDetails } from '../@core/models/admin-models';
 export class PortfolioComponent implements OnInit {
 
   projectDetailsList: ProjectDetails[] = [];
-  constructor(public service:baseService) { }
+  showTextBlock: boolean = false;
+
+  constructor(public service: baseService) { }
 
   ngOnInit() {
     this.getProtfolioDetails();

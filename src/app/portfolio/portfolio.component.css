@@ -1,0 +1,12 @@
+.text-block {
+    position: absolute;
+    bottom: 1px;
+    left: 16px;
+    height: 364px;
+    width: 349px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding-top: 149px;
+}

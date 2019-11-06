@@ -40,6 +40,7 @@ export interface ProjectDetails {
     TotalAmount?:number;
     InvoicePath?:string;
     BriefDescription?:string;
+    showTextBlock?:boolean;
 }
 
 export interface ProjectType {
