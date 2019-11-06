@@ -21,5 +21,6 @@ export const UrlConstants ={
     addContactUsDetails:"AddContactUsDetails",
     getAllContactUsDetails:"GetAllContactUsDetails",
     getContactDetailsById:"GetContactDetailsById",
-    updateContactedUserDetails:"UpdateConatctUsDetails"
+    updateContactedUserDetails:"UpdateConatctUsDetails",
+    getAllPortfolioDetails:"GetPortflioDetails"
 }; //no NEED TO USE Controller Name always as we are using attribute routing.

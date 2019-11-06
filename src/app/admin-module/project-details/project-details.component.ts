@@ -108,6 +108,18 @@ export class ProjectDetailsComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+
+  onSelectProtfolioFile(event)
+  {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+        this.projectDetails.ProtfolioImage = event.target.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+      
+    } 
+  }
   saveProject() {
     this.projectDetails.projectHighlights = this.pointsArray;
     // this.projectDetails.ProjectEndDate = this.datePipe.transform(this.projectDetails.ProjectEndDate, "dd-MM-yyyy");
@@ -133,7 +145,7 @@ export class ProjectDetailsComponent implements OnInit {
   updateProject() {
 
     this.projectDetails.projectHighlights = this.pointsArray;
-    this.projectDetails.CompanyName = this.companyNamesList.filter(t => t.value === this.projectDetails.CompanyId)[0].label;
+    this.projectDetails.CompanyName =  this.companyNamesList.filter(t=>t.CompanyId==this.projectDetails.CompanyId)[0].CompanyName;
     this.service.put(UrlConstants.updateProjcetInfo, this.projectDetails).subscribe(resp => {
       this.getAllProjectDetails();
       this.hideProjectDetails = true;

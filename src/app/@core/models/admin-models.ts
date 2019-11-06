@@ -23,6 +23,7 @@ export interface ProjectDetails {
     Location?: string;
     ProjectLocation?:string;
     ProjectImage?:string;
+    ProtfolioImage?:string;
     VideoFrame?:string;
     ProjectEndDate?:string;
     images?:FileToUpload[];
