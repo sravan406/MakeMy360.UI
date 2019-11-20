@@ -28,11 +28,11 @@
           <br/>
            <div class="form-group">
               <label for="email">Email address:</label>
-              <input type="email" class="form-control" id="email"  placeholder="Your Email address">
+              <input type="email" class="form-control" name="email" [(ngModel)]="subscriberData.EmailId" placeholder="Your Email address">
            </div>
          
          <br/>
-         <button type="submit" class="btn-submit">Subscribe</button>
+         <button type="submit" class="btn-submit" (click)="onClickSubscribe()">Subscribe</button>
          
          </form>
          

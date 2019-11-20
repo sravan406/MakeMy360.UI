@@ -25,3 +25,9 @@ export interface FileToUpload {
     lastModifiedDate: Date;
     fileAsBase64: string;
   }
+
+  export interface Subscriber {
+    Id?: number ;
+    EmailId?: string;
+    CreatedDate?: Date;
+  }
