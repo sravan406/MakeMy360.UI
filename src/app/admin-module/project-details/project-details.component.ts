@@ -22,6 +22,7 @@ export class ProjectDetailsComponent implements OnInit {
   hideProjectDetails: boolean = true;
   showFilter: boolean = false;
   showSavebtn: boolean = false;
+  showUpdatebtn: boolean = false;
   companyNamesList: any[] = [{ CompanyName: "", CompanyId: 0 }];
   imagedata: FileToUpload[] = [];
   public images: FileToUpload[] = [];
@@ -29,6 +30,7 @@ export class ProjectDetailsComponent implements OnInit {
   point: ProjectHighlights = {};
   projectTypeList: ProjectType[] = [{ ProjectType: "", ProjectTypeId: 0 }];
   showBackbtn: boolean = false;
+  btnName: string;
 
   constructor(private service: baseService, public nav: NavbarService, private datePipe: DatePipe, private _snackBar: MatSnackBar) {
     this.getAllCompanyDetails();
@@ -109,30 +111,33 @@ export class ProjectDetailsComponent implements OnInit {
     }
   }
 
-  onSelectProtfolioFile(event)
-  {
+  onSelectProtfolioFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
       reader.onload = (event: any) => {
         this.projectDetails.ProtfolioImage = event.target.result;
       };
       reader.readAsDataURL(event.target.files[0]);
-      
-    } 
+
+    }
   }
   saveProject() {
     this.projectDetails.projectHighlights = this.pointsArray;
     // this.projectDetails.ProjectEndDate = this.datePipe.transform(this.projectDetails.ProjectEndDate, "dd-MM-yyyy");
     if (this.companyNamesList.length != 0)
       this.projectDetails.CompanyName = this.companyNamesList.filter(t => t.CompanyId == this.projectDetails.CompanyId)[0].CompanyName;
-    this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails).subscribe(resp => {
-      this._snackBar.open("Project details saved successfully", "Success!", {
-        duration: 200000, verticalPosition: 'top', horizontalPosition: 'end'
-      });
-      window.location.reload();
-      this.hideProjectDetails = true;
-    });;
-
+    if (this.showSavebtn) {
+      this.service.uploadFile(UrlConstants.projectDetails, this.projectDetails).subscribe(resp => {
+        this._snackBar.open("Project details saved successfully", "Success!", {
+          duration: 200000, verticalPosition: 'top', horizontalPosition: 'end'
+        });
+        window.location.reload();
+        this.hideProjectDetails = true;
+      });;
+    }
+    else {
+      this.updateProject();
+    }
   }
 
   // selectFolder(e)
@@ -145,8 +150,11 @@ export class ProjectDetailsComponent implements OnInit {
   updateProject() {
 
     this.projectDetails.projectHighlights = this.pointsArray;
-    this.projectDetails.CompanyName =  this.companyNamesList.filter(t=>t.CompanyId==this.projectDetails.CompanyId)[0].CompanyName;
+    this.projectDetails.CompanyName = this.companyNamesList.filter(t => t.CompanyId == this.projectDetails.CompanyId)[0].CompanyName;
     this.service.put(UrlConstants.updateProjcetInfo, this.projectDetails).subscribe(resp => {
+      this._snackBar.open("Project details updated successfully", "Success!", {
+        duration: 200000, verticalPosition: 'top', horizontalPosition: 'end'
+      });
       this.getAllProjectDetails();
       this.hideProjectDetails = true;
     });

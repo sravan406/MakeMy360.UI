@@ -1,11 +1,12 @@
 <div class="row">
     <div *ngFor="let method of projectDetailsList">
-        <div class="col-sm-4">
-            <img style="align-content: center; padding-top:15px;" width="350" height="380"
-                [src]="method.ProtfolioImage" (mouseover) ="method.showTextBlock = true"  (mouseleave) ="method.showTextBlock = false"/>
-            <div *ngIf="method.showTextBlock" class="text-block">
-                <h4>{{method.ProjectName}}</h4>
-                <p>{{method.Location}}</p>
+        <div class="container">
+            <div class="col-sm-4">
+                <img class="image" width="350" height="380" [src]="method.ProtfolioImage" (click)="onImageClick(method.SearchId)"/>
+                <div class="middle">
+                    <h4 class="textproject">{{method.ProjectName}}</h4>
+                    <p class="textlocation">{{method.Location}}</p>
+                </div>
             </div>
         </div>
     </div>

@@ -1,12 +1,45 @@
-.text-block {
+.textproject {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding: 16px 32px;
+}
+
+.textlocation {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    padding: 16px 32px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    padding: 0px 0px !important;
+}
+
+.image {
+    align-content: center; 
+    padding-top:15px;
+    padding-bottom: 12px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
     position: absolute;
-    bottom: 1px;
-    left: 16px;
-    height: 364px;
-    width: 349px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    align-items: center;
-    padding-top: 149px;
+    top: 50%;
+    left: 170%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.container:hover .image {
+    opacity: 0.3;
+}
+
+.container:hover .middle {
+    opacity: 1;
 }
