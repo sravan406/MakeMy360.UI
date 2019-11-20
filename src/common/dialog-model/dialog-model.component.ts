@@ -12,7 +12,8 @@ export class DialogModelComponent implements OnInit {
 
     textContent: string ;
     facebookUrl:string;
-    whatsAppUrl:string="https://api.whatsapp.com/send?text";
+    whatsAppUrl:string="https://api.whatsapp.com/send?text=";
+
     constructor(
         public dialogRef: MatDialogRef<DialogModelComponent>,
         @Inject(MAT_DIALOG_DATA) public data: BookNowDetails,public router:Router) { }
