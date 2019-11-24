@@ -7,7 +7,7 @@
      
       <div class="row">
         <div class="col-md-4">
-            <img src="assets/img/MakeMy360-Footer.jpg" alt="MakeMy360 Virtual Tour Company"> <br /><br /><br/>
+            <img src="assets/img/MakeMy360-Footer.jpg" width="200" height="200" alt="MakeMy360 Virtual Tour Company"> <br /><br /><br/>
             <p><span class="glyphicon glyphicon-earphone"></span>  (+91) 7306553552 </p>
             <p><span class="glyphicon glyphicon-envelope"></span>  makemy360@gmail.com </p>
             <p><span class="glyphicon glyphicon-map-marker gly"></span>  India </p>
@@ -28,11 +28,11 @@
           <br/>
            <div class="form-group">
               <label for="email">Email address:</label>
-              <input type="email" class="form-control" id="email"  placeholder="Your Email address">
+              <input type="email" class="form-control" name="email" [(ngModel)]="subscriberData.EmailId" placeholder="Your Email address">
            </div>
          
          <br/>
-         <button type="submit" class="btn-submit">Subscribe</button>
+         <button type="submit" class="btn-submit" (click)="onClickSubscribe()">Subscribe</button>
          
          </form>
          
@@ -47,7 +47,7 @@
           <li><a routerLink="/Home">Home</a></li>
           <li><a routerLink="/About-us">About us</a></li>
           <li><a routerLink="/Virtual-tour">Virtual Tour</a></li>
-          <li><a routerLink="/">Portfolio</a></li>
+          <li><a routerLink="/Portfolio">Portfolio</a></li>
           <li><a routerLink="/Request-Quote">Request Quote</a></li>
          <li><a routerLink="/contact-us">Contact-us</a></li>
       </ul>

@@ -1,14 +1,22 @@
 nav {
     font-size: 100% !important;
-    background-color: transparent !important;
+    background-color: black !important;
     letter-spacing: 0.8px !important;
     line-height: 24px !important;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: black;
+    color: white;
     font-size: 14px;
     font-family: monospace;
+}
+
+.navbar-default{
+    border-color: black !important;
+}
+
+.navbar {
+    border-radius: 1px;
 }
 
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
@@ -41,11 +49,15 @@ nav a {
 }
 
 #grad2 {
-    background-color: #C0C0C0;
-    background-image: linear-gradient(90deg, #C0C0C0, white);
+    background-color: black;
+    /* background-image: linear-gradient(90deg, #C0C0C0, white); */
 }
 
 .navbar-brand>img {
     display: block;
     padding-top: 9px;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: black;
 }
