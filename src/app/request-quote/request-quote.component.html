@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="businessprofile">Business Profile<span class="required">*</span></label>
+                    <label for="businessprofile">Business Profile</label><span class="required">*</span>
                     <select class="form-control" placeholder="--select--" name="businessprofile" [(ngModel)]="reqDetails.BusinessProfileId" #businessprofile="ngModel"
                         [ngClass]="{ 'is-invalid': f.submitted && businessprofile.invalid }" required>
                         <option [value]="0">--Select--</option>
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Your Name <span class="required">*</span></label>
+                    <label for="name">Your Name</label> <span class="required">*</span>
                     <input type="text" class="form-control" name="Name" [(ngModel)]="reqDetails.Name" #Name="ngModel"
                         [ngClass]="{ 'is-invalid': f.submitted && Name.invalid }" maxlength="10" required>
                     <div *ngIf="f.submitted && Name.invalid" class="invalid-feedback">
@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="projectName">Your Email <span class="required">*</span></label>
+                    <label for="projectName">Your Email</label> <span class="required">*</span>
                     <input type="text" class="form-control" name="emailId" [(ngModel)]="reqDetails.EmailId"
                         #emailId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" maxlength="50"
                         required>
@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="Phone">Phone Number<span class="required">*</span></label>
+                    <label for="Phone">Phone Number</label><span class="required">*</span>
                     <input type="number" class="form-control" name="phone" [(ngModel)]="reqDetails.PhoneNumber"
                         maxlength="10" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" maxlength="50"
                         required>

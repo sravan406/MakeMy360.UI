@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Name <span class="required">*</span></label>
+                    <label for="name">Name</label> <span class="required">*</span>
                     <input type="text" class="form-control" name="Name" [(ngModel)]="contactDet.Name" #Name="ngModel"
                         [ngClass]="{ 'is-invalid': f.submitted && Name.invalid }" maxlength="100" required>
                     <div *ngIf="f.submitted && Name.invalid" class="invalid-feedback">
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Email Id <span class="required">*</span></label>
+                    <label for="name">Email Id</label> <span class="required">*</span>
                     <input type="text" class="form-control" name="emailId" [(ngModel)]="contactDet.EmailId"
                         #emailId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" maxlength="100"
                         required>
@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Mobile Number<span class="required">*</span></label>
+                    <label for="name">Mobile Number</label><span class="required">*</span>
                     <input type="text" class="form-control" name="mobileNumber" [(ngModel)]="contactDet.PhoneNumber"
                         #mobileNumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mobileNumber.invalid }" maxlength="10"
                         required>
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="name">Message<span class="required">*</span></label>
+                    <label for="name">Message</label><span class="required">*</span>
                     <textarea type="text" class="form-control" name="message" [(ngModel)]="contactDet.Message"
                         #message="ngModel" [ngClass]="{ 'is-invalid': f.submitted && message.invalid }" maxlength="8000"
                         required></textarea>
