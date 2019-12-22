@@ -24,6 +24,6 @@ export class DialogContactComponent {
 
     callAction()
     {
-        window.location.href="tel:+917306553552"
+        window.location.href="tel:+91"+this.projectDetails.MobileNumber
     }
 }
