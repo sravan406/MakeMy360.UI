@@ -28,17 +28,22 @@
           <div class="text-down"> MAP </div>
         </a>
       </li>
-      <li><a (click)="openDialog()">
+      <li>
+        <a (click)="openDialog()">
           <span class="fa fa-share-alt icon"></span>
-          <div class="text-down shareid" data-toggle="modal" data-target="#share" data-backdrop="false"> SHARE
+          <div class="text-down shareid" data-toggle="modal" data-target="#share" data-backdrop="false">
+            SHARE
 
           </div>
-        </a></li>
-      <li><a (click)="openContact()">
+        </a>
+      </li>
+      <li>
+        <a (click)="openContact()">
           <span class="glyphicon glyphicon-envelope icon"></span>
           <div class="text-down" data-toggle="modal" data-target="#share" data-backdrop="false"> CONTACT</div>
-        </a></li>
-     
+        </a>
+      </li>
+
     </ul>
   </div>
 </div>
@@ -46,7 +51,6 @@
 
 
 <!-- Modal -->
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog">
@@ -74,7 +78,7 @@
           <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="margin: 10px;">
             <mat-icon aria-label="Menu">menu</mat-icon>
           </button>
-      
+
           <mat-nav-list>
             <mat-list-item>
               <mat-icon mat-list-icon>info</mat-icon>
@@ -96,9 +100,9 @@
             </mat-list-item>
           </mat-nav-list>
         </mat-drawer>
-      
+
          <div class="example-sidenav-content">
           You cards and screen Contents goes here..
           Will be pushed towards right on expanding side navbar.
-        </div> 
+        </div>
 </mat-drawer-container> -->

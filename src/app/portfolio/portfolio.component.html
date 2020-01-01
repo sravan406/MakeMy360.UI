@@ -2,10 +2,14 @@
     <div *ngFor="let method of projectDetailsList">
         <div class="container">
             <div class="col-sm-4">
+                <a>
                 <img class="image" width="350" height="380" [src]="method.ProtfolioImage" (click)="onImageClick(method.SearchId)"/>
+            </a>
                 <div class="middle">
+                    <a (click)="onImageClick(method.SearchId)">
                     <h4 class="textproject">{{method.ProjectName}}</h4>
                     <p class="textlocation">{{method.Location}}</p>
+                </a>
                 </div>
             </div>
         </div>

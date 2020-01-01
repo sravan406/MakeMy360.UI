@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  apiUrl: 'http://localhost:60468/Api/',
-  tokenUrl:'http://localhost:60468/',
-  webApp:"http://localhost:4200",
+  apiUrl: 'https://makemy360apiservice.azurewebsites.net/Api/',
+  tokenUrl:'https://makemy360apiservice.azurewebsites.net/',
+  webApp:"https://MakeMy360.com",
   production: false
 };
 
